@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import StartScreen from "./app/screens/StartScreen";
 import HomeScreen from "./app/screens/HomeScreen";
 import DetailsScreen from "./app/screens/DetailsScreen";
 
@@ -25,5 +26,5 @@ export default function App() {
 	// 		<StackNavigator />
 	// 	</NavigationContainer>
 	// );
-	return <HomeScreen />;
+	return <StartScreen />;
 }
