@@ -20,10 +20,6 @@ const StackNavigator = () => (
 );
 
 export default function App() {
-	// if (!fontsLoaded) {
-	// 	return <AppLoading />;
-	// }
-	// from the custom App we return the component we assigned to RootApp.
 	// return (
 	// 	<NavigationContainer>
 	// 		<StackNavigator />
