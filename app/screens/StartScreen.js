@@ -21,6 +21,7 @@ function StartScreen({ naviagation }) {
 const styles = StyleSheet.create({
 	screen: {
 		justifyContent: "center",
+		alignItems: "center",
 	},
 	logo: { marginBottom: 100 },
 	button: {},

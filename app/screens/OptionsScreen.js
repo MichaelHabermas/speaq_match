@@ -20,7 +20,7 @@ function OptionsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
 	screen: {
-		width: "100%",
+		// width: "100%",
 	},
 });
 

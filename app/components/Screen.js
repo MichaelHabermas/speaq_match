@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
 	screen: {
 		paddingTop: Constants.statusBarHeight,
 		flex: 1,
+		width: "100%",
 	},
 	view: {
 		flex: 1,

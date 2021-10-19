@@ -19,7 +19,7 @@ function HelpScreen({ navigation }) {
 
 const styles = StyleSheet.create({
 	screen: {
-		width: "100%",
+		// width: "100%",
 	},
 });
 

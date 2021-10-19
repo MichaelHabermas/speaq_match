@@ -13,17 +13,20 @@ function ScreenHeader({
 	navRight,
 	showLeftButton = true,
 	showRightButton = true,
+	showTitle = true,
 	title,
 	titleOffset,
 }) {
 	return (
 		<View style={styles.container}>
-			<Text
-				style={[styles.headerText, { marginTop: titleOffset }]}
-				fontFam="bowlby"
-			>
-				{title}
-			</Text>
+			{showTitle && (
+				<Text
+					style={[styles.headerText, { marginTop: titleOffset }]}
+					fontFam="bowlby"
+				>
+					{title}
+				</Text>
+			)}
 			{showLeftButton && (
 				<NavButton
 					icon={navLeftIcon}
