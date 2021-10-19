@@ -4,15 +4,27 @@ import { StyleSheet, ImageBackground, SafeAreaView, View } from "react-native";
 
 import speaq_logo from "../assets/speaq_logo.png";
 
-function Screen({ children, style }) {
+function Screen({ children, screen = false, style }) {
 	return (
 		<ImageBackground
 			source={require("../assets/bg.png")}
 			style={styles.background}
 		>
-			<SafeAreaView style={[styles.screen, style]}>
-				<View style={[styles.view, style]}>{children}</View>
-			</SafeAreaView>
+			{screen && (
+				<ImageBackground
+					source={require("../assets/bg_screen.png")}
+					style={styles.background}
+				>
+					<SafeAreaView style={[styles.screen, style]}>
+						<View style={[styles.view, style]}>{children}</View>
+					</SafeAreaView>
+				</ImageBackground>
+			)}
+			{!screen && (
+				<SafeAreaView style={[styles.screen, style]}>
+					<View style={[styles.view, style]}>{children}</View>
+				</SafeAreaView>
+			)}
 		</ImageBackground>
 	);
 }
@@ -22,6 +34,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
+		width: "100%",
 	},
 	screen: {
 		paddingTop: Constants.statusBarHeight,

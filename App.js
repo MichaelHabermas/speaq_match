@@ -2,10 +2,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import StartScreen from "./app/screens/StartScreen";
-import HomeScreen from "./app/screens/HomeScreen";
-import DetailsScreen from "./app/screens/DetailsScreen";
+import HelpScreen from "./app/screens/HelpScreen";
 import LevelSelectScreen from "./app/screens/LevelSelectScreen";
+import OptionsScreen from "./app/screens/OptionsScreen";
+import StartScreen from "./app/screens/StartScreen";
+import UserProfileScreen from "./app/screens/UserProfileScreen";
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
@@ -15,8 +16,10 @@ const StackNavigator = () => (
 		}}
 	>
 		<Stack.Screen name="Start" component={StartScreen} />
-		<Stack.Screen name="Home" component={HomeScreen} />
-		<Stack.Screen name="Details" component={DetailsScreen} />
+		<Stack.Screen name="Profile" component={UserProfileScreen} />
+		<Stack.Screen name="LevelSelect" component={LevelSelectScreen} />
+		<Stack.Screen name="Options" component={OptionsScreen} />
+		<Stack.Screen name="Help" component={HelpScreen} />
 	</Stack.Navigator>
 );
 
@@ -26,5 +29,9 @@ export default function App() {
 	// 		<StackNavigator />
 	// 	</NavigationContainer>
 	// );
-	return <LevelSelectScreen />;
+	// return <StartScreen />;
+	// return <UserProfileScreen />;
+	// return <LevelSelectScreen />;
+	return <HelpScreen />;
+	// return <OptionsScreen />;
 }

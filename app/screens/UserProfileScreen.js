@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 
-function LevelSelectScreen({ navigation }) {
+function UserProfileScreen({ navigation }) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
@@ -12,7 +12,8 @@ function LevelSelectScreen({ navigation }) {
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				navRight={() => console.log("button 2 pressed")}
 				navRightIcon={require("../assets/buttons/forward_icon_dark.png")}
-				title="Level Select"
+				showRightButton={false}
+				title="User Profile"
 			/>
 		</Screen>
 	);
@@ -22,4 +23,4 @@ const styles = StyleSheet.create({
 	screen: {},
 });
 
-export default LevelSelectScreen;
+export default UserProfileScreen;
