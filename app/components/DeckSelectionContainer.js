@@ -12,10 +12,7 @@ function DeckSelectionContainer(props) {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		alignItems: "center",
-		justifyContent: "center",
-	},
+	container: {},
 });
 
 export default DeckSelectionContainer;
