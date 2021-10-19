@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import defaultStyles from "../config/styles";
+import OptionsButton from "../components/OptionsButton";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import Text from "../components/Text";
@@ -18,11 +19,7 @@ function OptionsScreen({ navigation }) {
 			/>
 			<Text style={styles.message}>Exit to Home?</Text>
 			<Text fontFam="alfa" style={styles.subMessage}>(all progress this session will be lost)</Text>
-			<TouchableOpacity onPress={() => {console.log("Exit Pressed")}}>
-				<View style={styles.exitButton}>
-					<Text fontFam="alfa" style={styles.buttonText}>EXIT</Text>
-				</View>
-			</TouchableOpacity>
+			<OptionsButton name="EXIT" style={styles.buttonText} />
 		</Screen>
 	);
 }
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
 		},
 		textShadowRadius: 0,
 	},
-	exitButton: {
+	view: {
 		alignItems: "center",
 		justifyContent: "center",
 		backgroundColor: defaultStyles.colors.white,
