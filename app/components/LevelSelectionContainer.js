@@ -53,17 +53,15 @@ const styles = StyleSheet.create({
 	container: {
 		alignSelf: "center",
 		height: "70%",
-		justifyContent: "space-between",
-		width: "80%",
+		width: "85%",
 		position: "absolute",
 		bottom: 0,
+		left: "10%",
 	},
 	subContainer: {
-		alignSelf: "center",
 		flexDirection: "row",
 		flexWrap: "wrap",
 		height: "100%",
-		justifyContent: "space-between",
 		width: "100%",
 	},
 });

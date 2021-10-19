@@ -5,7 +5,7 @@ import Text from "./Text";
 
 import defaultStyles from "../config/styles";
 
-function LevelCard({ number, onPress }) {
+function LevelCard({ number, onPress, chosen }) {
 	return (
 		<TouchableOpacity onPress={onPress}>
 			<View style={styles.container}>
@@ -17,23 +17,16 @@ function LevelCard({ number, onPress }) {
 
 const styles = StyleSheet.create({
 	container: {
-		// alignItems: "center",
-		// alignContent: "center",
 		backgroundColor: defaultStyles.colors.white,
 		borderRadius: 15,
 		height: 150,
-		// justifyContent: "center",
+		marginRight: 10,
 		marginBottom: 10,
 		width: 105,
 	},
 	text: {
-		alignItems: "center",
-		justifyContent: "center",
 		color: defaultStyles.colors.light_blue,
-		fontSize: 70,
-		flex: 1,
-		letterSpacing: -15,
-		paddingHorizontal: 10,
+		fontSize: 60,
 		textAlign: "center",
 		textShadowColor: "rgba(0, 0, 0, 0.0)",
 		textShadowOffset: {
@@ -41,6 +34,7 @@ const styles = StyleSheet.create({
 			height: 0,
 		},
 		textShadowRadius: 0,
+		width: "100%",
 	},
 });
 

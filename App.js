@@ -34,10 +34,10 @@ export default function App() {
 	// 	</NavigationContainer>
 	// );
 	// return <StartScreen />;
-	return <UserProfileScreen />;
+	// return <UserProfileScreen />;
 	// return <LevelSelectScreen />;
 	// return <GamePlayScreen />;
 	// return <HelpScreen />;
-	// return <OptionsScreen />;
+	return <OptionsScreen />;
 	// return <GameOverScreen />;
 }
