@@ -38,16 +38,16 @@ function DeckSelectionContainer(props) {
 
 const styles = StyleSheet.create({
 	scrollView: {
-		width: "100%",
-		height: "100%",
 		flex: 1,
+		height: "100%",
+		width: "100%",
 	},
 	container: {
 		alignSelf: "center",
-		height: "70%",
-		width: "80%",
-		position: "absolute",
 		bottom: 0,
+		height: "70%",
+		position: "absolute",
+		width: "80%",
 	},
 	subContainer: {
 		height: "100%",
