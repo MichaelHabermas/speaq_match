@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import colors from "../config/colors";
 import Text from "./Text";
 
-function AppButton({ title, onPress, color = "yellow" }) {
+function AppButton({ title, onPress, color = "yellow", style }) {
 	return (
 		<TouchableOpacity
 			style={[styles.button, { backgroundColor: colors[color] }]}
@@ -41,6 +41,12 @@ const styles = StyleSheet.create({
 		fontSize: 50,
 		paddingLeft: 90,
 		paddingRight: 90,
+		textShadowColor: "rgba(0, 0, 0, 0.0)",
+		textShadowOffset: {
+			height: 0,
+			width: 0,
+		},
+		textShadowRadius: 0,
 	},
 });
 
