@@ -15,7 +15,7 @@ function OptionsScreen({ navigation }) {
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				showRightButton={false}
 				title="Options"
-				titleOffset={100}
+				titleOffset={80}
 			/>
 			<Text style={styles.message}>Exit to Home?</Text>
 			<Text fontFam="alfa" style={styles.subMessage}>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 	message: {
 		color: defaultStyles.colors.white,
 		fontSize: 60,
-		marginTop: 100,
+		marginTop: 80,
 		lineHeight: 60,
 		paddingTop: 20,
 		textAlign: "center",
