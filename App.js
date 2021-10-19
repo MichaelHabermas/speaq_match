@@ -30,8 +30,8 @@ export default function App() {
 	// 	</NavigationContainer>
 	// );
 	// return <StartScreen />;
-	// return <UserProfileScreen />;
+	return <UserProfileScreen />;
 	// return <LevelSelectScreen />;
 	// return <HelpScreen />;
-	return <OptionsScreen />;
+	// return <OptionsScreen />;
 }

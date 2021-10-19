@@ -12,6 +12,7 @@ function UserProfileScreen({ navigation }) {
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				showRightButton={false}
 				title="User Profile"
+				titleOffset={40}
 			/>
 		</Screen>
 	);
