@@ -31,7 +31,7 @@ export default function App() {
 	// );
 	// return <StartScreen />;
 	// return <UserProfileScreen />;
-	return <LevelSelectScreen />;
+	// return <LevelSelectScreen />;
 	// return <HelpScreen />;
-	// return <OptionsScreen />;
+	return <OptionsScreen />;
 }

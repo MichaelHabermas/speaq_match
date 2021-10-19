@@ -5,11 +5,11 @@ import Text from "./Text";
 
 import defaultStyles from "../config/styles";
 
-function DeckCard({ name, onPress }) {
+function DeckCard({ name, onPress, style, fontFam }) {
 	return (
 		<TouchableOpacity onPress={onPress}>
-			<View style={styles.container}>
-				<Text style={styles.text}>{name}</Text>
+			<View style={[styles.container, style]}>
+				<Text fontFam={fontFam} style={styles.text}>{name}</Text>
 			</View>
 		</TouchableOpacity>
 	);
