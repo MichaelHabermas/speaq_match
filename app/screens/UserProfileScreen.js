@@ -21,24 +21,56 @@ function UserProfileScreen({ navigation }) {
 			<View style={styles.genderContainer}>
 				<View style={styles.genderLabel}>
 					<Text style={styles.genderText}>Gender</Text>
-					<TouchableOpacity onPress={()=>{console.log('help is pushed')}} style={styles.genderInfoButton}>
-						<Image style={styles.genderHelp} source={require("../assets/buttons/help_icon_light.png")} />
+					<TouchableOpacity
+						onPress={() => {
+							console.log("help is pushed");
+						}}
+						style={styles.genderInfoButton}
+					>
+						<Image
+							style={styles.genderHelp}
+							source={require("../assets/buttons/help_icon_light.png")}
+						/>
 					</TouchableOpacity>
 				</View>
+
 				<View style={styles.genderButtons}>
-					<OptionsButton name="Male" onPress={()=>{console.log("male button pressed")}} />
-					<OptionsButton name="Female" onPress={()=>{console.log("female button pressed")}} />
+					<OptionsButton
+						name="Male"
+						onPress={() => {
+							console.log("male button pressed");
+						}}
+					/>
+					<OptionsButton
+						name="Female"
+						onPress={() => {
+							console.log("female button pressed");
+						}}
+					/>
 				</View>
 			</View>
+
 			<View style={styles.genderContainer}>
 				<View style={styles.genderLabel}>
 					<Text style={styles.genderText}>Language</Text>
 				</View>
 				<View style={styles.genderButtons}>
-					<OptionsButton name="Italian" onPress={()=>{console.log("italian button pressed")}} />
+					<OptionsButton
+						name="Italian"
+						onPress={() => {
+							console.log("italian button pressed");
+						}}
+					/>
 				</View>
 			</View>
-			<ButtonMain onPress={()=>{console.log("save button")}} style={styles.saveButton} title="Save" />
+
+			<ButtonMain
+				onPress={() => {
+					console.log("save button");
+				}}
+				style={styles.saveButton}
+				title="Save"
+			/>
 		</Screen>
 	);
 }
@@ -47,9 +79,12 @@ const styles = StyleSheet.create({
 	screen: {},
 	genderButtons: {
 		flexDirection: "row",
+		width: "100%",
+		justifyContent: "space-evenly",
 	},
 	genderContainer: {
 		alignItems: "center",
+		marginTop: 40,
 	},
 	genderInfoButton: {
 		backgroundColor: defaultStyles.colors.gold,
@@ -63,18 +98,17 @@ const styles = StyleSheet.create({
 	genderHelp: {
 		resizeMode: "contain",
 		width: "100%",
-		height: "100%"
+		height: "100%",
 	},
-	genderLabel: {
-		
-	},
+	genderLabel: {},
 	genderText: {
 		fontSize: 50,
 		color: defaultStyles.colors.white,
 	},
 	saveButton: {
-
-	}
+		marginTop: 40,
+		width: "100%",
+	},
 });
 
 export default UserProfileScreen;

@@ -12,7 +12,7 @@ function StartScreen({ naviagation }) {
 			<ButtonMain
 				style={styles.button}
 				title="Start"
-				onPress={() => console.log("Button works")}
+				onPress={() => console.log("Start Button works")}
 			/>
 		</Screen>
 	);
