@@ -1,9 +1,10 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
 
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import Text from "../components/Text";
+
 import defaultStyles from "../config/styles";
 
 function UserProfileScreen({ navigation }) {
@@ -17,22 +18,33 @@ function UserProfileScreen({ navigation }) {
 				titleOffset={20}
 			/>
 			<View style={styles.selections}>
-				<Text style={styles.selectionItem} fontFam="bowlby">
-					Level
-				</Text>
-				<Text style={styles.selectionItem} fontFam="bowlby">
-					Deck
-				</Text>
+				<Image
+					style={styles.club}
+					source={require("../assets/club_orange.png")}
+				/>
+				<TouchableHighlight onPress={() => console.log("Level button pressed")}>
+					<Text style={styles.selectionItem} fontFam="bowlby">
+						Level
+					</Text>
+				</TouchableHighlight>
+				<TouchableHighlight onPress={() => console.log("Deck button pressed")}>
+					<Text style={styles.selectionItem} fontFam="bowlby">
+						Deck
+					</Text>
+				</TouchableHighlight>
 			</View>
 		</Screen>
 	);
 }
 
 const styles = StyleSheet.create({
+	club: {
+		position: "absolute",
+	},
 	screen: {},
 	selections: {
-		flexDirection: "row",
 		alignItems: "center",
+		flexDirection: "row",
 		justifyContent: "space-evenly",
 	},
 	selectionItem: {
