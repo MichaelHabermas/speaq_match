@@ -1,26 +1,29 @@
 import React from "react";
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, Image } from "react-native";
 
-import Button from "../components/Button";
+import Screen from "../components/Screen";
+import ButtonMain from "../components/ButtonMain";
+import speaq_logo from "../assets/speaq_logo.png";
 
 function StartScreen({ naviagation }) {
 	return (
-		<ImageBackground
-			source={require("../assets/bg.png")}
-			style={styles.background}
-		>
-			{/* <Button title="Start" onPress={() => props.navigation.navigate("Game")} /> */}
-			<Button title="Start" onPress={() => console.log("Button works")} />
-		</ImageBackground>
+		<Screen style={styles.screen}>
+			<Image source={speaq_logo} style={styles.logo} />
+			<ButtonMain
+				style={styles.button}
+				title="Start"
+				onPress={() => console.log("Button works")}
+			/>
+		</Screen>
 	);
 }
 
 const styles = StyleSheet.create({
-	background: {
-		flex: 1,
+	screen: {
 		justifyContent: "center",
-		alignItems: "center",
 	},
+	logo: { marginBottom: 100 },
+	button: {},
 });
 
 export default StartScreen;
