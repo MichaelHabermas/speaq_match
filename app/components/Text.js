@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import AppLoading from "expo-app-loading";
 import {
 	useFonts,
@@ -22,12 +22,27 @@ function AppText({ children, fontFam, style, ...otherProps }) {
 
 	return (
 		<Text
-			style={[style, { fontFamily: fontyFont || "AlfaSlabOne_400Regular" }]}
+			style={[
+				styles.text,
+				style,
+				{ fontFamily: fontyFont || "AlfaSlabOne_400Regular" },
+			]}
 			{...otherProps}
 		>
 			{children}
 		</Text>
 	);
 }
+
+const styles = StyleSheet.create({
+	text: {
+		textShadowColor: "rgba(0, 0, 0, 0.25)",
+		textShadowOffset: {
+			width: 2,
+			height: 2,
+		},
+		textShadowRadius: 8,
+	},
+});
 
 export default AppText;

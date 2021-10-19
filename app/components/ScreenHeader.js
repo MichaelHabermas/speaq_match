@@ -50,12 +50,6 @@ const styles = StyleSheet.create({
 		lineHeight: 55,
 		paddingTop: 40,
 		textAlign: "center",
-		textShadowColor: "rgba(0, 0, 0, 0.3)",
-		textShadowOffset: {
-			width: 2,
-			height: 2,
-		},
-		textShadowRadius: 8,
 		width: "80%",
 	},
 	leftButton: { left: 20 },
