@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
 
+import MenuButton from "../components/MenuButton";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
-import Text from "../components/Text";
 
 import defaultStyles from "../config/styles";
+import LevelSelectionContainer from "../components/LevelSelectionContainer";
+import DeckSelectionContainer from "../components/DeckSelectionContainer";
 
 function UserProfileScreen({ navigation }) {
+	const [menuChoice, setMenuChoice] = useState(true);
+
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
@@ -18,21 +22,19 @@ function UserProfileScreen({ navigation }) {
 				titleOffset={20}
 			/>
 			<View style={styles.selections}>
-				<Image
-					style={styles.club}
-					source={require("../assets/club_orange.png")}
+				<MenuButton
+					chosen={menuChoice}
+					onPress={() => setMenuChoice(true)}
+					title="Level"
 				/>
-				<TouchableHighlight onPress={() => console.log("Level button pressed")}>
-					<Text style={styles.selectionItem} fontFam="bowlby">
-						Level
-					</Text>
-				</TouchableHighlight>
-				<TouchableHighlight onPress={() => console.log("Deck button pressed")}>
-					<Text style={styles.selectionItem} fontFam="bowlby">
-						Deck
-					</Text>
-				</TouchableHighlight>
+				<MenuButton
+					chosen={!menuChoice}
+					onPress={() => setMenuChoice(false)}
+					title="Deck"
+				/>
 			</View>
+			{menuChoice && <LevelSelectionContainer />}
+			{!menuChoice && <DeckSelectionContainer />}
 		</Screen>
 	);
 }
