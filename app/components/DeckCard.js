@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		textShadowColor: "rgba(0, 0, 0, 0.0)",
 		textShadowOffset: {
-			width: 0,
 			height: 0,
+			width: 0,
 		},
 		textShadowRadius: 0,
 	},
