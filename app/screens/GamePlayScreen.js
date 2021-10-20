@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, Platform, StyleSheet, View } from "react-native";
 
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
@@ -7,30 +7,29 @@ import ScreenHeader from "../components/ScreenHeader";
 const characters = [
 	{
 		id: 1,
-		image: require("../assets/speech_bubbles/toby_bubble.png"),
+		image: require("../assets/speech_bubbles/toby.png"),
 		gender: "female",
 	},
 	{
 		id: 2,
-		image: require("../assets/speech_bubbles/sasha_bubble.png"),
+		image: require("../assets/speech_bubbles/sasha.png"),
 		gender: "female",
 	},
 	{
 		id: 3,
-		image: require("../assets/speech_bubbles/steven_bubble.png"),
+		image: require("../assets/speech_bubbles/steven.png"),
 		gender: "male",
 	},
 	{
 		id: 4,
-		image: require("../assets/speech_bubbles/andrea_bubble.png"),
+		image: require("../assets/speech_bubbles/andrea.png"),
 		gender: "female",
 	},
-	// {
-	// 	id: 4,
-	// 	image: require("../assets/speech_bubbles/steven_bubble.png"),
-	// 	gender: "male",
-	// },
-	//
+	{
+		id: 5,
+		image: require("../assets/speech_bubbles/jessica.png"),
+		gender: "male",
+	},
 ];
 
 function GamePlayScreen({ navigation }) {
@@ -46,11 +45,7 @@ function GamePlayScreen({ navigation }) {
 				style={styles.header}
 			/>
 			<View style={styles.speaker}>
-				<Image source={characters[0].image} />
-				<Image source={characters[1].image} />
-				<Image source={characters[2].image} />
-				{/* <Image source={characters[3].image} /> */}
-				{/* <Image source={characters[4].image} /> */}
+				<Image style={styles.speakerImage} source={characters[4].image} />
 			</View>
 		</Screen>
 	);
@@ -58,7 +53,15 @@ function GamePlayScreen({ navigation }) {
 
 const styles = StyleSheet.create({
 	speaker: {
-		flex: 1,
+		alignSelf: "center",
+		width: "100%",
+		height: 170,
+		position: "absolute",
+		bottom: 0,
+		marginBottom: Platform.OS == "android" ? 0 : -20,
+	},
+	speakerImage: {
+		resizeMode: "contain",
 		width: "100%",
 		height: "100%",
 	},
