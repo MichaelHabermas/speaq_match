@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Platform, StyleSheet, View } from "react-native";
 
+import CardsContainer from "../components/CardsContainer";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import Text from "../components/Text";
@@ -33,6 +34,24 @@ const characters = [
 	},
 ];
 
+const cards = [
+	{ name: "a zero", image: require("../assets/cards/numbers_1/card_0.png") },
+	{ name: "a one", image: require("../assets/cards/numbers_1/card_1.png") },
+	{ name: "a two", image: require("../assets/cards/numbers_1/card_2.png") },
+	{ name: "a three", image: require("../assets/cards/numbers_1/card_3.png") },
+	{ name: "a four", image: require("../assets/cards/numbers_1/card_4.png") },
+	{ name: "a five", image: require("../assets/cards/numbers_1/card_5.png") },
+	{ name: "a six", image: require("../assets/cards/numbers_1/card_6.png") },
+	{ name: "a seven", image: require("../assets/cards/numbers_1/card_7.png") },
+	{ name: "an eight", image: require("../assets/cards/numbers_1/card_8.png") },
+	{ name: "a nine", image: require("../assets/cards/numbers_1/card_9.png") },
+	{ name: "a ten", image: require("../assets/cards/numbers_1/card_10.png") },
+	{
+		name: "an eleven",
+		image: require("../assets/cards/numbers_1/card_11.png"),
+	},
+];
+
 function GamePlayScreen({ navigation }) {
 	if (!characters) return <View></View>;
 	return (
@@ -45,6 +64,10 @@ function GamePlayScreen({ navigation }) {
 				showTitle={false}
 				style={styles.header}
 			/>
+			<View style={styles.streakContainer}>
+				<Text style={styles.streakText}>Streak: 3</Text>
+			</View>
+			<CardsContainer deck={cards} />
 			<View style={styles.speaker}>
 				<Image style={styles.speakerImage} source={characters[4].image} />
 				<View style={styles.speakerTextContainer}>
@@ -60,32 +83,32 @@ function GamePlayScreen({ navigation }) {
 const styles = StyleSheet.create({
 	speaker: {
 		alignSelf: "center",
-		width: "100%",
-		height: 170,
-		position: "absolute",
 		bottom: 0,
+		height: 170,
 		marginBottom: Platform.OS == "android" ? 0 : -40,
+		position: "absolute",
+		width: "100%",
 	},
 	speakerImage: {
+		height: "100%",
 		resizeMode: "contain",
 		width: "100%",
-		height: "100%",
 	},
 	speakerTextContainer: {
-		width: "96%",
-		height: "55%",
 		alignSelf: "center",
-		position: "absolute",
-		justifyContent: "center",
 		fontSize: 30,
+		height: "55%",
+		justifyContent: "center",
+		position: "absolute",
+		width: "96%",
 	},
 	speakerText: {
 		fontSize: 30,
-		textAlign: "center",
 		height: "100%",
 		justifyContent: "center",
 		lineHeight: 40,
 		paddingTop: 5,
+		textAlign: "center",
 	},
 });
 
