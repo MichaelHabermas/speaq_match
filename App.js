@@ -28,15 +28,15 @@ const StackNavigator = () => (
 );
 
 export default function App() {
-	// return (
-	// 	<NavigationContainer>
-	// 		<StackNavigator />
-	// 	</NavigationContainer>
-	// );
+	return (
+		<NavigationContainer>
+			<StackNavigator />
+		</NavigationContainer>
+	);
 	// return <StartScreen />;
 	// return <UserProfileScreen />;
 	// return <LevelSelectScreen />;
-	return <GamePlayScreen />;
+	// return <GamePlayScreen />;
 	// return <HelpScreen />;
 	// return <OptionsScreen />;
 	// return <GameOverScreen />;

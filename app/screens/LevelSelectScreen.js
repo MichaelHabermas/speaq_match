@@ -14,9 +14,9 @@ function LevelSelectScreen({ navigation }) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => console.log("button 1 pressed")}
+				navLeft={() => navigation.goBack()}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
-				navRight={() => console.log("button 2 pressed")}
+				navRight={() => navigation.navigate("GamePlay")}
 				navRightIcon={require("../assets/buttons/forward_icon_dark.png")}
 				title="Level Select"
 			/>

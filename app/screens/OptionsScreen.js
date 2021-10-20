@@ -11,7 +11,7 @@ function OptionsScreen({ navigation }) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => console.log("button 1 pressed")}
+				navLeft={() => navigation.goBack()}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				showRightButton={false}
 				title="Options"
@@ -21,7 +21,11 @@ function OptionsScreen({ navigation }) {
 			<Text fontFam="alfa" style={styles.subMessage}>
 				(all progress this session will be lost)
 			</Text>
-			<OptionsButton name="EXIT" style={styles.buttonText} />
+			<OptionsButton
+				onPress={() => navigation.navigate("Start")}
+				name="EXIT"
+				style={styles.buttonText}
+			/>
 		</Screen>
 	);
 }

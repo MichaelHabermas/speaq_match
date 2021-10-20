@@ -111,9 +111,9 @@ function GamePlayScreen({ navigation }) {
 	return (
 		<Screen style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => console.log("options button pressed")}
+				navLeft={() => navigation.navigate("Options")}
 				navLeftIcon={require("../assets/buttons/options_icon_light.png")}
-				navRight={() => console.log("help button pressed")}
+				navRight={() => navigation.navigate("Help")}
 				navRightIcon={require("../assets/buttons/help_icon_light.png")}
 				showTitle={false}
 				style={styles.header}

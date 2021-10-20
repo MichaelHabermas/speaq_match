@@ -12,7 +12,7 @@ function UserProfileScreen({ navigation }) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => console.log("button 1 pressed")}
+				navLeft={() => navigation.goBack()}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				showRightButton={false}
 				title="User Profile"
@@ -66,7 +66,7 @@ function UserProfileScreen({ navigation }) {
 
 			<ButtonMain
 				onPress={() => {
-					console.log("save button");
+					navigation.navigate("LevelSelect");
 				}}
 				style={styles.saveButton}
 				title="Save"
