@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet, Platform } from "react-native";
 
 import LevelCard from "./LevelCard";
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		height: "70%",
 		left: "10%",
-		marginBottom: Platform.OS === "android" ? 0 : -35,
+		marginBottom: Platform.OS === "ios" ? -35 : 0,
 		position: "absolute",
 		width: "90%",
 	},

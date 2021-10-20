@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		bottom: 0,
 		height: 170,
-		marginBottom: Platform.OS == "android" ? 0 : -40,
+		marginBottom: Platform.OS === "ios" ? -35 : 0,
 		position: "absolute",
 		width: "100%",
 	},
