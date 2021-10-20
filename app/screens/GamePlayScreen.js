@@ -4,6 +4,7 @@ import { Image, Platform, StyleSheet, View } from "react-native";
 import CardsContainer from "../components/CardsContainer";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
+import StreakTracker from "../components/StreakTracker";
 import Text from "../components/Text";
 
 const characters = [
@@ -64,10 +65,14 @@ function GamePlayScreen({ navigation }) {
 				showTitle={false}
 				style={styles.header}
 			/>
-			<View style={styles.streakContainer}>
+
+			<StreakTracker streak={0} />
+			{/* <View style={styles.streakContainer}>
 				<Text style={styles.streakText}>Streak: 3</Text>
-			</View>
+			</View> */}
+
 			<CardsContainer deck={cards} />
+
 			<View style={styles.speaker}>
 				<Image style={styles.speakerImage} source={characters[4].image} />
 				<View style={styles.speakerTextContainer}>

@@ -17,13 +17,11 @@ const styles = StyleSheet.create({
 	container: {
 		alignSelf: "center",
 		alignItems: "center",
-		justifyContent: "center",
-		borderColor: "black",
-		borderWidth: 1,
+		justifyContent: "space-between",
 		flexDirection: "row",
 		flexWrap: "wrap",
 		height: "70%",
-		width: "80%",
+		width: "75%",
 	},
 });
 
