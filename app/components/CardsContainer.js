@@ -14,7 +14,17 @@ function CardsContainer({ deck }) {
 }
 
 const styles = StyleSheet.create({
-	container: {},
+	container: {
+		alignSelf: "center",
+		alignItems: "center",
+		justifyContent: "center",
+		borderColor: "black",
+		borderWidth: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
+		height: "70%",
+		width: "80%",
+	},
 });
 
 export default CardsContainer;

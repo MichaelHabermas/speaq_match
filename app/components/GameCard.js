@@ -1,33 +1,42 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 function GameCard({ card, onPress, inStreak = false }) {
 	return (
-		<>
-			{inStreak && (
-				<View style={styles.container}>
-					<Image
-						style={styles.cardBack}
-						source={require("../assets/cards/card_back.png")}
-					/>
-				</View>
+		<TouchableOpacity onPress={onPress} style={styles.container}>
+			<Image
+				style={styles.card}
+				source={require("../assets/cards/card_front.png")}
+			/>
+			{inStreak ? (
+				<Image
+					style={styles.card}
+					source={require("../assets/cards/card_back.png")}
+				/>
+			) : (
+				<Image style={styles.card} source={card.image} />
 			)}
-			{!inStreak && (
-				<View style={styles.container}>
-					<Image
-						style={styles.card}
-						source={require("../assets/cards/card_front.png")}
-					/>
-					<Image style={styles.face} source={card.image} />
-				</View>
-			)}
-		</>
+		</TouchableOpacity>
 	);
 }
 
 const styles = StyleSheet.create({
-	container: {},
-	card: { position: "absolute" },
+	container: {
+		// marginBottom: 10,
+		// marginRight: 10,
+		borderColor: "green",
+		borderWidth: 1,
+		width: "30%",
+		height: "25%",
+		// padding: 5,
+	},
+	card: {
+		position: "absolute",
+
+		resizeMode: "contain",
+		width: "100%",
+		height: "100%",
+	},
 	cardBack: {},
 	cardFace: {
 		position: "absolute",
