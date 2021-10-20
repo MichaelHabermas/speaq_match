@@ -36,8 +36,8 @@ export default function App() {
 	// return <StartScreen />;
 	// return <UserProfileScreen />;
 	// return <LevelSelectScreen />;
-	// return <GamePlayScreen />;
+	return <GamePlayScreen />;
 	// return <HelpScreen />;
-	return <OptionsScreen />;
+	// return <OptionsScreen />;
 	// return <GameOverScreen />;
 }
