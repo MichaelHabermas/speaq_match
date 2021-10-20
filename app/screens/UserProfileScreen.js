@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 	},
 	genderContainer: {
 		alignItems: "center",
-		marginTop: 40,
+		marginVertical: 40,
 	},
 	genderInfoButton: {
 		backgroundColor: defaultStyles.colors.gold,
@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
 		color: defaultStyles.colors.white,
 	},
 	saveButton: {
-		marginTop: 40,
 		width: "100%",
 	},
 });
