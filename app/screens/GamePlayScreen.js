@@ -36,18 +36,63 @@ const characters = [
 ];
 
 const cards = [
-	{ name: "a zero", image: require("../assets/cards/numbers_1/card_0.png") },
-	{ name: "a one", image: require("../assets/cards/numbers_1/card_1.png") },
-	{ name: "a two", image: require("../assets/cards/numbers_1/card_2.png") },
-	{ name: "a three", image: require("../assets/cards/numbers_1/card_3.png") },
-	{ name: "a four", image: require("../assets/cards/numbers_1/card_4.png") },
-	{ name: "a five", image: require("../assets/cards/numbers_1/card_5.png") },
-	{ name: "a six", image: require("../assets/cards/numbers_1/card_6.png") },
-	{ name: "a seven", image: require("../assets/cards/numbers_1/card_7.png") },
-	{ name: "an eight", image: require("../assets/cards/numbers_1/card_8.png") },
-	{ name: "a nine", image: require("../assets/cards/numbers_1/card_9.png") },
-	{ name: "a ten", image: require("../assets/cards/numbers_1/card_10.png") },
 	{
+		id: 1,
+		name: "a zero",
+		image: require("../assets/cards/numbers_1/card_0.png"),
+	},
+	{
+		id: 2,
+		name: "a one",
+		image: require("../assets/cards/numbers_1/card_1.png"),
+	},
+	{
+		id: 3,
+		name: "a two",
+		image: require("../assets/cards/numbers_1/card_2.png"),
+	},
+	{
+		id: 4,
+		name: "a three",
+		image: require("../assets/cards/numbers_1/card_3.png"),
+	},
+	{
+		id: 5,
+		name: "a four",
+		image: require("../assets/cards/numbers_1/card_4.png"),
+	},
+	{
+		id: 6,
+		name: "a five",
+		image: require("../assets/cards/numbers_1/card_5.png"),
+	},
+	{
+		id: 7,
+		name: "a six",
+		image: require("../assets/cards/numbers_1/card_6.png"),
+	},
+	{
+		id: 7,
+		name: "a seven",
+		image: require("../assets/cards/numbers_1/card_7.png"),
+	},
+	{
+		id: 9,
+		name: "an eight",
+		image: require("../assets/cards/numbers_1/card_8.png"),
+	},
+	{
+		id: 10,
+		name: "a nine",
+		image: require("../assets/cards/numbers_1/card_9.png"),
+	},
+	{
+		id: 11,
+		name: "a ten",
+		image: require("../assets/cards/numbers_1/card_10.png"),
+	},
+	{
+		id: 12,
 		name: "an eleven",
 		image: require("../assets/cards/numbers_1/card_11.png"),
 	},
@@ -67,9 +112,6 @@ function GamePlayScreen({ navigation }) {
 			/>
 
 			<StreakTracker streak={0} />
-			{/* <View style={styles.streakContainer}>
-				<Text style={styles.streakText}>Streak: 3</Text>
-			</View> */}
 
 			<CardsContainer deck={cards} />
 

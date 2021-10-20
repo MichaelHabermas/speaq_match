@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		backgroundColor: "red",
 		borderRadius: 40,
+		marginBottom: 20,
+		marginTop: 30,
 		paddingHorizontal: 30,
 		paddingVertical: 5,
-		marginTop: 30,
-		marginBottom: 20,
 	},
 	streakText: {
-		textAlign: "center",
 		fontSize: 25,
+		textAlign: "center",
 	},
 });
 

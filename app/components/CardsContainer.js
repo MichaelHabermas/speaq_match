@@ -7,7 +7,7 @@ function CardsContainer({ deck }) {
 	return (
 		<View style={styles.container}>
 			{deck.map((card, index) => (
-				<GameCard key={index} card={card} />
+				<GameCard key={card.id} card={card} />
 			))}
 		</View>
 	);
@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
 	container: {
 		alignSelf: "center",
 		alignItems: "center",
-		justifyContent: "space-between",
 		flexDirection: "row",
 		flexWrap: "wrap",
 		height: "70%",
+		justifyContent: "space-between",
 		width: "75%",
 	},
 });

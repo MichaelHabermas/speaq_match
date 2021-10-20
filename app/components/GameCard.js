@@ -22,15 +22,22 @@ function GameCard({ card, onPress, inStreak = false }) {
 
 const styles = StyleSheet.create({
 	container: {
-		width: "33%",
 		height: "25%",
 		paddingHorizontal: 1,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 2,
+			height: 2,
+		},
+		shadowOpacity: 0.2,
+		shadowRadius: 3,
+		width: "33%",
 	},
 	card: {
+		height: "100%",
 		position: "absolute",
 		resizeMode: "contain",
 		width: "100%",
-		height: "100%",
 	},
 });
 
