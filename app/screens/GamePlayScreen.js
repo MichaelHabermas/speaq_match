@@ -6,6 +6,7 @@ import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import StreakTracker from "../components/StreakTracker";
 import Text from "../components/Text";
+import SpeechBubble from "../components/SpeechBubble";
 
 const characters = [
 	{
@@ -98,6 +99,13 @@ const cards = [
 	},
 ];
 
+const questions = [
+	{
+		id: 1,
+		question: "Can I have an apple, please?",
+	},
+];
+
 function GamePlayScreen({ navigation }) {
 	if (!characters) return <View></View>;
 	return (
@@ -115,48 +123,11 @@ function GamePlayScreen({ navigation }) {
 
 			<CardsContainer deck={cards} />
 
-			<View style={styles.speaker}>
-				<Image style={styles.speakerImage} source={characters[4].image} />
-				<View style={styles.speakerTextContainer}>
-					<Text style={styles.speakerText}>
-						Can I have an apple, pretty please?
-					</Text>
-				</View>
-			</View>
+			<SpeechBubble character={characters[4]} text={questions[0].question} />
 		</Screen>
 	);
 }
 
-const styles = StyleSheet.create({
-	speaker: {
-		alignSelf: "center",
-		bottom: 0,
-		height: 170,
-		marginBottom: Platform.OS === "ios" ? -35 : 0,
-		position: "absolute",
-		width: "100%",
-	},
-	speakerImage: {
-		height: "100%",
-		resizeMode: "contain",
-		width: "100%",
-	},
-	speakerTextContainer: {
-		alignSelf: "center",
-		fontSize: 30,
-		height: "55%",
-		justifyContent: "center",
-		position: "absolute",
-		width: "96%",
-	},
-	speakerText: {
-		fontSize: 30,
-		height: "100%",
-		justifyContent: "center",
-		lineHeight: 40,
-		paddingTop: 5,
-		textAlign: "center",
-	},
-});
+const styles = StyleSheet.create({});
 
 export default GamePlayScreen;
