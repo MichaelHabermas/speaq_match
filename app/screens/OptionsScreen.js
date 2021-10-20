@@ -33,9 +33,9 @@ function OptionsScreen({ navigation }) {
 const styles = StyleSheet.create({
 	buttonText: {
 		alignItems: "center",
-		justifyContent: "center",
 		color: defaultStyles.colors.light_blue,
 		fontSize: 30,
+		justifyContent: "center",
 		textShadowColor: "rgba(0, 0, 0, 0.0)",
 		textShadowOffset: {
 			height: 0,
@@ -45,23 +45,23 @@ const styles = StyleSheet.create({
 	},
 	view: {
 		alignItems: "center",
-		justifyContent: "center",
 		backgroundColor: defaultStyles.colors.white,
 		borderRadius: 50,
+		justifyContent: "center",
 		height: 60,
 		width: 160,
 	},
 	message: {
 		color: defaultStyles.colors.white,
 		fontSize: 60,
-		marginTop: 80,
 		lineHeight: 60,
+		marginTop: 80,
 		paddingTop: 20,
 		textAlign: "center",
 	},
 	screen: {
-		width: "100%",
 		alignItems: "center",
+		width: "100%",
 	},
 	subMessage: {
 		color: "#F3FF6C",
