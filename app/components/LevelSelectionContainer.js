@@ -45,18 +45,19 @@ function LevelSelectionContainer(props) {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		alignSelf: "center",
+		bottom: 0,
+		height: "70%",
+		left: "10%",
+		marginBottom: Platform.OS === "android" ? 0 : -35,
+		position: "absolute",
+		width: "90%",
+	},
 	scrollView: {
 		width: "100%",
 		height: "100%",
 		flex: 1,
-	},
-	container: {
-		alignSelf: "center",
-		height: "70%",
-		width: "85%",
-		position: "absolute",
-		bottom: 0,
-		left: "10%",
 	},
 	subContainer: {
 		flexDirection: "row",

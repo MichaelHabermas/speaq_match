@@ -24,11 +24,13 @@ function LevelSelectScreen({ navigation }) {
 				<MenuButton
 					chosen={menuChoice}
 					onPress={() => setMenuChoice(true)}
+					style={styles.selectionItem}
 					title="Level"
 				/>
 				<MenuButton
 					chosen={!menuChoice}
 					onPress={() => setMenuChoice(false)}
+					style={styles.selectionItem}
 					title="Deck"
 				/>
 			</View>
