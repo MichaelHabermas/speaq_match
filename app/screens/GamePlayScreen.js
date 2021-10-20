@@ -3,6 +3,7 @@ import { Image, Platform, StyleSheet, View } from "react-native";
 
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
+import Text from "../components/Text";
 
 const characters = [
 	{
@@ -46,6 +47,11 @@ function GamePlayScreen({ navigation }) {
 			/>
 			<View style={styles.speaker}>
 				<Image style={styles.speakerImage} source={characters[4].image} />
+				<View style={styles.speakerTextContainer}>
+					<Text style={styles.speakerText}>
+						Can I have an apple, pretty please?
+					</Text>
+				</View>
 			</View>
 		</Screen>
 	);
@@ -58,12 +64,28 @@ const styles = StyleSheet.create({
 		height: 170,
 		position: "absolute",
 		bottom: 0,
-		marginBottom: Platform.OS == "android" ? 0 : -20,
+		marginBottom: Platform.OS == "android" ? 0 : -40,
 	},
 	speakerImage: {
 		resizeMode: "contain",
 		width: "100%",
 		height: "100%",
+	},
+	speakerTextContainer: {
+		width: "96%",
+		height: "55%",
+		alignSelf: "center",
+		position: "absolute",
+		justifyContent: "center",
+		fontSize: 30,
+	},
+	speakerText: {
+		fontSize: 30,
+		textAlign: "center",
+		height: "100%",
+		justifyContent: "center",
+		lineHeight: 40,
+		paddingTop: 5,
 	},
 });
 

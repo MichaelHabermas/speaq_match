@@ -7,7 +7,9 @@ import {
 } from "@expo-google-fonts/alfa-slab-one";
 import { BowlbyOneSC_400Regular } from "@expo-google-fonts/bowlby-one-sc";
 
-function AppText({ children, fontFam, style, ...otherProps }) {
+import defaultStyles from "../config/styles";
+
+function AppText({ children, fontFam = "alfa", style, ...otherProps }) {
 	const [fontsLoaded] = useFonts({
 		AlfaSlabOne_400Regular,
 		BowlbyOneSC_400Regular,
@@ -36,6 +38,7 @@ function AppText({ children, fontFam, style, ...otherProps }) {
 
 const styles = StyleSheet.create({
 	text: {
+		color: defaultStyles.colors.white,
 		textShadowColor: "rgba(0, 0, 0, 0.25)",
 		textShadowOffset: {
 			width: 2,
