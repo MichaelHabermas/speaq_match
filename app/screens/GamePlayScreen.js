@@ -72,7 +72,7 @@ const cards = [
 		image: require("../assets/cards/numbers_1/card_6.png"),
 	},
 	{
-		id: 7,
+		id: 8,
 		name: "a seven",
 		image: require("../assets/cards/numbers_1/card_7.png"),
 	},
