@@ -36,8 +36,32 @@ import water from "./assets/cards/food_1/water.png";
 // animals1
 
 //shapes and colors 1
+import arrow from "./assets/cards/shapes_colors_1/grey_arrow.png";
+import circle from "./assets/cards/shapes_colors_1/blue_circle.png";
+import cone from "./assets/cards/shapes_colors_1/brown_cone.png";
+import crescent from "./assets/cards/shapes_colors_1/pink_crescent.png";
+import cylinder from "./assets/cards/shapes_colors_1/green_cylinder.png";
+import cube from "./assets/cards/shapes_colors_1/purple_cube.png";
+import line from "./assets/cards/shapes_colors_1/black_line.png";
+import oval from "./assets/cards/shapes_colors_1/white_oval.png";
+import rectangle from "./assets/cards/shapes_colors_1/rainbow_rectangle.png";
+import sphere from "./assets/cards/shapes_colors_1/orange_sphere.png";
+import square from "./assets/cards/shapes_colors_1/red_square.png";
+import triangle from "./assets/cards/shapes_colors_1/yellow_triangle.png";
 
 // prepositions 1
+import above from "./assets/cards/prepositions/above.png";
+import behind from "./assets/cards/prepositions/behind.png";
+import below from "./assets/cards/prepositions/below.png";
+import between from "./assets/cards/prepositions/between.png";
+import far from "./assets/cards/prepositions/far.png";
+import in_front from "./assets/cards/prepositions/in_front.png";
+import in_it from "./assets/cards/prepositions/in.png";
+import near from "./assets/cards/prepositions/near.png";
+import next_to from "./assets/cards/prepositions/next_to.png";
+import on from "./assets/cards/prepositions/on.png";
+import surrounded_by from "./assets/cards/prepositions/surrounded_by.png";
+import under from "./assets/cards/prepositions/under.png";
 
 const characters = [
 	{
@@ -68,6 +92,92 @@ const characters = [
 ];
 
 const decks = {
+	template: [
+		{
+			id: 1,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 2,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 3,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 4,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 5,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 6,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 7,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 8,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 9,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 10,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 11,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+		{
+			id: 12,
+			image: card_0,
+			languages: {
+				english: "",
+			},
+		},
+	],
 	food_1: [
 		{
 			id: 1,
@@ -78,25 +188,7 @@ const decks = {
 				french: "une pâte de pain",
 				italian: "una fetta di pane",
 				german: "ein Teig",
-				portuguese: "uma folha de pano",
 				russian: "буханка хлеба",
-				polish: "łódka pączka",
-				greek: "απόδια",
-				farsi: "خورشید",
-				egyption: "جعلة الخبز",
-				chinese: "一块面包",
-				japanese: "パンケーキ",
-				mandarin: "一块面包",
-				hebrew: "עוף בעזה",
-				galiec: "pączek",
-				arabic: "حبة الخبز",
-				korean: "빵",
-				vietnamese: "một bánh bao",
-				thai: "ข้าวกล้อง",
-				indonesian: "sebu",
-				tagalog: "isang bawang",
-				malay: "sebu",
-				filipino: "isang bawang",
 			},
 		},
 		{
@@ -108,7 +200,6 @@ const decks = {
 				french: "un morceau de fromage",
 				italian: "una fetta di formaggio",
 				german: "ein Stück Käse",
-				portuguese: "um pedaço de frango",
 				russian: "кусок сыра",
 			},
 		},
@@ -121,7 +212,6 @@ const decks = {
 				french: "un morceau de poulet",
 				italian: "una fetta di pollo",
 				german: "ein Stück Käse",
-				portuguese: "um pedaço de frango",
 				russian: "кусок сыра",
 			},
 		},
@@ -134,7 +224,6 @@ const decks = {
 				french: "une tasse de café",
 				italian: "una tazza di caffè",
 				german: "ein Tasse Kaffee",
-				portuguese: "uma tigela de café",
 				russian: "купочка кофе",
 			},
 		},
@@ -147,7 +236,6 @@ const decks = {
 				french: "un oeuf",
 				italian: "un uovo",
 				german: "ein Ei",
-				portuguese: "um ovo",
 				russian: "яйцо",
 			},
 		},
@@ -160,7 +248,6 @@ const decks = {
 				french: "un morceau de poisson",
 				italian: "una fetta di pesce",
 				german: "ein Stück Fisch",
-				portuguese: "um pedaço de peixe",
 				russian: "кусок рыбы",
 			},
 		},
@@ -173,7 +260,6 @@ const decks = {
 				french: "un morceau de viande",
 				italian: "una fetta di carne",
 				german: "ein Stück Fleisch",
-				portuguese: "um pedaço de carne",
 				russian: "кусок мяса",
 			},
 		},
@@ -186,7 +272,6 @@ const decks = {
 				french: "un verre de lait",
 				italian: "una tazza di latte",
 				german: "ein Glas Milch",
-				portuguese: "uma copa de leite",
 				russian: "стакан с молоком",
 			},
 		},
@@ -199,7 +284,6 @@ const decks = {
 				french: "un plat de riz",
 				italian: "una fetta di riso",
 				german: "ein Stück Reis",
-				portuguese: "uma folha de arroz",
 				russian: "кусок риса",
 			},
 		},
@@ -212,7 +296,6 @@ const decks = {
 				french: "une tasse de thé",
 				italian: "una tazza di tè",
 				german: "ein Tasse Tee",
-				portuguese: "uma tigela de chá",
 				russian: "купочка чая",
 			},
 		},
@@ -225,7 +308,6 @@ const decks = {
 				french: "un morceau de légumes",
 				italian: "una fetta di verdure",
 				german: "ein Stück Gemüse",
-				portuguese: "um pedaço de vegetais",
 				russian: "кусок овощей",
 			},
 		},
@@ -238,7 +320,6 @@ const decks = {
 				french: "un verre d'eau",
 				italian: "una tazza di acqua",
 				german: "ein Glas Wasser",
-				portuguese: "uma copa de água",
 				russian: "стакан с водой",
 			},
 		},
@@ -253,7 +334,6 @@ const decks = {
 				french: "un zéro",
 				italian: "un zero",
 				german: "eins null",
-				portuguese: "um zero",
 				russian: "ноль",
 			},
 		},
@@ -266,7 +346,6 @@ const decks = {
 				french: "un un",
 				italian: "un uno",
 				german: "eins eins",
-				portuguese: "um um",
 				russian: "один",
 			},
 		},
@@ -279,7 +358,6 @@ const decks = {
 				french: "un deux",
 				italian: "un due",
 				german: "eins zwei",
-				portuguese: "um dois",
 				russian: "два",
 			},
 		},
@@ -292,7 +370,6 @@ const decks = {
 				french: "un trois",
 				italian: "un tre",
 				german: "eins drei",
-				portuguese: "um três",
 				russian: "три",
 			},
 		},
@@ -305,7 +382,6 @@ const decks = {
 				french: "un quatre",
 				italian: "un quattro",
 				german: "eins vier",
-				portuguese: "um quatro",
 				russian: "четыре",
 			},
 		},
@@ -318,7 +394,6 @@ const decks = {
 				french: "un cinq",
 				italian: "un cinque",
 				german: "eins fünf",
-				portuguese: "um cinco",
 				russian: "пять",
 			},
 		},
@@ -331,7 +406,6 @@ const decks = {
 				french: "un six",
 				italian: "un sei",
 				german: "eins sechs",
-				portuguese: "um seis",
 				russian: "шесть",
 			},
 		},
@@ -344,7 +418,6 @@ const decks = {
 				french: "un sept",
 				italian: "un sette",
 				german: "eins sieben",
-				portuguese: "um sete",
 				russian: "семь",
 			},
 		},
@@ -357,7 +430,6 @@ const decks = {
 				french: "un huit",
 				italian: "un otto",
 				german: "eins acht",
-				portuguese: "um oito",
 				russian: "восемь",
 			},
 		},
@@ -370,7 +442,6 @@ const decks = {
 				french: "un neuf",
 				italian: "un nove",
 				german: "eins neun",
-				portuguese: "um nove",
 				russian: "девять",
 			},
 		},
@@ -383,7 +454,6 @@ const decks = {
 				french: "un dix",
 				italian: "un dieci",
 				german: "eins zehn",
-				portuguese: "um dez",
 				russian: "десять",
 			},
 		},
@@ -396,14 +466,304 @@ const decks = {
 				french: "un onze",
 				italian: "un undici",
 				german: "eins elf",
-				portuguese: "um onze",
 				russian: "одиннадцать",
 			},
 		},
 	],
 	animals_1: [],
-	shapes_colors_1: [],
-	prepositions: [],
+	shapes_colors_1: [
+		{
+			id: 1,
+			image: arrow,
+			languages: {
+				english: "a grey arrow",
+				spanish: "una flecha gris",
+				french: "une flèche grise",
+				italian: "una freccia grigia",
+				german: "eine graue Pfeil",
+				russian: "серая стрелка",
+			},
+		},
+		{
+			id: 2,
+			image: circle,
+			languages: {
+				english: "a blue circle",
+				spanish: "un círculo azul",
+				french: "un cercle bleu",
+				italian: "un cerchio blu",
+				german: "ein blauer Kreis",
+				russian: "синий круг",
+			},
+		},
+		{
+			id: 3,
+			image: cone,
+			languages: {
+				english: "a brown cone",
+				spanish: "un cono marrón",
+				french: "un cône marron",
+				italian: "un cono marrone",
+				german: "ein braunes Kegel",
+				russian: "конус бурый",
+			},
+		},
+		{
+			id: 4,
+			image: crescent,
+			languages: {
+				english: "a pink crescent",
+				spanish: "un creciente rosa",
+				french: "un crecrescent rose",
+				italian: "un crecenete rosa",
+				german: "ein rosa Zwischenkreis",
+				russian: "розовый крест",
+			},
+		},
+		{
+			id: 5,
+			image: cylinder,
+			languages: {
+				english: "a green cylinder",
+				spanish: "un cilindro verde",
+				french: "un cylindre vert",
+				italian: "un cilindro verde",
+				german: "ein grüner Zylinder",
+				russian: "зеленый цилиндр",
+			},
+		},
+		{
+			id: 6,
+			image: cube,
+			languages: {
+				english: "a purple cube",
+				spanish: "un cubo morado",
+				french: "un cube violet",
+				italian: "un cubo viola",
+				german: "ein violettes Würfel",
+				russian: "фиолетовый куб",
+			},
+		},
+		{
+			id: 7,
+			image: line,
+			languages: {
+				english: "a black line",
+				spanish: "una línea negra",
+				french: "une ligne noire",
+				italian: "una linea nera",
+				german: "eine schwarze Linie",
+				russian: "черная линия",
+			},
+		},
+		{
+			id: 8,
+			image: oval,
+			languages: {
+				english: "a white oval",
+				spanish: "un óvalo blanco",
+				french: "un ovale blanc",
+				italian: "un ovale bianco",
+				german: "ein weißes Oval",
+				russian: "белый овал",
+			},
+		},
+		{
+			id: 9,
+			image: rectangle,
+			languages: {
+				english: "a rainbow rectangle",
+				spanish: "un rectángulo de arcoiris",
+				french: "un rectangle arc-en-ciel",
+				italian: "un rettangolo arcobaleno",
+				german: "ein Regenbogenrechteck",
+				russian: "прямоугольник с небесами",
+			},
+		},
+		{
+			id: 10,
+			image: sphere,
+			languages: {
+				english: "an orange sphere",
+				spanish: "una esfera naranja",
+				french: "une sphère orange",
+				italian: "una sfera arancione",
+				german: "eine orange-Kugel",
+				russian: "оранжевая сфера",
+			},
+		},
+		{
+			id: 11,
+			image: square,
+			languages: {
+				english: "a red square",
+				spanish: "un cuadrado rojo",
+				french: "un carré rouge",
+				italian: "un quadrato rosso",
+				german: "ein rotes Quadrat",
+				russian: "красный квадрат",
+			},
+		},
+		{
+			id: 12,
+			image: triangle,
+			languages: {
+				english: "a yellow triangle",
+				spanish: "un triángulo amarillo",
+				french: "un triangle jaune",
+				italian: "un triangolo giallo",
+				german: "ein gelbes Dreieck",
+				russian: "желтый треугольник",
+			},
+		},
+	],
+	prepositions: [
+		{
+			id: 1,
+			image: above,
+			languages: {
+				english: "a ball above a box",
+				spanish: "una bola encima de una caja",
+				french: "un ballon au-dessus d'une boîte",
+				italian: "una pallina sopra una scatola",
+				german: "ein Ball über eine Kiste",
+				russian: "мяч над коробкой",
+			},
+		},
+		{
+			id: 2,
+			image: behind,
+			languages: {
+				english: "a ball behind a box",
+				spanish: "una bola detrás de una caja",
+				french: "un ballon derrière une boîte",
+				italian: "una pallina dietro una scatola",
+				german: "ein Ball hinter einer Kiste",
+				russian: "мяч позади коробки",
+			},
+		},
+		{
+			id: 3,
+			image: below,
+			languages: {
+				english: "a ball below a box",
+				spanish: "una bola debajo de una caja",
+				french: "un ballon sous une boîte",
+				italian: "una pallina sotto una scatola",
+				german: "ein Ball unter einer Kiste",
+				russian: "мяч под коробкой",
+			},
+		},
+		{
+			id: 4,
+			image: between,
+			languages: {
+				english: "a ball between boxes",
+				spanish: "una bola entre cajas",
+				french: "un ballon entre des boîtes",
+				italian: "una pallina tra scatole",
+				german: "ein Ball zwischen Kisten",
+				russian: "мяч между коробками",
+			},
+		},
+		{
+			id: 5,
+			image: far,
+			languages: {
+				english: "a ball far from a box",
+				spanish: "una bola lejos de una caja",
+				french: "un ballon loin d'une boîte",
+				italian: "una pallina lontana da una scatola",
+				german: "ein Ball weit von einer Kiste",
+				russian: "мяч далеко от коробки",
+			},
+		},
+		{
+			id: 6,
+			image: in_front,
+			languages: {
+				english: "a ball in front of a box",
+				spanish: "una bola delante de una caja",
+				french: "un ballon devant une boîte",
+				italian: "una pallina in primo piano",
+				german: "ein Ball vor einer Kiste",
+				russian: "мяч перед коробкой",
+			},
+		},
+		{
+			id: 7,
+			image: in_it,
+			languages: {
+				english: "a ball in a box",
+				spanish: "una bola en una caja",
+				french: "un ballon dans une boîte",
+				italian: "una pallina in una scatola",
+				german: "ein Ball in einer Kiste",
+				russian: "мяч в коробке",
+			},
+		},
+		{
+			id: 8,
+			image: near,
+			languages: {
+				english: "a ball near a box",
+				spanish: "una bola cerca de una caja",
+				french: "un ballon près d'une boîte",
+				italian: "una pallina vicino a una scatola",
+				german: "ein Ball in der Nähe einer Kiste",
+				russian: "мяч в пределах коробки",
+			},
+		},
+		{
+			id: 9,
+			image: next_to,
+			languages: {
+				english: "a ball next to a box",
+				spanish: "una bola al lado de una caja",
+				french: "un ballon à côté d'une boîte",
+
+				italian: "una pallina accanto a una scatola",
+				german: "ein Ball neben einer Kiste",
+				russian: "мяч по боку коробки",
+			},
+		},
+		{
+			id: 10,
+			image: on,
+			languages: {
+				english: "a ball on a box",
+				spanish: "una bola sobre una caja",
+				french: "un ballon sur une boîte",
+				italian: "una pallina sopra una scatola",
+				german: "ein Ball auf einer Kiste",
+				russian: "мяч на коробке",
+			},
+		},
+		{
+			id: 11,
+			image: surrounded_by,
+			languages: {
+				english: "a ball surrounded by boxes",
+				spanish: "una bola rodeando por cajas",
+				french: "un ballon entouré de boîtes",
+				italian: "una pallina circondata da scatole",
+				german: "ein Ball um Kisten",
+				russian: "мяч окруженный коробками",
+			},
+		},
+		{
+			id: 12,
+			image: under,
+			languages: {
+				english: "a ball under a box",
+				spanish: "una bola debajo de una caja",
+				french: "un ballon sous une boîte",
+				italian: "una pallina sotto una scatola",
+				german: "ein Ball unter einer Kiste",
+				russian: "мяч под коробкой",
+			},
+		},
+	],
 };
 
 const levels = {
@@ -429,79 +789,7 @@ const levels = {
 				pre: "",
 				post: "",
 			},
-			portuguese: {
-				pre: "",
-				post: "",
-			},
 			russian: {
-				pre: "",
-				post: "",
-			},
-			polish: {
-				pre: "",
-				post: "",
-			},
-			greek: {
-				pre: "",
-				post: "",
-			},
-			farsi: {
-				pre: "",
-				post: "",
-			},
-			egyption: {
-				pre: "",
-				post: "",
-			},
-			chinese: {
-				pre: "",
-				post: "",
-			},
-			japanese: {
-				pre: "",
-				post: "",
-			},
-			mandarin: {
-				pre: "",
-				post: "",
-			},
-			hebrew: {
-				pre: "",
-				post: "",
-			},
-			galiec: {
-				pre: "",
-				post: "",
-			},
-			arabic: {
-				pre: "",
-				post: "",
-			},
-			korean: {
-				pre: "",
-				post: "",
-			},
-			vietnamese: {
-				pre: "",
-				post: "",
-			},
-			thai: {
-				pre: "",
-				post: "",
-			},
-			indonesian: {
-				pre: "",
-				post: "",
-			},
-			tagalog: {
-				pre: "",
-				post: "",
-			},
-			malay: {
-				pre: "",
-				post: "",
-			},
-			filipino: {
 				pre: "",
 				post: "",
 			},
@@ -527,10 +815,6 @@ const levels = {
 			},
 			german: {
 				pre: "Es ",
-				post: ".",
-			},
-			portuguese: {
-				pre: "É ",
 				post: ".",
 			},
 			russian: {
@@ -565,13 +849,37 @@ const levels = {
 				pre: "Ich will ",
 				post: ".",
 			},
-			portuguese: {
-				pre: "Eu quero ",
-				post: ".",
-			},
 			russian: {
 				pre: "Я хочу ",
 				post: ".",
+			},
+		},
+	},
+	4: {
+		languages: {
+			english: {
+				pre: "Do you have ",
+				post: "?",
+			},
+			spanish: {
+				pre: "¿Tienes ",
+				post: "?",
+			},
+			french: {
+				pre: "Avez-vous ",
+				post: " ?",
+			},
+			italian: {
+				pre: "Hai ",
+				post: "?",
+			},
+			german: {
+				pre: "Haben Sie ",
+				post: "?",
+			},
+			russian: {
+				pre: "У вас ",
+				post: "?",
 			},
 		},
 	},
