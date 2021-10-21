@@ -32,7 +32,7 @@ function HelpScreen(props) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navRight={() => console.log("button 2 pressed")}
+				navRight={() => navigation.goBack()}
 				navRightIcon={require("../assets/buttons/cancel_icon_dark.png")}
 				showLeftButton={false}
 				title="Help"

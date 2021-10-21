@@ -1,22 +1,22 @@
 import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet, Platform } from "react-native";
 
 import DeckCard from "./DeckCard";
 
 const decks = [
-	{name: "Numbers 1", unlocked: true, completed: false},
-	{name: "Numbers 2", unlocked: true, completed: false},
-	{name: "Numbers 3", unlocked: true, completed: false},
-	{name: "Food 1", unlocked: true, completed: false},
-	{name: "Food 2", unlocked: true, completed: false},
-	{name: "Food 3", unlocked: true, completed: false},
-	{name: "Animals 1", unlocked: true, completed: false},
-	{name: "Animals 2", unlocked: true, completed: false},
-	{name: "Animals 3", unlocked: true, completed: false},
-	{name: "Transportation", unlocked: true, completed: false},
-	{name: "Nature", unlocked: true, completed: false},
-	{name: "Shapes & Colors", unlocked: true, completed: false},
-]
+	{ name: "Numbers 1", unlocked: true, completed: false },
+	{ name: "Numbers 2", unlocked: true, completed: false },
+	{ name: "Numbers 3", unlocked: true, completed: false },
+	{ name: "Food 1", unlocked: true, completed: false },
+	{ name: "Food 2", unlocked: true, completed: false },
+	{ name: "Food 3", unlocked: true, completed: false },
+	{ name: "Animals 1", unlocked: true, completed: false },
+	{ name: "Animals 2", unlocked: true, completed: false },
+	{ name: "Animals 3", unlocked: true, completed: false },
+	{ name: "Transportation", unlocked: true, completed: false },
+	{ name: "Nature", unlocked: true, completed: false },
+	{ name: "Shapes & Colors", unlocked: true, completed: false },
+];
 
 function DeckSelectionContainer(props) {
 	return (
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
 		height: "70%",
 		position: "absolute",
 		width: "80%",
+		marginBottom: Platform.OS === "ios" ? -35 : 0,
 	},
 	subContainer: {
 		height: "100%",

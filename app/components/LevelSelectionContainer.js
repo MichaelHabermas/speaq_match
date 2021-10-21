@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet, Platform } from "react-native";
 
 import LevelCard from "./LevelCard";
 
@@ -45,25 +45,24 @@ function LevelSelectionContainer(props) {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		alignSelf: "center",
+		bottom: 0,
+		height: "70%",
+		left: "10%",
+		marginBottom: Platform.OS === "ios" ? -35 : 0,
+		position: "absolute",
+		width: "90%",
+	},
 	scrollView: {
 		width: "100%",
 		height: "100%",
 		flex: 1,
 	},
-	container: {
-		alignSelf: "center",
-		height: "70%",
-		justifyContent: "space-between",
-		width: "80%",
-		position: "absolute",
-		bottom: 0,
-	},
 	subContainer: {
-		alignSelf: "center",
 		flexDirection: "row",
 		flexWrap: "wrap",
 		height: "100%",
-		justifyContent: "space-between",
 		width: "100%",
 	},
 });

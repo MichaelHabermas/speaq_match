@@ -11,23 +11,31 @@ function OptionsScreen({ navigation }) {
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => console.log("button 1 pressed")}
+				navLeft={() => navigation.goBack()}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				showRightButton={false}
 				title="Options"
-				titleOffset={60}
+				titleOffset={80}
 			/>
 			<Text style={styles.message}>Exit to Home?</Text>
-			<Text fontFam="alfa" style={styles.subMessage}>(all progress this session will be lost)</Text>
-			<OptionsButton name="EXIT" style={styles.buttonText} />
+			<Text fontFam="alfa" style={styles.subMessage}>
+				(all progress this session will be lost)
+			</Text>
+			<OptionsButton
+				onPress={() => navigation.navigate("Start")}
+				name="EXIT"
+				style={styles.buttonText}
+			/>
 		</Screen>
 	);
 }
 
 const styles = StyleSheet.create({
 	buttonText: {
+		alignItems: "center",
 		color: defaultStyles.colors.light_blue,
 		fontSize: 30,
+		justifyContent: "center",
 		textShadowColor: "rgba(0, 0, 0, 0.0)",
 		textShadowOffset: {
 			height: 0,
@@ -37,16 +45,18 @@ const styles = StyleSheet.create({
 	},
 	view: {
 		alignItems: "center",
-		justifyContent: "center",
 		backgroundColor: defaultStyles.colors.white,
 		borderRadius: 50,
+		justifyContent: "center",
 		height: 60,
 		width: 160,
 	},
 	message: {
 		color: defaultStyles.colors.white,
-		fontSize: 45,
-		marginTop: 60,
+		fontSize: 60,
+		lineHeight: 60,
+		marginTop: 80,
+		paddingTop: 20,
 		textAlign: "center",
 	},
 	screen: {
@@ -55,7 +65,7 @@ const styles = StyleSheet.create({
 	},
 	subMessage: {
 		color: "#F3FF6C",
-		fontSize: 18,
+		fontSize: 19,
 		marginBottom: 100,
 		textAlign: "center",
 	},
