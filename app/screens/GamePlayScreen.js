@@ -10,6 +10,12 @@ import StreakTracker from "../components/StreakTracker";
 import { characters, decks, questions } from "../test_data";
 
 function GamePlayScreen({ navigation }) {
+	const streak = 0;
+
+	if (streak === 12) {
+		setTimeout(() => navigation.navigate("GameOver"), 2000);
+	}
+
 	if (!characters || !decks || !questions) {
 		return <View></View>;
 	}
@@ -24,7 +30,7 @@ function GamePlayScreen({ navigation }) {
 				style={styles.header}
 			/>
 
-			<StreakTracker streak={0} />
+			<StreakTracker streak={streak} />
 
 			<CardsContainer deck={decks.food_1} />
 
