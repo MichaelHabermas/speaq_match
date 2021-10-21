@@ -33,6 +33,7 @@ export default function App() {
 			<StackNavigator />
 		</NavigationContainer>
 	);
+
 	// return <StartScreen />;
 	// return <UserProfileScreen />;
 	// return <LevelSelectScreen />;

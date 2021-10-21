@@ -7,7 +7,11 @@ function CardsContainer({ deck }) {
 	return (
 		<View style={styles.container}>
 			{deck.map((card, index) => (
-				<GameCard key={card.id} card={card} />
+				<GameCard
+					key={card.id}
+					card={card}
+					onPress={() => console.log(`${card.languages.german} pressed`)}
+				/>
 			))}
 		</View>
 	);
