@@ -18,9 +18,7 @@ function HelpScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-	screen: {
-		// width: "100%",
-	},
+	screen: {},
 });
 
 export default HelpScreen;

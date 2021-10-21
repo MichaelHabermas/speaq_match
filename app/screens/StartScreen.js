@@ -12,7 +12,6 @@ function StartScreen({ navigation }) {
 			<ButtonMain
 				style={styles.button}
 				title="Start"
-				// onPress={() => console.log("Start Button works")}
 				onPress={() => navigation.navigate("Profile")}
 			/>
 		</Screen>
