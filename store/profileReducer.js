@@ -14,7 +14,7 @@ const initialState = {
 		level: "",
 		deck: "",
 	},
-	profile_created: false,
+	profile_created: true,
 	overall_progress: {
 		tutorial_completed: false,
 		levels: {

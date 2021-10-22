@@ -1,6 +1,9 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 
+// redux
+import { connect } from "react-redux";
+
 //components
 import ScreenHeader from "../components/ScreenHeader";
 import Screen from "../components/Screen";
@@ -9,7 +12,15 @@ import ButtonMain from "../components/ButtonMain";
 // assets
 import speaq_logo from "../assets/speaq_logo.png";
 
-function StartScreen({ navigation }) {
+function StartScreen({ navigation, gameState }) {
+	const handleStart = () => {
+		if (gameState.profile_created) {
+			navigation.navigate("LevelSelect");
+		} else {
+			navigation.navigate("Profile");
+		}
+	};
+
 	return (
 		<Screen style={styles.screen}>
 			<ScreenHeader
@@ -20,11 +31,7 @@ function StartScreen({ navigation }) {
 				style={styles.header}
 			/>
 			<Image source={speaq_logo} style={styles.logo} />
-			<ButtonMain
-				style={styles.button}
-				title="Start"
-				onPress={() => navigation.navigate("Profile")}
-			/>
+			<ButtonMain style={styles.button} title="Start" onPress={handleStart} />
 		</Screen>
 	);
 }
@@ -46,4 +53,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default StartScreen;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+// const mapActionsToProps = {
+//     updateRouterElem // unrelated example
+// }
+
+export default connect(mapStateToProps, {})(StartScreen);

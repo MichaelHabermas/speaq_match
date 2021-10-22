@@ -9,8 +9,7 @@ import ScreenHeader from "../components/ScreenHeader";
 import OptionsButton from "../components/OptionsButton";
 import Text from "../components/Text";
 
-// import { connect } from "react-redux";
-// import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const initialProfile = {
 	gender: "",
@@ -122,15 +121,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default UserProfileScreen;
-
-// const mapStateToProps = state => ({
-//     routers: state.router.routers,
-// })
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
 
 // const mapActionsToProps = {
-//     updateRouterElem,
-//     updateRouterArr,
+//     updateRouterElem // unrelated example
 // }
 
-// export default connect(mapStateToProps, mapActionsToProps)(UserProfileScreen);
+export default connect(mapStateToProps, {})(UserProfileScreen);

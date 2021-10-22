@@ -1,13 +1,23 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet } from "react-native";
 
-import defaultStyles from "../config/styles";
+// redux
+import { connect } from "react-redux";
+
+// components
 import OptionsButton from "../components/OptionsButton";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import Text from "../components/Text";
 
+//styling
+import defaultStyles from "../config/styles";
+
 function OptionsScreen({ navigation }) {
+	const handleReset = () => {
+		console.log("TODO: dispatch a reset to state");
+	};
+
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
@@ -23,7 +33,7 @@ function OptionsScreen({ navigation }) {
 				undone.
 			</Text>
 			<OptionsButton
-				onPress={() => console.log("TODO: dispatch a reset to state")}
+				onPress={handleReset}
 				name="RESET"
 				style={styles.buttonText}
 			/>
@@ -75,4 +85,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default OptionsScreen;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+// const mapActionsToProps = {
+//     updateRouterElem // unrelated example
+// }
+
+export default connect(mapStateToProps, {})(OptionsScreen);
