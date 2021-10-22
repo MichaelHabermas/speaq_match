@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
+import { useSelector } from "react-redux";
 
 import ButtonMain from "../components/ButtonMain";
 import defaultStyles from "../config/styles";
@@ -8,7 +9,18 @@ import ScreenHeader from "../components/ScreenHeader";
 import OptionsButton from "../components/OptionsButton";
 import Text from "../components/Text";
 
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+
+const initialProfile = {
+	gender: "",
+	language: "english",
+};
+
 function UserProfileScreen({ navigation }) {
+	const [newProfile, setNewProfile] = useState(initialProfile);
+
+	const user_profile = useSelector(state => state.user_profile);
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
@@ -111,3 +123,14 @@ const styles = StyleSheet.create({
 });
 
 export default UserProfileScreen;
+
+// const mapStateToProps = state => ({
+//     routers: state.router.routers,
+// })
+
+// const mapActionsToProps = {
+//     updateRouterElem,
+//     updateRouterArr,
+// }
+
+// export default connect(mapStateToProps, mapActionsToProps)(UserProfileScreen);

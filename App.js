@@ -10,6 +10,12 @@ import OptionsScreen from "./app/screens/OptionsScreen";
 import StartScreen from "./app/screens/StartScreen";
 import UserProfileScreen from "./app/screens/UserProfileScreen";
 
+import store from "./store/store";
+import { Provider } from "react-redux";
+
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
 	<Stack.Navigator
@@ -28,13 +34,15 @@ const StackNavigator = () => (
 );
 
 export default function App() {
-	// return (
-	// 	<NavigationContainer>
-	// 		<StackNavigator />
-	// 	</NavigationContainer>
-	// );
+	return (
+		<Provider store={store}>
+			<NavigationContainer>
+				<StackNavigator />
+			</NavigationContainer>
+		</Provider>
+	);
 
-	return <StartScreen />;
+	// return <StartScreen />;
 	// return <UserProfileScreen />;
 	// return <LevelSelectScreen />;
 	// return <GamePlayScreen />;
@@ -42,3 +50,26 @@ export default function App() {
 	// return <OptionsScreen />;
 	// return <GameOverScreen />;
 }
+
+// const mapStateToProps = state => ({
+// 	match: state.match,
+// });
+
+// const ActionCreators = Object.assign({}, chooseGender);
+
+// const mapActionsToProps = dispatch => ({
+// 	actions: bindActionCreators(ActionCreators, dispatch),
+// });
+
+/// other option
+// const mapStateToProps = state => ({
+//     routers: state.router.routers,
+//     router_addr: state.router.router_addr,
+// })
+
+// const mapActionsToProps = {
+//     updateRouterElem,
+//     updateRouterArr,
+// }
+
+// export default connect(mapStateToProps, mapActionsToProps)(RouterCard);

@@ -884,5 +884,213 @@ const levels = {
 		},
 	},
 };
+const languages = {
+	english: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
+				completed: false,
+			},
+			2: {
+				pre: "It's ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "I want ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "Do you have ",
+				post: "?",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "Give me ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+	spanish: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
+				completed: false,
+			},
+			2: {
+				pre: "Es ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "Quiero ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "Tienes ",
+				post: "?",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "Dame ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+	french: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
+				completed: false,
+			},
+			2: {
+				pre: "Il est ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "Je veux ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "Avez-vous ",
+				post: " ?",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "Donnez-moi ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+	italian: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
 
-export { characters, decks, levels };
+				completed: false,
+			},
+			2: {
+				pre: "È ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "Voglio ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "Hai ",
+				post: "?",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "Dammi ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+	german: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
+				completed: false,
+			},
+			2: {
+				pre: "Es ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "Ich will ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "Haben Sie ",
+				post: "?",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "Geben Sie mir ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+	russian: {
+		levels: {
+			1: {
+				pre: "",
+				post: "",
+				unlocked: true,
+				completed: false,
+			},
+			2: {
+				pre: "Это ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			3: {
+				pre: "Я хочу ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			4: {
+				pre: "У вас ",
+				post: "?",
+				unlocked: true,
+
+				completed: false,
+			},
+			5: {
+				pre: "Дайте мне ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+		},
+	},
+};
+
+export { characters, decks, levels, languages };
