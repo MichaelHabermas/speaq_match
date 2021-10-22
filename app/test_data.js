@@ -470,7 +470,6 @@ const decks = {
 			},
 		},
 	],
-	animals_1: [],
 	shapes_colors_1: [
 		{
 			id: 1,

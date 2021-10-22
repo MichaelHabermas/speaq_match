@@ -1,4 +1,3 @@
-// import { SET_PROFILE } from "./profileTypes";
 export const SET_PROFILE = "SET_PROFILE";
 export const RESET_PROFILE = "RESET_PROFILE";
 export const SET_CURRENT_GAME = "SET_CURRENT_GAME";

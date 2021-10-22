@@ -17,8 +17,6 @@ import defaultStyles from "../config/styles";
 function LevelSelectScreen({ navigation, gameState }) {
 	const [menuChoice, setMenuChoice] = useState(true);
 
-	console.log("profile: ", gameState);
-
 	const handleGoBack = () => {
 		navigation.navigate("Start");
 	};

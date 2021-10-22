@@ -15,10 +15,9 @@ import Text from "../components/Text";
 import defaultStyles from "../config/styles";
 
 function OptionsScreen({ navigation, gameState, dispatch }) {
-	console.log("state: ", gameState);
 	const handleReset = () => {
 		dispatch(resetProfile());
-		console.log("TODO: dispatch a reset to state");
+		navigation.navigate("Start");
 	};
 
 	return (
