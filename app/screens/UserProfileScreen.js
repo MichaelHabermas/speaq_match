@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 import { useSelector } from "react-redux";
 
+// redux
+import { connect } from "react-redux";
+import { setProfile } from "../../store/profileAction";
+
+// components
 import ButtonMain from "../components/ButtonMain";
 import defaultStyles from "../config/styles";
 import Screen from "../components/Screen";
@@ -9,15 +14,20 @@ import ScreenHeader from "../components/ScreenHeader";
 import OptionsButton from "../components/OptionsButton";
 import Text from "../components/Text";
 
-import { connect } from "react-redux";
-
 const initialProfile = {
-	gender: "",
+	gender: "male",
 	language: "english",
 };
 
-function UserProfileScreen({ navigation }) {
+function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
+
+	console.log("profile screen state", gameState);
+
+	const handleSaveProfile = () => {
+		dispatch(setProfile(newProfile));
+		navigation.navigate("LevelSelect");
+	};
 
 	const user_profile = useSelector(state => state.user_profile);
 	return (
@@ -76,9 +86,7 @@ function UserProfileScreen({ navigation }) {
 			</View>
 
 			<ButtonMain
-				onPress={() => {
-					navigation.navigate("LevelSelect");
-				}}
+				onPress={handleSaveProfile}
 				style={styles.saveButton}
 				title="Save"
 			/>
@@ -126,7 +134,7 @@ const mapStateToProps = state => ({
 });
 
 // const mapActionsToProps = {
-//     updateRouterElem // unrelated example
-// }
+// 	dispatch,
+// };
 
-export default connect(mapStateToProps, {})(UserProfileScreen);
+export default connect(mapStateToProps)(UserProfileScreen);

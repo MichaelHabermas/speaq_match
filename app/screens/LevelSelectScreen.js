@@ -1,20 +1,32 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
+// redux
+import { connect } from "react-redux";
+
+// components
 import MenuButton from "../components/MenuButton";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
-
-import defaultStyles from "../config/styles";
 import LevelSelectionContainer from "../components/LevelSelectionContainer";
 import DeckSelectionContainer from "../components/DeckSelectionContainer";
 
-function LevelSelectScreen({ navigation }) {
+// styles
+import defaultStyles from "../config/styles";
+
+function LevelSelectScreen({ navigation, gameState }) {
 	const [menuChoice, setMenuChoice] = useState(true);
+
+	console.log("profile: ", gameState);
+
+	const handleGoBack = () => {
+		navigation.navigate("Start");
+	};
+
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => navigation.goBack()}
+				navLeft={handleGoBack}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
 				navRight={() => navigation.navigate("GamePlay")}
 				navRightIcon={require("../assets/buttons/forward_icon_dark.png")}
@@ -56,4 +68,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default LevelSelectScreen;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+// const mapActionsToProps = {
+// 	dispatch,
+// };
+
+export default connect(mapStateToProps)(LevelSelectScreen);

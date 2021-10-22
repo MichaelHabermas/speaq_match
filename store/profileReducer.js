@@ -18,7 +18,7 @@ const initialState = {
 	overall_progress: {
 		tutorial_completed: false,
 		levels: {
-			1: { unlocked: true, completed: false },
+			1: { pre: "", post: "", unlocked: true, completed: false },
 		},
 	},
 };

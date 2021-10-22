@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 // redux
 import { connect } from "react-redux";
+import { resetProfile } from "../../store/profileAction";
 
 // components
 import OptionsButton from "../components/OptionsButton";
@@ -13,8 +14,10 @@ import Text from "../components/Text";
 //styling
 import defaultStyles from "../config/styles";
 
-function OptionsScreen({ navigation }) {
+function OptionsScreen({ navigation, gameState, dispatch }) {
+	console.log("state: ", gameState);
 	const handleReset = () => {
+		dispatch(resetProfile());
 		console.log("TODO: dispatch a reset to state");
 	};
 
@@ -90,7 +93,7 @@ const mapStateToProps = state => ({
 });
 
 // const mapActionsToProps = {
-//     updateRouterElem // unrelated example
-// }
+// 	resetProfile,
+// };
 
-export default connect(mapStateToProps, {})(OptionsScreen);
+export default connect(mapStateToProps)(OptionsScreen);
