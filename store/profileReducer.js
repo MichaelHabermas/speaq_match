@@ -8,7 +8,8 @@ import {
 const initialState = {
 	user_profile: {
 		gender: "",
-		language: "",
+		user_language: "english",
+		language_to_learn: "french",
 	},
 	game_settings: {
 		level: "",
@@ -19,6 +20,7 @@ const initialState = {
 		tutorial_completed: false,
 		levels: {
 			1: { pre: "", post: "", unlocked: true, completed: false },
+			2: { pre: "", post: "", unlocked: false, completed: false },
 		},
 	},
 };
@@ -31,7 +33,7 @@ const reducer = (state = initialState, action) => {
 				user_profile: {
 					...state.user_profile,
 					gender: action.payload.gender,
-					language: action.payload.language,
+					language_to_learn: action.payload.language_to_learn,
 				},
 				profile_created: true,
 			};
