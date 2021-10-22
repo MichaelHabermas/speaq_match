@@ -2,19 +2,19 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+// screens
 import GameOverScreen from "./app/screens/GameOverScreen";
 import GamePlayScreen from "./app/screens/GamePlayScreen";
 import HelpScreen from "./app/screens/HelpScreen";
 import LevelSelectScreen from "./app/screens/LevelSelectScreen";
 import OptionsScreen from "./app/screens/OptionsScreen";
+import OptionsResetScreen from "./app/screens/OptionsResetScreen";
 import StartScreen from "./app/screens/StartScreen";
 import UserProfileScreen from "./app/screens/UserProfileScreen";
 
+//redux
 import store from "./store/store";
 import { Provider } from "react-redux";
-
-// import { connect } from "react-redux";
-// import { bindActionCreators } from "redux";
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
@@ -28,6 +28,7 @@ const StackNavigator = () => (
 		<Stack.Screen name="LevelSelect" component={LevelSelectScreen} />
 		<Stack.Screen name="GamePlay" component={GamePlayScreen} />
 		<Stack.Screen name="Options" component={OptionsScreen} />
+		<Stack.Screen name="OptionsReset" component={OptionsResetScreen} />
 		<Stack.Screen name="Help" component={HelpScreen} />
 		<Stack.Screen name="GameOver" component={GameOverScreen} />
 	</Stack.Navigator>
