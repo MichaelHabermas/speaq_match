@@ -12,6 +12,7 @@ import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import OptionsButton from "../components/OptionsButton";
 import Text from "../components/Text";
+import VertScrollSelector from "../components/VertScrollSelector";
 
 const initialProfile = {
 	gender: "",
@@ -39,7 +40,9 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 			/>
 			<View style={styles.optionsContainer}>
 				<View style={styles.optionLabel}>
-					<Text style={styles.optionText}>Gender</Text>
+					<Text style={styles.optionText} fontFam="bowlby">
+						Gender
+					</Text>
 					<TouchableOpacity
 						onPress={() => {
 							// TODO: insert modal for gender info
@@ -74,16 +77,12 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 
 			<View style={styles.optionsContainer}>
 				<View style={styles.optionLabel}>
-					<Text style={styles.optionText}>Language</Text>
+					<Text style={styles.optionText} fontFam="bowlby">
+						Language
+					</Text>
 				</View>
-				<View style={styles.genderButtons}>
-					<OptionsButton
-						name="Italian"
-						onPress={() => {
-							// TODO: create language scroll / picker
-							console.log("italian button pressed");
-						}}
-					/>
+				<View style={styles.languageField}>
+					<VertScrollSelector style={styles.languageSelector} />
 				</View>
 			</View>
 
@@ -117,9 +116,15 @@ const styles = StyleSheet.create({
 		height: 26,
 		width: 26,
 	},
+	languageField: {
+		width: "80%",
+	},
+	languageSelector: {
+		width: "100%",
+	},
 	optionsContainer: {
 		alignItems: "center",
-		marginVertical: 40,
+		marginVertical: 30,
 	},
 	optionLabel: { marginBottom: 10 },
 	optionText: {
@@ -128,6 +133,7 @@ const styles = StyleSheet.create({
 	},
 	saveButton: {
 		width: "100%",
+		marginTop: 80,
 	},
 });
 

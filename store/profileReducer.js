@@ -15,6 +15,16 @@ const initialState = {
 		level: "",
 		deck: "",
 	},
+	game_options: {
+		learnable_languages: [
+			"English",
+			"Spanish",
+			"French",
+			"German",
+			"Italian",
+			"Russian",
+		],
+	},
 	profile_created: false,
 	overall_progress: {
 		tutorial_completed: false,
