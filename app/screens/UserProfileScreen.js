@@ -19,6 +19,15 @@ const initialProfile = {
 	language_to_learn: "french",
 };
 
+const scrollOptions = [
+	"English",
+	"Spanish",
+	"French",
+	"Italian",
+	"German",
+	"Russian",
+];
+
 function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
 
@@ -82,7 +91,10 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 					</Text>
 				</View>
 				<View style={styles.languageField}>
-					<VertScrollSelector style={styles.languageSelector} />
+					<VertScrollSelector
+						scrollOptions={scrollOptions}
+						style={styles.languageSelector}
+					/>
 				</View>
 			</View>
 

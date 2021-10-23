@@ -10,13 +10,17 @@ import Text from "../components/Text";
 // styling
 import defaultStyles from "../config/styles";
 
-function VertScrollSelector({ style, gameState }) {
+function VertScrollSelector({ gameState, scrollOptions, style }) {
 	return (
 		<View style={[styles.container, style]}>
-			<ScrollView horizontal={true} style={styles.scrollBar}>
-				<Text fontFam="alfa" style={styles.text}>
-					English Spanish French Italian German Russian
-				</Text>
+			<ScrollView horizontal={true}>
+				{scrollOptions.map((option, index) => {
+					return (
+						<View key={index} style={styles.option}>
+							<Text style={styles.optionText}>{option}</Text>
+						</View>
+					);
+				})}
 			</ScrollView>
 		</View>
 	);
@@ -31,8 +35,8 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		width: 160,
 	},
-	scrollBar: {},
-	text: {
+	option: { alignItems: "center", justifyContent: "center", width: 160 },
+	optionText: {
 		color: defaultStyles.colors.medium,
 		alignSelf: "center",
 
