@@ -14,11 +14,6 @@ import OptionsButton from "../components/OptionsButton";
 import Text from "../components/Text";
 import VertScrollSelector from "../components/VertScrollSelector";
 
-const initialProfile = {
-	gender: "",
-	language_to_learn: "french",
-};
-
 // TODO: will need to get this from the data
 const scrollOptions = [
 	"English",
@@ -27,18 +22,15 @@ const scrollOptions = [
 	"Italian",
 	"German",
 	"Russian",
-	"Portuguese",
-	"Mandarin",
-	"Japanese",
-	"Korean",
-	"Hindi",
-	"Arabic",
 ];
+
+const initialProfile = {
+	gender: "",
+	language_to_learn: scrollOptions[0],
+};
 
 function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
-
-	console.log("profile screen state", gameState);
 
 	const handleSaveProfile = () => {
 		dispatch(setProfile(newProfile));
@@ -94,13 +86,15 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 			<View style={styles.optionsContainer}>
 				<View style={styles.optionLabel}>
 					<Text style={styles.optionText} fontFam="bowlby">
-						Language
+						Learning
 					</Text>
 				</View>
 				<View style={styles.languageField}>
 					<VertScrollSelector
 						scrollOptions={scrollOptions}
 						style={styles.languageSelector}
+						setNewProfile={setNewProfile}
+						profile={newProfile}
 					/>
 				</View>
 			</View>

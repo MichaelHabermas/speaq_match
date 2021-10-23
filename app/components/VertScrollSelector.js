@@ -14,7 +14,17 @@ import defaultStyles from "../config/styles";
 const CARD_WIDTH = 190;
 const SPACING_FOR_CARD_INSET = 60;
 
-function VertScrollSelector({ gameState, scrollOptions, style }) {
+function VertScrollSelector({ profile, scrollOptions, setNewProfile, style }) {
+	const handleScroll = event => {
+		const { contentOffset } = event.nativeEvent;
+		const { x, y } = contentOffset;
+		const index = Math.round(x / CARD_WIDTH);
+		setNewProfile({
+			...profile,
+			language_to_learn: scrollOptions[index].toLowerCase(),
+		});
+	};
+
 	return (
 		<View style={[styles.container, style]}>
 			<ScrollView
@@ -32,6 +42,8 @@ function VertScrollSelector({ gameState, scrollOptions, style }) {
 				}}
 				decelerationRate="fast"
 				horizontal // Change the direction to horizontal
+				onScroll={handleScroll}
+				scrollEventThrottle={16}
 				showsHorizontalScrollIndicator={false}
 				snapToAlignment="center"
 				snapToInterval={CARD_WIDTH + 10} // Calculate the size for a card including marginLeft and marginRight
