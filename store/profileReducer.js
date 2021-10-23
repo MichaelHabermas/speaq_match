@@ -7,9 +7,9 @@ import {
 
 const initialState = {
 	user_profile: {
-		gender: "",
-		user_language: "english",
-		language_to_learn: "french",
+		gender: "female",
+		user_language: "",
+		language_to_learn: "",
 	},
 	game_settings: {
 		level: "",
@@ -29,6 +29,7 @@ const initialState = {
 	overall_progress: {
 		tutorial_completed: false,
 		levels: {
+			//TODO: clear and fill through a data call
 			1: { pre: "", post: "", unlocked: true, completed: false },
 			2: { pre: "", post: "", unlocked: false, completed: false },
 		},

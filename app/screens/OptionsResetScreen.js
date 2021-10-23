@@ -34,11 +34,9 @@ function OptionsScreen({ navigation, gameState, dispatch }) {
 				WARNING: This will reset all progress and achievements, and cannot be
 				undone.
 			</Text>
-			<OptionsButton
-				onPress={handleReset}
-				name="RESET"
-				style={styles.buttonText}
-			/>
+			<OptionsButton onPress={handleReset} style={styles.buttonText}>
+				RESET
+			</OptionsButton>
 		</Screen>
 	);
 }

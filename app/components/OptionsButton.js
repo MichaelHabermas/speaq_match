@@ -1,18 +1,38 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+	StyleSheet,
+	TouchableOpacity,
+	TouchableWithoutFeedback,
+	View,
+} from "react-native";
 
 import defaultStyles from "../config/styles";
 import Text from "../components/Text";
 
-function OptionsButton({ onPress, name, style }) {
+function OptionsButton({
+	children,
+	isSelected,
+	onPress,
+	style,
+	...otherProps
+}) {
 	return (
-		<TouchableOpacity onPress={onPress}>
-			<View style={[styles.container, style]}>
-				<Text fontFam="alfa" style={styles.text}>
-					{name}
-				</Text>
-			</View>
-		</TouchableOpacity>
+		<>
+			<TouchableWithoutFeedback onPress={onPress}>
+				<View style={[styles.container, style]}>
+					<Text fontFam="alfa" style={styles.text}>
+						{children}
+					</Text>
+					{isSelected && (
+						<View style={[styles.container, styles.selectedContainer, style]}>
+							<Text fontFam="alfa" style={styles.text}>
+								{children}
+							</Text>
+						</View>
+					)}
+				</View>
+			</TouchableWithoutFeedback>
+		</>
 	);
 }
 
@@ -24,6 +44,17 @@ const styles = StyleSheet.create({
 		borderRadius: 50,
 		height: 60,
 		width: 160,
+	},
+	selectedContainer: {
+		position: "absolute",
+		backgroundColor: defaultStyles.colors.gold,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 3,
+			height: 3,
+		},
+		shadowOpacity: 0.2,
+		shadowRadius: 3,
 	},
 	text: {
 		color: defaultStyles.colors.light_blue,

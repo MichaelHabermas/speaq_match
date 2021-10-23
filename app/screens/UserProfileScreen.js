@@ -25,15 +25,26 @@ const scrollOptions = [
 ];
 
 const initialProfile = {
-	gender: "",
-	language_to_learn: scrollOptions[0],
+	gender: null,
+	// TODO: create ~ learner's_native_language: some_options
+	language_to_learn: null,
 };
 
 function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
+	const [isFemale, setIsFemale] = useState(true);
+
+	const handleSelectGender = gender => {
+		setIsFemale(gender === "female");
+		setNewProfile({
+			...newProfile,
+			gender: gender,
+		});
+	};
 
 	const handleSaveProfile = () => {
 		dispatch(setProfile(newProfile));
+		setNewProfile({ gender: null, language_to_learn: null });
 		navigation.navigate("LevelSelect");
 	};
 
@@ -67,19 +78,17 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 
 				<View style={styles.genderButtons}>
 					<OptionsButton
-						name="Male"
-						onPress={() => {
-							// TODO: toggle the gender button
-							console.log("male button pressed");
-						}}
-					/>
+						isSelected={isFemale}
+						onPress={() => handleSelectGender("female")}
+					>
+						Female
+					</OptionsButton>
 					<OptionsButton
-						name="Female"
-						onPress={() => {
-							// TODO: toggle the gender button
-							console.log("female button pressed");
-						}}
-					/>
+						isSelected={!isFemale}
+						onPress={() => handleSelectGender("male")}
+					>
+						Male
+					</OptionsButton>
 				</View>
 			</View>
 
@@ -99,11 +108,13 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 				</View>
 			</View>
 
-			<ButtonMain
-				onPress={handleSaveProfile}
-				style={styles.saveButton}
-				title="Save"
-			/>
+			{newProfile.language_to_learn && (
+				<ButtonMain
+					onPress={handleSaveProfile}
+					style={styles.saveButton}
+					title="Save"
+				/>
+			)}
 		</Screen>
 	);
 }
