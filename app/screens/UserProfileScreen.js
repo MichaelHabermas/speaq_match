@@ -19,6 +19,7 @@ const initialProfile = {
 	language_to_learn: "french",
 };
 
+// TODO: will need to get this from the data
 const scrollOptions = [
 	"English",
 	"Spanish",
@@ -26,6 +27,12 @@ const scrollOptions = [
 	"Italian",
 	"German",
 	"Russian",
+	"Portuguese",
+	"Mandarin",
+	"Japanese",
+	"Korean",
+	"Hindi",
+	"Arabic",
 ];
 
 function UserProfileScreen({ navigation, gameState, dispatch }) {
@@ -138,7 +145,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		marginVertical: 30,
 	},
-	optionLabel: { marginBottom: 10 },
+	optionLabel: {},
 	optionText: {
 		fontSize: 50,
 		color: defaultStyles.colors.white,
