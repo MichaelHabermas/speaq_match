@@ -118,21 +118,21 @@ const styles = StyleSheet.create({
 	screen: {},
 	genderButtons: {
 		flexDirection: "row",
-		width: "100%",
 		justifyContent: "space-evenly",
+		width: "100%",
 	},
 	genderHelp: {
+		height: "100%",
 		resizeMode: "contain",
 		width: "100%",
-		height: "100%",
 	},
 	genderInfoButton: {
 		backgroundColor: defaultStyles.colors.gold,
 		borderRadius: 13,
-		position: "absolute",
-		top: 0,
-		right: -20,
 		height: 26,
+		position: "absolute",
+		right: -20,
+		top: 0,
 		width: 26,
 	},
 	languageField: {
@@ -147,21 +147,17 @@ const styles = StyleSheet.create({
 	},
 	optionLabel: {},
 	optionText: {
-		fontSize: 50,
 		color: defaultStyles.colors.white,
+		fontSize: 50,
 	},
 	saveButton: {
-		width: "100%",
 		marginTop: 80,
+		width: "100%",
 	},
 });
 
 const mapStateToProps = state => ({
 	gameState: state.matchAndMemory,
 });
-
-// const mapActionsToProps = {
-// 	dispatch,
-// };
 
 export default connect(mapStateToProps)(UserProfileScreen);

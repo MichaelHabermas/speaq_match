@@ -18,10 +18,11 @@ function VertScrollSelector({ gameState, scrollOptions, style }) {
 	return (
 		<View style={[styles.container, style]}>
 			<ScrollView
-				horizontal // Change the direction to horizontal
-				decelerationRate="fast"
-				snapToInterval={CARD_WIDTH + 10} // Calculate the size for a card including marginLeft and marginRight
-				snapToAlignment="center"
+				contentContainerStyle={{
+					// contentInset alternative for Android
+					paddingHorizontal:
+						Platform.OS === "android" ? SPACING_FOR_CARD_INSET : 0, // Horizontal spacing before and after the ScrollView
+				}}
 				contentInset={{
 					// iOS ONLY
 					top: 0,
@@ -29,11 +30,11 @@ function VertScrollSelector({ gameState, scrollOptions, style }) {
 					bottom: 0,
 					right: SPACING_FOR_CARD_INSET, // Right spacing for the very last card
 				}}
-				contentContainerStyle={{
-					// contentInset alternative for Android
-					paddingHorizontal:
-						Platform.OS === "android" ? SPACING_FOR_CARD_INSET : 0, // Horizontal spacing before and after the ScrollView
-				}}
+				decelerationRate="fast"
+				horizontal // Change the direction to horizontal
+				showsHorizontalScrollIndicator={false}
+				snapToAlignment="center"
+				snapToInterval={CARD_WIDTH + 10} // Calculate the size for a card including marginLeft and marginRight
 			>
 				{scrollOptions.map((option, index) => {
 					return (
@@ -57,10 +58,10 @@ const styles = StyleSheet.create({
 	},
 	option: {
 		alignItems: "center",
-		justifyContent: "center",
-		width: CARD_WIDTH,
 		backgroundColor: "transparent",
+		justifyContent: "center",
 		marginHorizontal: 5,
+		width: CARD_WIDTH,
 	},
 	optionText: {
 		color: defaultStyles.colors.light_blue,
