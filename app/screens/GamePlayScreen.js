@@ -18,6 +18,7 @@ function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
 
 	// TODO: get questions from the store dynamically
+	// TODO:  'streak' may need to be part of the redux store
 
 	const level = 2;
 	const language = "french";
@@ -44,7 +45,10 @@ function GamePlayScreen({ gameState, navigation }) {
 	};
 
 	if (streak === 12) {
-		setTimeout(() => navigation.navigate("GameOver"), 2000);
+		setTimeout(() => {
+			setStreak(0);
+			navigation.navigate("GameOver");
+		}, 2000);
 	}
 
 	// TODO: need a better loading mechanism
