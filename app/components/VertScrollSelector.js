@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 	},
 	optionText: {
 		color: defaultStyles.colors.light_blue,
-		fontSize: 30,
+		fontSize: 35,
 		textShadowColor: "rgba(0, 0, 0, 0.0)",
 		textShadowOffset: {
 			height: 0,
