@@ -5,8 +5,8 @@ import { LinearGradient } from "expo-linear-gradient";
 
 function NavButton({ icon, onPress, style }) {
 	return (
-		<TouchableOpacity style={[style, styles.container]} onPress={onPress}>
-			<LinearGradient colors={["#F0FF49", "#FFF494"]} style={styles.button}>
+		<TouchableOpacity onPress={onPress} style={[styles.overContainer, style]}>
+			<LinearGradient colors={["#F0FF49", "#FFF494"]} style={styles.container}>
 				<Image source={icon} style={styles.icon} />
 			</LinearGradient>
 		</TouchableOpacity>
@@ -14,13 +14,7 @@ function NavButton({ icon, onPress, style }) {
 }
 
 const styles = StyleSheet.create({
-	button: {
-		borderRadius: 35,
-	},
-	container: {
-		position: "absolute",
-		width: 69,
-		height: 69,
+	overContainer: {
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 2,
@@ -28,7 +22,11 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.2,
 		shadowRadius: 3,
+		width: 50,
+		height: 50,
+		borderRadius: 25,
 	},
+	container: {},
 	icon: {
 		width: "100%",
 		height: "100%",

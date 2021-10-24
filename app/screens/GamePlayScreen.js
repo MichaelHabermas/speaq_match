@@ -17,6 +17,8 @@ import { characters, decks, levels } from "../test_data";
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
 
+	// TODO: get questions from the store dynamically
+
 	const level = 2;
 	const language = "french";
 	const deck = "food_1";
@@ -63,7 +65,7 @@ function GamePlayScreen({ gameState, navigation }) {
 
 			<CardsContainer onPress={handleStreakChange} deck={decks.food_1} />
 
-			<SpeechBubble character={characters[4]} text={`${pre}${card}${post}`} />
+			<SpeechBubble character={characters[1]} text={`${pre}${card}${post}`} />
 		</Screen>
 	);
 }

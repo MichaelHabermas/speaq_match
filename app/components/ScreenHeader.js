@@ -31,14 +31,14 @@ function ScreenHeader({
 				<NavButton
 					icon={navLeftIcon}
 					onPress={navLeft}
-					style={styles.leftButton}
+					style={[styles.button, styles.leftButton]}
 				/>
 			)}
 			{showRightButton && (
 				<NavButton
 					icon={navRightIcon}
 					onPress={navRight}
-					style={styles.rightButton}
+					style={[styles.button, styles.rightButton]}
 				/>
 			)}
 		</View>
@@ -46,7 +46,10 @@ function ScreenHeader({
 }
 
 const styles = StyleSheet.create({
-	container: { alignItems: "center", width: "100%" },
+	container: {
+		alignItems: "center",
+		width: "100%",
+	},
 	headerText: {
 		color: defaultStyles.colors.gold,
 		fontSize: 60,
@@ -55,8 +58,20 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		width: "80%",
 	},
-	leftButton: { left: 20 },
-	rightButton: { right: 20 },
+	button: {
+		position: "absolute",
+		width: 69,
+		height: 69,
+		borderRadius: 35,
+	},
+	leftButton: {
+		top: 0,
+		left: 20,
+	},
+	rightButton: {
+		top: 0,
+		right: 20,
+	},
 });
 
 export default ScreenHeader;

@@ -28,7 +28,6 @@ function StartScreen({ navigation, gameState }) {
 				navLeftIcon={require("../assets/buttons/options_icon_light.png")}
 				showRightButton={false}
 				showTitle={false}
-				style={styles.header}
 			/>
 			<Image source={speaq_logo} style={styles.logo} />
 			<ButtonMain style={styles.button} title="Start" onPress={handleStart} />
@@ -37,8 +36,6 @@ function StartScreen({ navigation, gameState }) {
 }
 
 const styles = StyleSheet.create({
-	button: {},
-	header: {},
 	logo: {
 		alignItems: "center",
 		justifyContent: "center",

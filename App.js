@@ -24,11 +24,11 @@ const StackNavigator = () => (
 		}}
 	>
 		<Stack.Screen name="Start" component={StartScreen} />
+		<Stack.Screen name="OptionsReset" component={OptionsResetScreen} />
 		<Stack.Screen name="Profile" component={UserProfileScreen} />
 		<Stack.Screen name="LevelSelect" component={LevelSelectScreen} />
 		<Stack.Screen name="GamePlay" component={GamePlayScreen} />
 		<Stack.Screen name="Options" component={OptionsScreen} />
-		<Stack.Screen name="OptionsReset" component={OptionsResetScreen} />
 		<Stack.Screen name="Help" component={HelpScreen} />
 		<Stack.Screen name="GameOver" component={GameOverScreen} />
 	</Stack.Navigator>
