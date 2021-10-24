@@ -3,10 +3,16 @@ import { StyleSheet, TouchableOpacity, Image } from "react-native";
 
 import { LinearGradient } from "expo-linear-gradient";
 
-function NavButton({ icon, onPress, style }) {
+function NavButton({ icon, onPress, positionAndSize, shape }) {
 	return (
-		<TouchableOpacity onPress={onPress} style={[styles.overContainer, style]}>
-			<LinearGradient colors={["#F0FF49", "#FFF494"]} style={styles.container}>
+		<TouchableOpacity
+			onPress={onPress}
+			style={[styles.overContainer, positionAndSize]}
+		>
+			<LinearGradient
+				colors={["#F0FF49", "#FFF494"]}
+				style={[styles.container, shape]}
+			>
 				<Image source={icon} style={styles.icon} />
 			</LinearGradient>
 		</TouchableOpacity>
@@ -15,6 +21,7 @@ function NavButton({ icon, onPress, style }) {
 
 const styles = StyleSheet.create({
 	overContainer: {
+		height: 69,
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 2,
@@ -22,16 +29,12 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.2,
 		shadowRadius: 3,
-		width: 50,
-		height: 50,
-		borderRadius: 25,
+		width: 69,
 	},
-	container: {},
+	container: { borderRadius: 35 },
 	icon: {
-		width: "100%",
 		height: "100%",
-		alignItems: "center",
-		justifyContent: "center",
+		width: "100%",
 	},
 });
 

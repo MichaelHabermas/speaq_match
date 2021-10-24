@@ -31,14 +31,14 @@ function ScreenHeader({
 				<NavButton
 					icon={navLeftIcon}
 					onPress={navLeft}
-					style={[styles.button, styles.leftButton]}
+					positionAndSize={[styles.buttonPos, styles.leftButton]}
 				/>
 			)}
 			{showRightButton && (
 				<NavButton
 					icon={navRightIcon}
 					onPress={navRight}
-					style={[styles.button, styles.rightButton]}
+					positionAndSize={[styles.buttonPos, styles.rightButton]}
 				/>
 			)}
 		</View>
@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		width: "100%",
 	},
+	buttonPos: {
+		position: "absolute",
+	},
 	headerText: {
 		color: defaultStyles.colors.gold,
 		fontSize: 60,
@@ -57,12 +60,6 @@ const styles = StyleSheet.create({
 		paddingTop: 40,
 		textAlign: "center",
 		width: "80%",
-	},
-	button: {
-		position: "absolute",
-		width: 69,
-		height: 69,
-		borderRadius: 35,
 	},
 	leftButton: {
 		top: 0,

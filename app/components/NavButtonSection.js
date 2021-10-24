@@ -19,7 +19,8 @@ function NavButtonSection({ navigation }) {
 						console.log("home button pressed");
 						navigation.navigate("Start");
 					}}
-					style={styles.navButton}
+					positionAndSize={styles.navButtonPos}
+					shape={styles.navButton}
 				/>
 				<NavButton
 					icon={replay}
@@ -27,7 +28,8 @@ function NavButtonSection({ navigation }) {
 						console.log("replay button pressed");
 						navigation.navigate("GamePlay");
 					}}
-					style={styles.navButton}
+					positionAndSize={styles.navButtonPos}
+					shape={styles.navButton}
 				/>
 				<NavButton
 					icon={next}
@@ -35,7 +37,8 @@ function NavButtonSection({ navigation }) {
 						console.log("next button pressed");
 						navigation.navigate("GamePlay");
 					}}
-					style={styles.navButton}
+					positionAndSize={styles.navButtonPos}
+					shape={styles.navButton}
 				/>
 			</View>
 		</View>
@@ -43,30 +46,32 @@ function NavButtonSection({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		position: "absolute",
-		bottom: 0,
-		height: "20%",
-		width: "90%",
-		alignSelf: "center",
-		borderColor: "black",
-		borderWidth: 1,
-	},
 	buttonsContainer: {
-		flexDirection: "row",
 		alignItems: "center",
+		flexDirection: "row",
+		height: "100%",
 		justifyContent: "space-evenly",
 		width: "100%",
-		height: "100%",
-		borderColor: "green",
-		borderWidth: 1,
+	},
+	container: {
+		alignSelf: "center",
+		bottom: 0,
+		height: "20%",
+		position: "absolute",
+		width: "90%",
 	},
 	navButton: {
-		width: 100,
-		height: 100,
 		borderRadius: 50,
-		borderColor: "blue",
-		borderWidth: 1,
+	},
+	navButtonPos: {
+		height: 100,
+		shadowOffset: {
+			width: 3,
+			height: 3,
+		},
+		shadowOpacity: 0.3,
+		shadowRadius: 5,
+		width: 100,
 	},
 });
 
