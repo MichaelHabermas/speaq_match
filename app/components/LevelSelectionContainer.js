@@ -29,7 +29,7 @@ const level_cards = [
 function LevelSelectionContainer(props) {
 	return (
 		<View style={styles.container}>
-			<ScrollView style={styles.scrollView}>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.subContainer}>
 					{level_cards.map((level_card, index) => (
 						<LevelCard
@@ -49,15 +49,10 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		bottom: 0,
 		height: "70%",
-		left: "10%",
+		left: "10%", // TODO: fix with Constants (width of screen - width of container / 2) (unless this works)
 		marginBottom: Platform.OS === "ios" ? -35 : 0, // TODO: fix all these with Constants
 		position: "absolute",
 		width: "90%",
-	},
-	scrollView: {
-		flex: 1,
-		height: "100%",
-		width: "100%",
 	},
 	subContainer: {
 		flexDirection: "row",

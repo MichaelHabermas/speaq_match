@@ -16,23 +16,7 @@ import card5 from "../assets/cards/numbers_1/card_5.png";
 
 // temporary data structures
 import { decks } from "../test_data";
-// const cards = [
-// 	{ id: 1, name: "uno zero", image: card0 },
-// 	{ id: 2, name: "un uno", image: card1 },
-// 	{ id: 3, name: "un due", image: card2 },
-// 	{ id: 4, name: "un tre", image: card3 },
-// 	{ id: 5, name: "un quattro", image: card4 },
-// 	{ id: 6, name: "un cinque", image: card5 },
-// 	{ id: 7, name: "un cinque", image: card5 },
-// 	{ id: 8, name: "un cinque", image: card5 },
-// 	{ id: 9, name: "un cinque", image: card5 },
-// 	{ id: 10, name: "un cinque", image: card5 },
-// 	{ id: 11, name: "un cinque", image: card5 },
-// 	{ id: 12, name: "un cinque", image: card5 },
-// ];
-
 const language = "french";
-
 const initialDeck = decks.food_1.map(card => {
 	return {
 		id: card.id,
@@ -41,6 +25,7 @@ const initialDeck = decks.food_1.map(card => {
 	};
 });
 
+// how data is structured currently
 // food_1: [
 // 	{
 // 		id: 1,
@@ -59,8 +44,6 @@ const initialDeck = decks.food_1.map(card => {
 function HelpScreen({ navigation }) {
 	const [deck, setDeck] = useState(initialDeck);
 
-	console.log(deck);
-
 	return (
 		<Screen screen={true} style={styles.screen}>
 			<ScreenHeader
@@ -71,7 +54,7 @@ function HelpScreen({ navigation }) {
 			/>
 
 			<View style={styles.container}>
-				<ScrollView>
+				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={styles.subContainer}>
 						{deck.map((card, index) => (
 							<HelpMenuItem
@@ -79,6 +62,7 @@ function HelpScreen({ navigation }) {
 								onPress={() => console.log(`Card ${card.name} pressed`)}
 								card={card}
 							/>
+							// TODO: add a divider between cards
 						))}
 					</View>
 				</ScrollView>

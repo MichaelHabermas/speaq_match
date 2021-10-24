@@ -21,7 +21,7 @@ const decks = [
 function DeckSelectionContainer(props) {
 	return (
 		<View style={styles.container}>
-			<ScrollView style={styles.scrollView}>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.subContainer}>
 					{decks.map((deck, index) => (
 						<DeckCard
@@ -37,11 +37,6 @@ function DeckSelectionContainer(props) {
 }
 
 const styles = StyleSheet.create({
-	scrollView: {
-		flex: 1,
-		height: "100%",
-		width: "100%",
-	},
 	container: {
 		alignSelf: "center",
 		bottom: 0,
