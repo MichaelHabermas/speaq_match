@@ -50,14 +50,14 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		height: "70%",
 		left: "10%",
-		marginBottom: Platform.OS === "ios" ? -35 : 0,
+		marginBottom: Platform.OS === "ios" ? -35 : 0, // TODO: fix all these with Constants
 		position: "absolute",
 		width: "90%",
 	},
 	scrollView: {
-		width: "100%",
-		height: "100%",
 		flex: 1,
+		height: "100%",
+		width: "100%",
 	},
 	subContainer: {
 		flexDirection: "row",

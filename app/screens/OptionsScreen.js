@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 import defaultStyles from "../config/styles";
 import OptionsButton from "../components/OptionsButton";
@@ -23,9 +23,10 @@ function OptionsScreen({ navigation }) {
 			</Text>
 			<OptionsButton
 				onPress={() => navigation.navigate("Start")}
-				name="EXIT"
 				style={styles.buttonText}
-			/>
+			>
+				EXIT
+			</OptionsButton>
 		</Screen>
 	);
 }

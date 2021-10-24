@@ -26,7 +26,7 @@ const scrollOptions = [
 
 const initialProfile = {
 	gender: null,
-	// TODO: create ~ learner's_native_language: some_options
+	user_language: "english",
 	language_to_learn: null,
 };
 
@@ -91,6 +91,8 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 					</OptionsButton>
 				</View>
 			</View>
+
+			{/* TODO: create selection for user's known language */}
 
 			<View style={styles.optionsContainer}>
 				<View style={styles.optionLabel}>

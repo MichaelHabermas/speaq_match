@@ -8,7 +8,7 @@ import {
 const initialState = {
 	user_profile: {
 		gender: "female",
-		user_language: "",
+		user_language: "english",
 		language_to_learn: "",
 	},
 	game_settings: {
