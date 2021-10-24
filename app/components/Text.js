@@ -24,12 +24,12 @@ function AppText({ children, fontFam = "alfa", style, ...otherProps }) {
 
 	return (
 		<Text
+			// numberOfLines={4}
 			style={[
 				styles.text,
 				style,
 				{ fontFamily: fontyFont || "AlfaSlabOne_400Regular" },
 			]}
-			{...otherProps}
 		>
 			{children}
 		</Text>

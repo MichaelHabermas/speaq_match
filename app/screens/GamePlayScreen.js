@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
+// redux
+import { connect } from "react-redux";
+
+// components
 import CardsContainer from "../components/CardsContainer";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 import SpeechBubble from "../components/SpeechBubble";
 import StreakTracker from "../components/StreakTracker";
 
+// TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
 
-function GamePlayScreen({ navigation }) {
-	const streak = 0;
+function GamePlayScreen({ gameState, navigation }) {
+	const [streak, setStreak] = useState(0);
+
 	const level = 2;
 	const language = "french";
 	const deck = "food_1";
@@ -19,10 +25,27 @@ function GamePlayScreen({ navigation }) {
 	const pre = levels[level].languages[language].pre;
 	const post = levels[level].languages[language].post;
 
+	// for testing purposes, 2 and 3 lines of text
+	// const post = ", please do it. I like";
+	// const post = ", please do it. I like that. asdf arg aw ase aesa asdv awe ";
+
+	const handleStreakChange = () => {
+		if (streak >= 12) return;
+		// TODO:fix the if condition
+		if (card) {
+			// 1.  increase only if card choice matches bubble text
+			setStreak(streak + 1);
+		} else {
+			// 2. reset streak if card choice doesn't match bubble text
+			setStreak(0);
+		}
+	};
+
 	if (streak === 12) {
 		setTimeout(() => navigation.navigate("GameOver"), 2000);
 	}
 
+	// TODO: need a better loading mechanism
 	if (!characters || !decks || !levels) {
 		return <View></View>;
 	}
@@ -34,20 +57,21 @@ function GamePlayScreen({ navigation }) {
 				navRight={() => navigation.navigate("Help")}
 				navRightIcon={require("../assets/buttons/help_icon_light.png")}
 				showTitle={false}
-				style={styles.header}
 			/>
 
 			<StreakTracker streak={streak} />
 
-			<CardsContainer deck={decks.food_1} />
+			<CardsContainer onPress={handleStreakChange} deck={decks.food_1} />
 
-			{/* <SpeechBubble character={characters[4]} text={levels[0].question} /> */}
 			<SpeechBubble character={characters[4]} text={`${pre}${card}${post}`} />
-			{/* <SpeechBubble character={characters[4]} text={`hi`} /> */}
 		</Screen>
 	);
 }
 
 const styles = StyleSheet.create({});
 
-export default GamePlayScreen;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+export default connect(mapStateToProps)(GamePlayScreen);
