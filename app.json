@@ -5,6 +5,7 @@
 		"slug": "speaq_memory",
 		"version": "1.0.0",
 		"orientation": "portrait",
+		"owner": "speaq",
 		"icon": "./app/assets/icon.png",
 		"splash": {
 			"image": "./app/assets/splash.png",

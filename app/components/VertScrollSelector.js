@@ -1,11 +1,14 @@
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Image } from "react-native";
 
 // redux
 import { connect } from "react-redux";
 
 // components
 import Text from "../components/Text";
+
+// assets
+import scrollIndicator from "../assets/lang_marker.png";
 
 // styling
 import defaultStyles from "../config/styles";
@@ -29,6 +32,7 @@ function VertScrollSelector({ profile, scrollOptions, setNewProfile, style }) {
 
 	return (
 		<View style={[styles.container, style]}>
+			<Image source={scrollIndicator} style={styles.indicator} />
 			<ScrollView
 				contentContainerStyle={{
 					// contentInset alternative for Android
@@ -70,6 +74,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		width: 100,
 	},
+	indicator: { position: "absolute", alignSelf: "center" },
 	option: {
 		alignItems: "center",
 		backgroundColor: "transparent",
