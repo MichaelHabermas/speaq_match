@@ -4,8 +4,8 @@ React Native attempt for Speaq Match & Memory app
 
 ### To start up project:
 
-npm i
-expo start
+- npm i
+- expo start
 
 ### Figma Wireframe
 
