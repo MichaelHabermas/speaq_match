@@ -1,33 +1,35 @@
 {
-	"name": "speaq_memory",
-	"expo": {
-		"name": "speaq_memory",
-		"slug": "speaq_memory",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"owner": "speaq",
-		"icon": "./app/assets/icon.png",
-		"splash": {
-			"image": "./app/assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./app/assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
-		},
-		"web": {
-			"favicon": "./app/assets/favicon.png"
-		},
-		"description": "Play Games. Learn Languages."
-	}
+  "name": "speaq_memory",
+  "expo": {
+    "name": "speaq_memory",
+    "slug": "speaq_memory",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "owner": "speaq",
+    "icon": "./app/assets/icon.png",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    },
+    "description": "Play Games. Learn Languages."
+  }
 }

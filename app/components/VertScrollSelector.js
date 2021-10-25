@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Image } from "react-native";
+import { View, StyleSheet, ScrollView, Image, Platform } from "react-native";
 
 // redux
 import { connect } from "react-redux";

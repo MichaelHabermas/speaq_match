@@ -190,13 +190,14 @@ const decks = {
 				german: "ein Teig",
 				russian: "буханка хлеба",
 			},
+            quality: ["food", "brown", "soft"],
 		},
 		{
 			id: 2,
 			image: cheese,
 			languages: {
 				english: "a piece of cheese",
-				spanish: "un trozo de queso",
+				spanish: "un pedazo de queso",
 				french: "un morceau de fromage",
 				italian: "una fetta di formaggio",
 				german: "ein Stück Käse",

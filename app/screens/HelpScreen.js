@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, Platform } from "react-native";
 
 // components
 import HelpMenuItem from "../components/HelpMenuItem";
