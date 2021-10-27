@@ -19,6 +19,34 @@ import card_9 from "./assets/cards/numbers_1/card_9.png";
 import card_10 from "./assets/cards/numbers_1/card_10.png";
 import card_11 from "./assets/cards/numbers_1/card_11.png";
 
+// numbers 2
+// card 11 pulled from above
+import card_12 from "./assets/cards/numbers_2/card_12.png";
+import card_13 from "./assets/cards/numbers_2/card_13.png";
+import card_14 from "./assets/cards/numbers_2/card_14.png";
+import card_15 from "./assets/cards/numbers_2/card_15.png";
+import card_16 from "./assets/cards/numbers_2/card_16.png";
+import card_17 from "./assets/cards/numbers_2/card_17.png";
+import card_18 from "./assets/cards/numbers_2/card_18.png";
+import card_19 from "./assets/cards/numbers_2/card_19.png";
+import card_20 from "./assets/cards/numbers_2/card_20.png";
+import card_21 from "./assets/cards/numbers_2/card_21.png";
+import card_22 from "./assets/cards/numbers_2/card_22.png";
+
+// numbers 3
+// card 10 pulled from above
+// card 20 pulled from above
+import card_30 from "./assets/cards/numbers_3/card_30.png";
+import card_40 from "./assets/cards/numbers_3/card_40.png";
+import card_50 from "./assets/cards/numbers_3/card_50.png";
+import card_60 from "./assets/cards/numbers_3/card_60.png";
+import card_70 from "./assets/cards/numbers_3/card_70.png";
+import card_80 from "./assets/cards/numbers_3/card_80.png";
+import card_90 from "./assets/cards/numbers_3/card_90.png";
+import card_100 from "./assets/cards/numbers_3/card_100.png";
+import card_1000 from "./assets/cards/numbers_3/card_1000.png";
+import card_10000 from "./assets/cards/numbers_3/card_10000.png";
+
 // food 1
 import bread from "./assets/cards/food_1/bread.png";
 import cheese from "./assets/cards/food_1/cheese.png";
@@ -34,6 +62,18 @@ import vegetables from "./assets/cards/food_1/vegetables.png";
 import water from "./assets/cards/food_1/water.png";
 
 // animals1
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
+// import an_1 from "./assets/cards/animals_1/ani_1.png";
 
 //shapes and colors 1
 import arrow from "./assets/cards/shapes_colors_1/grey_arrow.png";
@@ -190,7 +230,7 @@ const decks = {
 				german: "ein Teig",
 				russian: "буханка хлеба",
 			},
-            quality: ["food", "brown", "soft"],
+			quality: ["food", "brown", "soft"],
 		},
 		{
 			id: 2,
@@ -468,6 +508,298 @@ const decks = {
 				italian: "un undici",
 				german: "eins elf",
 				russian: "одиннадцать",
+			},
+		},
+	],
+	numbers_2: [
+		{
+			id: 1,
+			image: card_11,
+			languages: {
+				english: "an eleven",
+				spanish: "uno once",
+				french: "un onze",
+				italian: "un undici",
+				german: "eins elf",
+				russian: "одиннадцать",
+			},
+		},
+		{
+			id: 2,
+			image: card_12,
+			languages: {
+				english: "a twelve",
+				spanish: "uno doce",
+				french: "un douze",
+				italian: "un dodici",
+				german: "eins zwölf",
+				russian: "двенадцать",
+			},
+		},
+		{
+			id: 3,
+			image: card_13,
+			languages: {
+				english: "a thirteen",
+				spanish: "uno trece",
+				french: "un treize",
+				italian: "un tretti",
+				german: "eins dreizehn",
+				russian: "тринадцать",
+			},
+		},
+		{
+			id: 4,
+			image: card_14,
+			languages: {
+				english: "a fourteen",
+				spanish: "uno catorce",
+				french: "un quatorze",
+				italian: "un quattordici",
+				german: "eins vierzehn",
+				russian: "четырнадцать",
+			},
+		},
+		{
+			id: 5,
+			image: card_15,
+			languages: {
+				english: "a fifteen",
+				spanish: "uno quince",
+				french: "un quinze",
+				italian: "un quindici",
+				german: "eins fünfzehn",
+				russian: "пятнадцать",
+			},
+		},
+		{
+			id: 6,
+			image: card_16,
+			languages: {
+				english: "a sixteen",
+				spanish: "uno dieciséis",
+				french: "un seize",
+				italian: "un sedici",
+				german: "eins sechzehn",
+				russian: "шестнадцать",
+			},
+		},
+		{
+			id: 7,
+			image: card_17,
+			languages: {
+				english: "a seventeen",
+				spanish: "uno diecisiete",
+				french: "un dix-sept",
+				italian: "un diciassette",
+				german: "eins achtezehn",
+				russian: "семнадцать",
+			},
+		},
+		{
+			id: 8,
+			image: card_18,
+			languages: {
+				english: "an eighteen",
+				spanish: "uno dieciocho",
+				french: "un dix-huit",
+				italian: "un diciotto",
+				german: "eins neunzehn",
+				russian: "восемнадцать",
+			},
+		},
+		{
+			id: 9,
+			image: card_19,
+			languages: {
+				english: "an nineteen",
+				spanish: "uno diecinueve",
+				french: "un dix-neuf",
+				italian: "un diciannove",
+				german: "eins achtzehn",
+				russian: "девятнадцать",
+			},
+		},
+		{
+			id: 10,
+			image: card_20,
+			languages: {
+				english: "a twenty",
+				spanish: "uno veinte",
+				french: "un vingt",
+				italian: "un venti",
+				german: "eins zwanzig",
+				russian: "двадцать",
+			},
+		},
+		{
+			id: 11,
+			image: card_21,
+			languages: {
+				english: "a twenty-one",
+				spanish: "uno veintiuno",
+				french: "un vingt-et-un",
+				italian: "un ventuno",
+				german: "eins einundzwanzig",
+				russian: "двадцать один",
+			},
+		},
+		{
+			id: 12,
+			image: card_22,
+			languages: {
+				english: "an twenty-two",
+				spanish: "uno veintidós",
+				french: "un vingt-deux",
+				italian: "un ventidue",
+				german: "eins zweiundzwanzig",
+				russian: "двадцать два",
+			},
+		},
+	],
+	numbers_3: [
+		{
+			id: 1,
+			image: card_10,
+			languages: {
+				english: "a ten",
+				spanish: "un diez",
+				french: "un dix",
+				italian: "un dieci",
+				german: "eins zehn",
+				russian: "десять",
+			},
+		},
+		{
+			id: 2,
+			image: card_20,
+			languages: {
+				english: "a twenty",
+				spanish: "un veinte",
+				french: "un vingt",
+				italian: "un venti",
+				german: "eins zwanzig",
+				russian: "двадцать",
+			},
+		},
+		{
+			id: 3,
+			image: card_30,
+			languages: {
+				english: "a thirty",
+				spanish: "un treinta",
+				french: "un trente",
+				italian: "un trenta",
+				german: "eins dreißig",
+				russian: "тридцать",
+			},
+		},
+		{
+			id: 4,
+			image: card_40,
+			languages: {
+				english: "a fourty",
+				spanish: "un cuarenta",
+				french: "un quarante",
+				italian: "un quaranta",
+				german: "eins vierzig",
+				russian: "сорок",
+			},
+		},
+		{
+			id: 5,
+			image: card_50,
+			languages: {
+				english: "a fifty",
+				spanish: "un cincuenta",
+				french: "un cinquante",
+				italian: "un cinquanta",
+				german: "eins fünfzig",
+				russian: "пятьдесят",
+			},
+		},
+		{
+			id: 6,
+			image: card_60,
+			languages: {
+				english: "a sixty",
+				spanish: "un sesenta",
+				french: "un soixante",
+				italian: "un sessanta",
+				german: "eins sechzig",
+				russian: "шестьдесят",
+			},
+		},
+		{
+			id: 7,
+			image: card_70,
+			languages: {
+				english: "a seventy",
+				spanish: "un setenta",
+				french: "un soixante-dix",
+				italian: "un settanta",
+				german: "eins siebzig",
+				russian: "семьдесят",
+			},
+		},
+		{
+			id: 8,
+			image: card_80,
+			languages: {
+				english: "an eighty",
+				spanish: "un ochenta",
+				french: "un quatre-vingt",
+				italian: "un ottanta",
+				german: "eins achtzig",
+				russian: "восемьдесят",
+			},
+		},
+		{
+			id: 9,
+			image: card_90,
+			languages: {
+				english: "an ninety",
+				spanish: "un noventa",
+				french: "un quatre-vingt-dix",
+				italian: "un novanta",
+				german: "eins neunzig",
+				russian: "девяносто",
+			},
+		},
+		{
+			id: 10,
+			image: card_100,
+			languages: {
+				english: "a hundred",
+				spanish: "un cien",
+				french: "un cent",
+				italian: "un cento",
+				german: "eins hundert",
+				russian: "сто",
+			},
+		},
+		{
+			id: 11,
+			image: card_1000,
+			languages: {
+				english: "a thousand",
+				spanish: "un mil",
+				french: "un mille",
+				italian: "un mille",
+				german: "eins tausend",
+				russian: "тысяча",
+			},
+		},
+		{
+			id: 12,
+			image: card_10000,
+			languages: {
+				english: "a ten thousand",
+				spanish: "un diez mil",
+				french: "un dix mille",
+				italian: "un dieci mille",
+				german: "eins zehn-tausend",
+				russian: "десять тысяч",
 			},
 		},
 	],
@@ -764,6 +1096,7 @@ const decks = {
 			},
 		},
 	],
+	animals_1: [],
 };
 
 const levels = {
