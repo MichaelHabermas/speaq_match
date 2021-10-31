@@ -5,7 +5,7 @@ import Text from "./Text";
 
 import defaultStyles from "../config/styles";
 
-function LevelCard({ level, handleLevelSelection, isSelected }) {
+function LevelCard({ handleLevelSelection, level, isSelected }) {
 	return (
 		<TouchableWithoutFeedback onPress={() => handleLevelSelection(level)}>
 			<View>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
 	},
 	notSelectedContainer: { backgroundColor: defaultStyles.colors.white },
 	selectedContainer: {
-		position: "absolute",
 		backgroundColor: defaultStyles.colors.gold,
+		position: "absolute",
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 4,

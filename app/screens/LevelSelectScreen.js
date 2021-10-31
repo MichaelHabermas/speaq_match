@@ -41,10 +41,35 @@ const levelCardsTest = [
 	{ level: 19, unlocked: true, completed: false, isSelected: false },
 	{ level: 20, unlocked: true, completed: false, isSelected: false },
 ];
+const deckCardsTest = [
+	{ name: "Numbers 1", unlocked: true, completed: false, isSelected: true },
+	{ name: "Numbers 2", unlocked: true, completed: false, isSelected: false },
+	{ name: "Numbers 3", unlocked: true, completed: false, isSelected: false },
+	{ name: "Food 1", unlocked: true, completed: false, isSelected: false },
+	{ name: "Food 2", unlocked: true, completed: false, isSelected: false },
+	{ name: "Food 3", unlocked: true, completed: false, isSelected: false },
+	{ name: "Animals 1", unlocked: true, completed: false, isSelected: false },
+	{ name: "Animals 2", unlocked: true, completed: false, isSelected: false },
+	{ name: "Animals 3", unlocked: true, completed: false, isSelected: false },
+	{
+		name: "Transportation",
+		unlocked: true,
+		completed: false,
+		isSelected: false,
+	},
+	{ name: "Nature", unlocked: true, completed: false, isSelected: false },
+	{
+		name: "Shapes & Colors",
+		unlocked: true,
+		completed: false,
+		isSelected: false,
+	},
+];
 
 function LevelSelectScreen({ navigation, gameState }) {
 	const [menuChoice, setMenuChoice] = useState(true);
 	const [levelCards, setLevelCards] = useState(levelCardsTest);
+	const [deckCards, setDeckCards] = useState(deckCardsTest);
 	const [newGameSettings, setNewGameSettings] = useState(
 		initialCurrentGameSettings
 	);
@@ -67,11 +92,20 @@ function LevelSelectScreen({ navigation, gameState }) {
 	};
 
 	const handleDeckSelection = deckName => {
+		setDeckCards(
+			deckCards.map(deck => {
+				if (deck.name === deckName) {
+					return { ...deck, isSelected: true };
+				} else {
+					return { ...deck, isSelected: false };
+				}
+			})
+		);
 		setNewGameSettings({ ...newGameSettings, currentDeckName: deckName });
 	};
 
 	const handleSaveCurrentGameSettings = () => {
-		// currentGame;
+		// setCurrentGame(newGameSettings) // this is the action to set the store
 		navigation.navigate("GamePlay");
 	};
 
@@ -101,13 +135,12 @@ function LevelSelectScreen({ navigation, gameState }) {
 			{menuChoice && (
 				<LevelSelectionContainer
 					levelCards={levelCards}
-					// newGameSettings={newGameSettings}
 					handleLevelSelection={handleLevelSelection}
 				/>
 			)}
 			{!menuChoice && (
 				<DeckSelectionContainer
-					// newGameSettings={newGameSettings}
+					deckCards={deckCards}
 					handleDeckSelection={handleDeckSelection}
 				/>
 			)}
@@ -119,7 +152,7 @@ const styles = StyleSheet.create({
 	club: {
 		position: "absolute",
 	},
-	screen: {},
+	screen: { overflow: "visible" },
 	selections: {
 		alignItems: "center",
 		flexDirection: "row",
