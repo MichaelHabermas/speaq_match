@@ -6,14 +6,6 @@ import HelpMenuItem from "../components/HelpMenuItem";
 import Screen from "../components/Screen";
 import ScreenHeader from "../components/ScreenHeader";
 
-// assets
-import card0 from "../assets/cards/numbers_1/card_0.png";
-import card1 from "../assets/cards/numbers_1/card_1.png";
-import card2 from "../assets/cards/numbers_1/card_2.png";
-import card3 from "../assets/cards/numbers_1/card_3.png";
-import card4 from "../assets/cards/numbers_1/card_4.png";
-import card5 from "../assets/cards/numbers_1/card_5.png";
-
 // temporary data structures
 import { decks } from "../test_data";
 const language = "french";
