@@ -17,7 +17,7 @@ import card5 from "../assets/cards/numbers_1/card_5.png";
 // temporary data structures
 import { decks } from "../test_data";
 const language = "french";
-const initialDeck = decks.food_1.map(card => {
+const initialDeck = decks.food_1.deck.map(card => {
 	return {
 		id: card.id,
 		image: card.image,

@@ -14,27 +14,27 @@ function NavButtonSection({ navigation }) {
 		<View style={styles.container}>
 			<View style={styles.buttonsContainer}>
 				<NavButton
+					// TODO: action to increase the current game level and return to home
 					icon={home}
 					onPress={() => {
-						console.log("home button pressed");
 						navigation.navigate("Start");
 					}}
 					positionAndSize={styles.navButtonPos}
 					shape={styles.navButton}
 				/>
 				<NavButton
+					// TODO:  action to reset the current game
 					icon={replay}
 					onPress={() => {
-						console.log("replay button pressed");
 						navigation.navigate("GamePlay");
 					}}
 					positionAndSize={styles.navButtonPos}
 					shape={styles.navButton}
 				/>
 				<NavButton
+					// TODO: action to increase the current game level
 					icon={next}
 					onPress={() => {
-						console.log("next button pressed");
 						navigation.navigate("GamePlay");
 					}}
 					positionAndSize={styles.navButtonPos}

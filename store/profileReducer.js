@@ -6,17 +6,17 @@ import {
 } from "./profileAction";
 
 const initialState = {
-	user_profile: {
+	userProfile: {
+		userLanguage: "english",
 		gender: "female",
-		user_language: "english",
-		language_to_learn: "",
 	},
-	game_settings: {
-		level: "",
-		deck: "",
+	gameSettings: {
+		languageToLearn: "italian",
+		level: "3",
+		currentDeck: "numbers_1",
 	},
-	game_options: {
-		learnable_languages: [
+	gameOptions: {
+		learnableLanguages: [
 			"English",
 			"Spanish",
 			"French",
@@ -25,7 +25,7 @@ const initialState = {
 			"Russian",
 		],
 	},
-	profile_created: false,
+	profileCreated: false,
 	overall_progress: {
 		tutorial_completed: false,
 		levels: {
@@ -41,12 +41,12 @@ const reducer = (state = initialState, action) => {
 		case SET_PROFILE:
 			return {
 				...state,
-				user_profile: {
-					...state.user_profile,
+				userProfile: {
+					...state.userProfile,
 					gender: action.payload.gender,
-					language_to_learn: action.payload.language_to_learn,
 				},
-				profile_created: true,
+				profileCreated: true,
+				languageToLearn: action.payload.languageToLearn,
 			};
 		case RESET_PROFILE:
 			return {
@@ -55,10 +55,10 @@ const reducer = (state = initialState, action) => {
 		case SET_CURRENT_GAME:
 			return {
 				...state,
-				game_settings: {
-					...state.game_settings,
+				gameSettings: {
+					...state.gameSettings,
 					level: action.payload.level,
-					deck: action.payload.deck,
+					currentDeck: action.payload.currentDeck,
 				},
 			};
 		case SET_PROGRESS:

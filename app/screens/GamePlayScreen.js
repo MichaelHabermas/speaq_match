@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 // redux
@@ -11,31 +11,40 @@ import ScreenHeader from "../components/ScreenHeader";
 import SpeechBubble from "../components/SpeechBubble";
 import StreakTracker from "../components/StreakTracker";
 
+// logic
+import { deckShuffle } from "../gameLogic";
+
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
+const initialGameSettings = {
+	level: 3,
+	language: "italian",
+	deckName: "numbers_2",
+	deck: {},
+};
 
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
+	const [gameSettings, setGameSettings] = useState(initialGameSettings);
+
+	useEffect(() => {
+		// TODO: get deck info for gameSettings dynamically from the server/dynamically
+
+		const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
+		setGameSettings({ ...gameSettings, deck: shuffledDeck });
+	}, []);
 
 	// TODO: get questions from the store dynamically
 	// TODO:  'streak' may need to be part of the redux store
-
-	const level = 2;
-	const language = "french";
-	const deck = "food_1";
-
-	const card = decks[deck][0].languages[language];
-	const pre = levels[level].languages[language].pre;
-	const post = levels[level].languages[language].post;
-
-	// for testing purposes, 2 and 3 lines of text
-	// const post = ", please do it. I like";
-	// const post = ", please do it. I like that. asdf arg aw ase aesa asdv awe ";
+	const cardText =
+		decks[gameSettings.deckName].deck[0].languages[gameSettings.language];
+	const pre = levels[gameSettings.level].languages[gameSettings.language].pre;
+	const post = levels[gameSettings.level].languages[gameSettings.language].post;
 
 	const handleStreakChange = () => {
 		if (streak >= 12) return;
 		// TODO:fix the if condition
-		if (card) {
+		if (cardText) {
 			// 1.  increase only if card choice matches bubble text
 			setStreak(streak + 1);
 		} else {
@@ -44,6 +53,8 @@ function GamePlayScreen({ gameState, navigation }) {
 		}
 	};
 
+	// game over condition
+	// TODO: disable all buttons while waiting for transition
 	if (streak === 12) {
 		setTimeout(() => {
 			setStreak(0);
@@ -53,7 +64,11 @@ function GamePlayScreen({ gameState, navigation }) {
 
 	// TODO: need a better loading mechanism
 	if (!characters || !decks || !levels) {
-		return <View></View>;
+		return (
+			<View>
+				<Text>Loading...</Text>
+			</View>
+		);
 	}
 	return (
 		<Screen style={styles.screen}>
@@ -67,9 +82,15 @@ function GamePlayScreen({ gameState, navigation }) {
 
 			<StreakTracker streak={streak} />
 
-			<CardsContainer onPress={handleStreakChange} deck={decks.food_1} />
+			<CardsContainer
+				onPress={handleStreakChange}
+				deck={decks[gameSettings.deckName].deck}
+			/>
 
-			<SpeechBubble character={characters[1]} text={`${pre}${card}${post}`} />
+			<SpeechBubble
+				character={characters[1]}
+				text={`${pre}${cardText}${post}`}
+			/>
 		</Screen>
 	);
 }
