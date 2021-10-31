@@ -11,8 +11,8 @@ export const resetProfile = () => {
 	return { type: RESET_PROFILE };
 };
 
-export const setCurrentGame = currentGameSetting => {
-	return { type: SET_CURRENT_GAME, payload: currentGameSetting };
+export const setCurrentGame = currentGameSettings => {
+	return { type: SET_CURRENT_GAME, payload: currentGameSettings };
 };
 
 export const setProgress = updatedProgress => {

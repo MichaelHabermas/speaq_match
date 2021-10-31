@@ -14,7 +14,7 @@ import speaq_logo from "../assets/speaq_logo.png";
 
 function StartScreen({ navigation, gameState }) {
 	const handleStart = () => {
-		if (gameState.profile_created) {
+		if (gameState.profileCreated) {
 			navigation.navigate("LevelSelect");
 		} else {
 			navigation.navigate("Profile");

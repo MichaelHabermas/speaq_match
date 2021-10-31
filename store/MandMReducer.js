@@ -11,9 +11,9 @@ const initialState = {
 		gender: "female",
 	},
 	gameSettings: {
-		languageToLearn: "italian",
-		currentLevel: "3",
-		currentDeckName: "numbers_1",
+		languageToLearn: null,
+		currentLevel: "1",
+		currentDeckName: null,
 		currentDeck: {},
 	},
 	gameOptions: {
@@ -27,8 +27,8 @@ const initialState = {
 		],
 	},
 	profileCreated: false,
-	overall_progress: {
-		tutorial_completed: false,
+	overallProgress: {
+		tutorialCompleted: false,
 		levels: {
 			//TODO: clear and fill through a data call
 			1: { pre: "", post: "", unlocked: true, completed: false },
@@ -47,7 +47,10 @@ const reducer = (state = initialState, action) => {
 					gender: action.payload.gender,
 				},
 				profileCreated: true,
-				languageToLearn: action.payload.languageToLearn,
+				gameSettings: {
+					...state.gameSettings,
+					languageToLearn: action.payload.languageToLearn,
+				},
 			};
 		case RESET_PROFILE:
 			return {
@@ -60,17 +63,18 @@ const reducer = (state = initialState, action) => {
 					...state.gameSettings,
 					currentLevel: action.payload.currentLevel,
 					currentDeckName: action.payload.currentDeckName,
+					currentDeck: action.payload.currentDeck,
 				},
 			};
 		case SET_PROGRESS:
 			return {
 				...state,
-				overall_progress: {
-					...state.overall_progress,
+				overallProgress: {
+					...state.overallProgress,
 					levels: {
-						...state.overall_progress.levels,
+						...state.overallProgress.levels,
 						[action.payload.level]: {
-							...state.overall_progress.levels[action.payload.level],
+							...state.overallProgress.levels[action.payload.level],
 							completed: action.payload.completed,
 							unlocked: action.payload.unlocked,
 						},

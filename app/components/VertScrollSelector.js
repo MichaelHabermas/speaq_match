@@ -24,7 +24,7 @@ function VertScrollSelector({ profile, scrollOptions, setNewProfile, style }) {
 		const index = Math.round(x / CARD_WIDTH);
 		setNewProfile({
 			...profile,
-			language_to_learn: scrollOptions[index]
+			languageToLearn: scrollOptions[index]
 				? scrollOptions[index].toLowerCase()
 				: scrollOptions[0].toLowerCase(), // needed to prevent an 'undefined object' bug
 		});
@@ -48,7 +48,7 @@ function VertScrollSelector({ profile, scrollOptions, setNewProfile, style }) {
 				}}
 				decelerationRate="fast"
 				horizontal // Change the direction to horizontal
-				onScroll={handleScroll}
+				onScroll={e => handleScroll(e)}
 				scrollEventThrottle={16000} // Reduce the number of events fired
 				showsHorizontalScrollIndicator={false}
 				snapToAlignment="center"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 
 // redux
@@ -26,13 +26,19 @@ const scrollOptions = [
 
 const initialProfile = {
 	gender: null,
-	user_language: "english",
-	language_to_learn: null,
+	userLanguage: "english",
+	languageToLearn: null,
 };
 
 function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
 	const [isFemale, setIsFemale] = useState(true);
+
+	console.log("newProfile: ", newProfile);
+
+	// useEffect(() => {
+	// 	setNewProfile(initialProfile);
+	// }, []);
 
 	const handleSelectGender = gender => {
 		setIsFemale(gender === "female");
@@ -44,7 +50,6 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 
 	const handleSaveProfile = () => {
 		dispatch(setProfile(newProfile));
-		setNewProfile({ gender: null, language_to_learn: null });
 		navigation.navigate("LevelSelect");
 	};
 
@@ -110,7 +115,7 @@ function UserProfileScreen({ navigation, gameState, dispatch }) {
 				</View>
 			</View>
 
-			{newProfile.language_to_learn && (
+			{newProfile.languageToLearn && (
 				<ButtonMain
 					onPress={handleSaveProfile}
 					style={styles.saveButton}
