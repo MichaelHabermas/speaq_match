@@ -3,7 +3,7 @@ import {
 	RESET_PROFILE,
 	SET_CURRENT_GAME,
 	SET_PROGRESS,
-} from "./profileAction";
+} from "./MandMAction";
 
 const initialState = {
 	userProfile: {
@@ -12,8 +12,9 @@ const initialState = {
 	},
 	gameSettings: {
 		languageToLearn: "italian",
-		level: "3",
-		currentDeck: "numbers_1",
+		currentLevel: "3",
+		currentDeckName: "numbers_1",
+		currentDeck: {},
 	},
 	gameOptions: {
 		learnableLanguages: [
@@ -57,8 +58,8 @@ const reducer = (state = initialState, action) => {
 				...state,
 				gameSettings: {
 					...state.gameSettings,
-					level: action.payload.level,
-					currentDeck: action.payload.currentDeck,
+					currentLevel: action.payload.currentLevel,
+					currentDeckName: action.payload.currentDeckName,
 				},
 			};
 		case SET_PROGRESS:

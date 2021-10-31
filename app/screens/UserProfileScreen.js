@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 
 // redux
 import { connect } from "react-redux";
-import { setProfile } from "../../store/profileAction";
+import { setProfile } from "../../store/MandMAction";
 
 // components
 import ButtonMain from "../components/ButtonMain";

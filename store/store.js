@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import profileReducer from "./profileReducer";
+import MandMReducer from "./MandMReducer";
 
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-const rootReducer = combineReducers({ matchAndMemory: profileReducer });
+const rootReducer = combineReducers({ matchAndMemory: MandMReducer });
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
