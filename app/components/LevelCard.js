@@ -1,28 +1,46 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 
 import Text from "./Text";
 
 import defaultStyles from "../config/styles";
 
-function LevelCard({ number, onPress, chosen }) {
+function LevelCard({ level, handleLevelSelection, isSelected }) {
 	return (
-		<TouchableOpacity onPress={onPress}>
-			<View style={styles.container}>
-				<Text style={styles.text}>{number}</Text>
+		<TouchableWithoutFeedback onPress={() => handleLevelSelection(level)}>
+			<View>
+				<View style={[styles.container, styles.notSelectedContainer]}>
+					<Text style={styles.text}>{level}</Text>
+				</View>
+				{isSelected && (
+					<View style={[styles.container, styles.selectedContainer]}>
+						<Text style={styles.text}>{level}</Text>
+					</View>
+				)}
 			</View>
-		</TouchableOpacity>
+		</TouchableWithoutFeedback>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: defaultStyles.colors.white,
 		borderRadius: 15,
 		height: 150,
 		marginRight: 10,
 		marginBottom: 10,
 		width: 105,
+	},
+	notSelectedContainer: { backgroundColor: defaultStyles.colors.white },
+	selectedContainer: {
+		position: "absolute",
+		backgroundColor: defaultStyles.colors.gold,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 4,
+			height: 4,
+		},
+		shadowOpacity: 0.2,
+		shadowRadius: 5,
 	},
 	text: {
 		color: defaultStyles.colors.light_blue,
