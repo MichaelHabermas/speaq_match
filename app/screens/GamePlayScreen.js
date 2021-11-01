@@ -16,12 +16,12 @@ import { deckShuffle } from "../gameLogic";
 
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
-const initialGameSettings = {
-	level: 3,
-	language: "italian",
-	deckName: "numbers_2",
-	deck: {},
-};
+// const initialGameSettings = {
+// 	level: 3,
+// 	language: "italian",
+// 	deckName: "numbers_2",
+// 	deck: {},
+// };
 const initialCardText = {
 	pre: "",
 	post: "",

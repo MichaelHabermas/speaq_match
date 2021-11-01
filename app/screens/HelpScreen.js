@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollView, StyleSheet, View, Platform } from "react-native";
+
+// redux
+import { connect } from "react-redux";
 
 // components
 import HelpMenuItem from "../components/HelpMenuItem";
@@ -8,33 +11,23 @@ import ScreenHeader from "../components/ScreenHeader";
 
 // temporary data structures
 import { decks } from "../test_data";
-const language = "french";
-const initialDeck = decks.food_1.deck.map(card => {
-	return {
-		id: card.id,
-		image: card.image,
-		name: card.languages[language],
-	};
-});
 
-// how data is structured currently
-// food_1: [
-// 	{
-// 		id: 1,
-// 		image: bread,
-// 		languages: {
-// 			english: "a loaf of bread",
-// 			spanish: "una barra de pan",
-// 			french: "une pâte de pain",
-// 			italian: "una fetta di pane",
-// 			german: "ein Teig",
-// 			russian: "буханка хлеба",
-// 		},
-// 	},
-// ];
+function HelpScreen({ navigation, gameState }) {
+	const [deck, setDeck] = useState([]);
 
-function HelpScreen({ navigation }) {
-	const [deck, setDeck] = useState(initialDeck);
+	useEffect(() => {
+		const helpCards = decks[gameState.gameSettings.currentDeckName].deck.map(
+			card => {
+				return {
+					id: card.id,
+					image: card.image,
+					name: card.languages[gameState.gameSettings.languageToLearn],
+				};
+			}
+		);
+		console.log("helpCards: ", helpCards);
+		setDeck(helpCards);
+	}, []);
 
 	return (
 		<Screen screen={true} style={styles.screen}>
@@ -81,4 +74,8 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default HelpScreen;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+export default connect(mapStateToProps)(HelpScreen);
