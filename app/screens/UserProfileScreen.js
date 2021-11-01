@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 
 // redux
 import { connect } from "react-redux";
-import { setProfile } from "../../store/MandMAction";
+import { setProfile } from "../../store/MandMActions";
 
 // components
 import ButtonMain from "../components/ButtonMain";
@@ -33,12 +33,6 @@ const initialProfile = {
 function UserProfileScreen({ navigation, gameState, dispatch }) {
 	const [newProfile, setNewProfile] = useState(initialProfile);
 	const [isFemale, setIsFemale] = useState(true);
-
-	console.log("newProfile: ", newProfile);
-
-	// useEffect(() => {
-	// 	setNewProfile(initialProfile);
-	// }, []);
 
 	const handleSelectGender = gender => {
 		setIsFemale(gender === "female");

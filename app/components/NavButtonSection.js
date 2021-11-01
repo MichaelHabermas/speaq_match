@@ -1,6 +1,10 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
+// redux
+import { connect } from "react-redux";
+import { increaseLevel } from "../../store/MandMActions";
+
 // component
 import NavButton from "./NavButton";
 
@@ -9,34 +13,33 @@ import home from "../assets/buttons/home_icon_dark.png";
 import replay from "../assets/buttons/replay_icon_dark.png";
 import next from "../assets/buttons/forward_icon_dark.png";
 
-function NavButtonSection({ navigation }) {
+function NavButtonSection({ navigation, dispatch }) {
+	const handleNavigation = (route, shouldProgress) => {
+		if (shouldProgress) {
+			dispatch(increaseLevel());
+		}
+		navigation.navigate(route);
+	};
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.buttonsContainer}>
 				<NavButton
-					// TODO: action to increase the current game level and return to home
 					icon={home}
-					onPress={() => {
-						navigation.navigate("Start");
-					}}
+					onPress={() => handleNavigation("Start", true)}
 					positionAndSize={styles.navButtonPos}
 					shape={styles.navButton}
 				/>
 				<NavButton
-					// TODO:  action to reset the current game
 					icon={replay}
-					onPress={() => {
-						navigation.navigate("GamePlay");
-					}}
+					onPress={() => handleNavigation("GamePlay", false)}
 					positionAndSize={styles.navButtonPos}
 					shape={styles.navButton}
 				/>
 				<NavButton
-					// TODO: action to increase the current game level
 					icon={next}
-					onPress={() => {
-						navigation.navigate("GamePlay");
-					}}
+					onPress={() => handleNavigation("GamePlay", true)}
+					GamePlay
 					positionAndSize={styles.navButtonPos}
 					shape={styles.navButton}
 				/>
@@ -75,4 +78,8 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default NavButtonSection;
+const mapStateToProps = state => ({
+	gameState: state.matchAndMemory,
+});
+
+export default connect(mapStateToProps)(NavButtonSection);

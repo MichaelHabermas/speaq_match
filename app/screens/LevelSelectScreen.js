@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 // redux
 import { connect } from "react-redux";
-import { setCurrentGame } from "../../store/MandMAction";
+import { setCurrentGame } from "../../store/MandMActions";
 
 // components
 import MenuButton from "../components/MenuButton";
@@ -16,7 +16,7 @@ import DeckSelectionContainer from "../components/DeckSelectionContainer";
 import defaultStyles from "../config/styles";
 
 const initialCurrentGameSettings = {
-	currentLevel: "1",
+	currentLevel: 1,
 	currentDeckName: null,
 };
 const levelCardsTest = [

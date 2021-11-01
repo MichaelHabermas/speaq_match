@@ -1,9 +1,10 @@
 import {
 	SET_PROFILE,
 	RESET_PROFILE,
+	INCREASE_LEVEL,
 	SET_CURRENT_GAME,
 	SET_PROGRESS,
-} from "./MandMAction";
+} from "./MandMActions";
 
 const initialState = {
 	userProfile: {
@@ -12,7 +13,7 @@ const initialState = {
 	},
 	gameSettings: {
 		languageToLearn: null,
-		currentLevel: "1",
+		currentLevel: 1,
 		currentDeckName: null,
 		currentDeck: {},
 	},
@@ -55,6 +56,14 @@ const reducer = (state = initialState, action) => {
 		case RESET_PROFILE:
 			return {
 				...initialState,
+			};
+		case INCREASE_LEVEL:
+			return {
+				...state,
+				gameSettings: {
+					...state.gameSettings,
+					currentLevel: state.gameSettings.currentLevel + 1, // TODO: prevent going over highest possible level
+				},
 			};
 		case SET_CURRENT_GAME:
 			return {

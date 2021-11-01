@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 // redux
 import { connect } from "react-redux";
-import { resetProfile } from "../../store/MandMAction";
+import { resetProfile } from "../../store/MandMActions";
 
 // components
 import OptionsButton from "../components/OptionsButton";
