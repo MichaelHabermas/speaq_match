@@ -32,7 +32,13 @@ const initialCardText = {
 
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
-	const [gameSettings, setGameSettings] = useState(initialGameSettings);
+	// const [gameSettings, setGameSettings] = useState(initialGameSettings);
+	const [gameSettings, setGameSettings] = useState({
+		level: gameState.gameSettings.currentLevel,
+		language: gameState.gameSettings.languageToLearn,
+		deckName: gameState.gameSettings.currentDeckName,
+		deck: gameState.gameSettings.currentDeck,
+	});
 	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
 	useEffect(() => {
@@ -42,7 +48,7 @@ function GamePlayScreen({ gameState, navigation }) {
 	// TODO: get questions from the store dynamically
 
 	const resetStreak = () => {
-		const randomCardIdx = cardIdxRandomizer();
+		const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
 		setCurrentCardText({
 			pre: levels[gameSettings.level].languages[gameSettings.language].pre,
 			post: levels[gameSettings.level].languages[gameSettings.language].post,
@@ -59,13 +65,14 @@ function GamePlayScreen({ gameState, navigation }) {
 		setStreak(0);
 	};
 
-	const cardIdxRandomizer = () => Math.floor(Math.random() * 12);
+	const cardIdxRandomizer = () =>
+		Math.floor(Math.random() * currentCardText.unchosen.length);
 
 	const handleCardTap = cardText => {
 		if (streak >= 12) return;
 		// TODO: fix the if condition
 		if (cardText === currentCardText.cardText) {
-			const randomCardIdx = cardIdxRandomizer();
+			const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
 			setCurrentCardText({
 				...currentCardText,
 				cardText:
@@ -87,7 +94,7 @@ function GamePlayScreen({ gameState, navigation }) {
 		setTimeout(() => {
 			setStreak(0);
 			navigation.navigate("GameOver");
-		}, 2000);
+		}, 1000);
 	}
 
 	// TODO: need a better loading mechanism
@@ -98,6 +105,7 @@ function GamePlayScreen({ gameState, navigation }) {
 			</View>
 		);
 	}
+
 	return (
 		<Screen style={styles.screen}>
 			<ScreenHeader

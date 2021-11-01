@@ -14,6 +14,12 @@ export const increaseLevel = () => {
 	return { type: INCREASE_LEVEL };
 };
 export const setCurrentGame = currentGameSettings => {
+	const convertToDeckKey = deckName => {
+		return deckName.toLowerCase().split(" ").join("_");
+	};
+	currentGameSettings.currentDeckName = convertToDeckKey(
+		currentGameSettings.currentDeckName
+	);
 	return { type: SET_CURRENT_GAME, payload: currentGameSettings };
 };
 export const setProgress = updatedProgress => {

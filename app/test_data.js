@@ -818,7 +818,7 @@ const decks = {
 			},
 		],
 	},
-	shapes_colors_1: {
+	"shapes_&_colors": {
 		locked: "false",
 		deck: [
 			{
