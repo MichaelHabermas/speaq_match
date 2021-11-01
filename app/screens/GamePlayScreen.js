@@ -27,6 +27,7 @@ const initialCardText = {
 	post: "",
 	cardText: "",
 	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+	currentCardIdx: Math.floor(Math.random() * 12),
 };
 
 function GamePlayScreen({ gameState, navigation }) {
@@ -35,26 +36,13 @@ function GamePlayScreen({ gameState, navigation }) {
 	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
 	useEffect(() => {
-		// TODO: get deck info for gameSettings dynamically from the server/dynamically
-		resetGame();
-		// const randomCardIdx = Math.floor(Math.random() * 12);
-		// setCurrentCardText({
-		// 	pre: levels[gameSettings.level].languages[gameSettings.language].pre,
-		// 	post: levels[gameSettings.level].languages[gameSettings.language].post,
-		// 	cardText:
-		// 		decks[gameSettings.deckName].deck[randomCardIdx].languages[
-		// 			gameSettings.language
-		// 		],
-		// 	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-		// });
-		// const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
-		// setGameSettings({ ...gameSettings, deck: shuffledDeck });
+		resetStreak();
 	}, []);
 
 	// TODO: get questions from the store dynamically
 
-	const resetGame = () => {
-		const randomCardIdx = Math.floor(Math.random() * 12);
+	const resetStreak = () => {
+		const randomCardIdx = cardIdxRandomizer();
 		setCurrentCardText({
 			pre: levels[gameSettings.level].languages[gameSettings.language].pre,
 			post: levels[gameSettings.level].languages[gameSettings.language].post,
@@ -62,28 +50,40 @@ function GamePlayScreen({ gameState, navigation }) {
 				decks[gameSettings.deckName].deck[randomCardIdx].languages[
 					gameSettings.language
 				],
-			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
+				num => num != randomCardIdx
+			),
 		});
 		const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
 		setGameSettings({ ...gameSettings, deck: shuffledDeck });
+		setStreak(0);
 	};
+
+	const cardIdxRandomizer = () => Math.floor(Math.random() * 12);
 
 	const handleCardTap = cardText => {
 		if (streak >= 12) return;
 		// TODO: fix the if condition
 		if (cardText === currentCardText.cardText) {
-			// 1.  increase only if card choice matches bubble text
+			const randomCardIdx = cardIdxRandomizer();
+			setCurrentCardText({
+				...currentCardText,
+				cardText:
+					decks[gameSettings.deckName].deck[randomCardIdx].languages[
+						gameSettings.language
+					],
+				unchosen: currentCardText.unchosen.filter(num => num != randomCardIdx),
+			});
 			setStreak(streak + 1);
 		} else {
-			// 2. reset streak if card choice doesn't match bubble text
-			resetGame();
-			setStreak(0);
+			resetStreak();
 		}
 	};
 
 	// game over condition
-	// TODO: disable all buttons while waiting for transition
 	if (streak === 12) {
+		// TODO: disable all buttons while waiting for transition
+		// TODO: option: Modal??
 		setTimeout(() => {
 			setStreak(0);
 			navigation.navigate("GameOver");
