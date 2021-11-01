@@ -22,33 +22,61 @@ const initialGameSettings = {
 	deckName: "numbers_2",
 	deck: {},
 };
+const initialCardText = {
+	pre: "",
+	post: "",
+	cardText: "",
+	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+};
 
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
 	const [gameSettings, setGameSettings] = useState(initialGameSettings);
+	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
 	useEffect(() => {
 		// TODO: get deck info for gameSettings dynamically from the server/dynamically
-
-		const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
-		setGameSettings({ ...gameSettings, deck: shuffledDeck });
+		resetGame();
+		// const randomCardIdx = Math.floor(Math.random() * 12);
+		// setCurrentCardText({
+		// 	pre: levels[gameSettings.level].languages[gameSettings.language].pre,
+		// 	post: levels[gameSettings.level].languages[gameSettings.language].post,
+		// 	cardText:
+		// 		decks[gameSettings.deckName].deck[randomCardIdx].languages[
+		// 			gameSettings.language
+		// 		],
+		// 	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		// });
+		// const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
+		// setGameSettings({ ...gameSettings, deck: shuffledDeck });
 	}, []);
 
 	// TODO: get questions from the store dynamically
-	// TODO:  'streak' may need to be part of the redux store
-	const cardTextTest =
-		decks[gameSettings.deckName].deck[0].languages[gameSettings.language];
-	const pre = levels[gameSettings.level].languages[gameSettings.language].pre;
-	const post = levels[gameSettings.level].languages[gameSettings.language].post;
+
+	const resetGame = () => {
+		const randomCardIdx = Math.floor(Math.random() * 12);
+		setCurrentCardText({
+			pre: levels[gameSettings.level].languages[gameSettings.language].pre,
+			post: levels[gameSettings.level].languages[gameSettings.language].post,
+			cardText:
+				decks[gameSettings.deckName].deck[randomCardIdx].languages[
+					gameSettings.language
+				],
+			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		});
+		const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
+		setGameSettings({ ...gameSettings, deck: shuffledDeck });
+	};
 
 	const handleCardTap = cardText => {
 		if (streak >= 12) return;
 		// TODO: fix the if condition
-		if (cardText === cardTextTest) {
+		if (cardText === currentCardText.cardText) {
 			// 1.  increase only if card choice matches bubble text
 			setStreak(streak + 1);
 		} else {
 			// 2. reset streak if card choice doesn't match bubble text
+			resetGame();
 			setStreak(0);
 		}
 	};
@@ -90,7 +118,7 @@ function GamePlayScreen({ gameState, navigation }) {
 
 			<SpeechBubble
 				character={characters[1]}
-				text={`${pre}${cardTextTest}${post}`}
+				text={`${currentCardText.pre}${currentCardText.cardText}${currentCardText.post}`}
 			/>
 		</Screen>
 	);
