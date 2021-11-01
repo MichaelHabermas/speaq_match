@@ -36,15 +36,15 @@ function GamePlayScreen({ gameState, navigation }) {
 
 	// TODO: get questions from the store dynamically
 	// TODO:  'streak' may need to be part of the redux store
-	const cardText =
+	const cardTextTest =
 		decks[gameSettings.deckName].deck[0].languages[gameSettings.language];
 	const pre = levels[gameSettings.level].languages[gameSettings.language].pre;
 	const post = levels[gameSettings.level].languages[gameSettings.language].post;
 
-	const handleStreakChange = () => {
+	const handleCardTap = cardText => {
 		if (streak >= 12) return;
-		// TODO:fix the if condition
-		if (cardText) {
+		// TODO: fix the if condition
+		if (cardText === cardTextTest) {
 			// 1.  increase only if card choice matches bubble text
 			setStreak(streak + 1);
 		} else {
@@ -83,13 +83,14 @@ function GamePlayScreen({ gameState, navigation }) {
 			<StreakTracker streak={streak} />
 
 			<CardsContainer
-				onPress={handleStreakChange}
+				language={gameSettings.language}
+				handleCardTap={handleCardTap}
 				deck={decks[gameSettings.deckName].deck}
 			/>
 
 			<SpeechBubble
 				character={characters[1]}
-				text={`${pre}${cardText}${post}`}
+				text={`${pre}${cardTextTest}${post}`}
 			/>
 		</Screen>
 	);

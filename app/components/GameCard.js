@@ -1,9 +1,12 @@
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
-function GameCard({ card, onPress, inStreak = false }) {
+function GameCard({ card, handleCardTap, language, inStreak = false }) {
 	return (
-		<TouchableOpacity onPress={onPress} style={styles.container}>
+		<TouchableOpacity
+			onPress={() => handleCardTap(card.languages[language])}
+			style={styles.container}
+		>
 			<Image
 				style={styles.card}
 				source={require("../assets/cards/card_front.png")}

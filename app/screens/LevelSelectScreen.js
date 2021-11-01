@@ -66,7 +66,7 @@ const deckCardsTest = [
 	},
 ];
 
-function LevelSelectScreen({ navigation, gameState }) {
+function LevelSelectScreen({ navigation, gameState, dispatch }) {
 	const [menuChoice, setMenuChoice] = useState(true);
 	const [levelCards, setLevelCards] = useState(levelCardsTest);
 	const [deckCards, setDeckCards] = useState(deckCardsTest);
@@ -105,8 +105,10 @@ function LevelSelectScreen({ navigation, gameState }) {
 	};
 
 	const handleSaveCurrentGameSettings = () => {
-		// setCurrentGame(newGameSettings) // this is the action to set the store
-		navigation.navigate("GamePlay");
+		if (newGameSettings.currentDeckName) {
+			dispatch(setCurrentGame(newGameSettings));
+			navigation.navigate("GamePlay");
+		}
 	};
 
 	return (
