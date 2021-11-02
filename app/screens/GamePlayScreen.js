@@ -16,12 +16,6 @@ import { deckShuffle } from "../gameLogic";
 
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
-// const initialGameSettings = {
-// 	level: 3,
-// 	language: "italian",
-// 	deckName: "numbers_2",
-// 	deck: {},
-// };
 const initialCardText = {
 	pre: "",
 	post: "",
@@ -32,8 +26,7 @@ const initialCardText = {
 
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
-	// const [gameSettings, setGameSettings] = useState(initialGameSettings);
-	const [gameSettings, setGameSettings] = useState({
+	const [currentGameSettings, setCurrentGameSettings] = useState({
 		level: gameState.gameSettings.currentLevel,
 		language: gameState.gameSettings.languageToLearn,
 		deckName: gameState.gameSettings.currentDeckName,
@@ -48,20 +41,26 @@ function GamePlayScreen({ gameState, navigation }) {
 	// TODO: get questions from the store dynamically
 
 	const resetStreak = () => {
-		const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
+		const randomCardIdx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][
+			cardIdxRandomizer()
+		];
 		setCurrentCardText({
-			pre: levels[gameSettings.level].languages[gameSettings.language].pre,
-			post: levels[gameSettings.level].languages[gameSettings.language].post,
+			pre: levels[currentGameSettings.level].languages[
+				currentGameSettings.language
+			].pre,
+			post: levels[currentGameSettings.level].languages[
+				currentGameSettings.language
+			].post,
 			cardText:
-				decks[gameSettings.deckName].deck[randomCardIdx].languages[
-					gameSettings.language
+				decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
+					currentGameSettings.language
 				],
 			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
 				num => num != randomCardIdx
 			),
 		});
-		const shuffledDeck = deckShuffle(decks[gameSettings.deckName].deck);
-		setGameSettings({ ...gameSettings, deck: shuffledDeck });
+		const shuffledDeck = deckShuffle(decks[currentGameSettings.deckName].deck);
+		setCurrentGameSettings({ ...currentGameSettings, deck: shuffledDeck });
 		setStreak(0);
 	};
 
@@ -69,33 +68,33 @@ function GamePlayScreen({ gameState, navigation }) {
 		Math.floor(Math.random() * currentCardText.unchosen.length);
 
 	const handleCardTap = cardText => {
+		// prevent over-selecting on game over
 		if (streak >= 12) return;
-		// TODO: fix the if condition
 		if (cardText === currentCardText.cardText) {
-			const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
-			setCurrentCardText({
-				...currentCardText,
-				cardText:
-					decks[gameSettings.deckName].deck[randomCardIdx].languages[
-						gameSettings.language
-					],
-				unchosen: currentCardText.unchosen.filter(num => num != randomCardIdx),
-			});
-			setStreak(streak + 1);
+			// game over condition
+			if (streak >= 11) {
+				setTimeout(() => {
+					navigation.navigate("GameOver");
+					resetStreak();
+				}, 1000);
+			} else {
+				const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
+				setCurrentCardText({
+					...currentCardText,
+					cardText:
+						decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
+							currentGameSettings.language
+						],
+					unchosen: currentCardText.unchosen.filter(
+						num => num != randomCardIdx
+					),
+				});
+				setStreak(streak + 1);
+			}
 		} else {
 			resetStreak();
 		}
 	};
-
-	// game over condition
-	if (streak === 12) {
-		// TODO: disable all buttons while waiting for transition
-		// TODO: option: Modal??
-		setTimeout(() => {
-			setStreak(0);
-			navigation.navigate("GameOver");
-		}, 1000);
-	}
 
 	// TODO: need a better loading mechanism
 	if (!characters || !decks || !levels) {
@@ -119,9 +118,9 @@ function GamePlayScreen({ gameState, navigation }) {
 			<StreakTracker streak={streak} />
 
 			<CardsContainer
-				language={gameSettings.language}
+				language={currentGameSettings.language}
 				handleCardTap={handleCardTap}
-				deck={decks[gameSettings.deckName].deck}
+				deck={decks[currentGameSettings.deckName].deck}
 			/>
 
 			<SpeechBubble
