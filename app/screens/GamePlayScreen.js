@@ -32,13 +32,24 @@ function GamePlayScreen({ gameState, navigation }) {
 		deckName: gameState.gameSettings.currentDeckName,
 		deck: gameState.gameSettings.currentDeck,
 	});
-	const [currentCardText, setCurrentCardText] = useState(initialCardText);
+	const [currentCardText, setCurrentCardText] = useState({
+		pre: levels[currentGameSettings.level].languages[
+			currentGameSettings.language
+		].pre,
+		post: levels[currentGameSettings.level].languages[
+			currentGameSettings.language
+		].post,
+		cardText: "",
+		unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		currentCardIdx: Math.floor(Math.random() * 12),
+	});
 
 	useEffect(() => {
 		resetStreak();
 	}, []);
 
-	// TODO: get questions from the store dynamically
+	const cardIdxRandomizer = () =>
+		Math.floor(Math.random() * currentCardText.unchosen.length);
 
 	const resetStreak = () => {
 		const randomCardIdx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][
@@ -63,9 +74,6 @@ function GamePlayScreen({ gameState, navigation }) {
 		setCurrentGameSettings({ ...currentGameSettings, deck: shuffledDeck });
 		setStreak(0);
 	};
-
-	const cardIdxRandomizer = () =>
-		Math.floor(Math.random() * currentCardText.unchosen.length);
 
 	const handleCardTap = cardText => {
 		// prevent over-selecting on game over
