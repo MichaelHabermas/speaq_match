@@ -17,8 +17,6 @@ import { deckShuffle } from "../gameLogic";
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
 const initialCardText = {
-	pre: "",
-	post: "",
 	cardText: "",
 	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
 	currentCardIdx: Math.floor(Math.random() * 12),
@@ -27,26 +25,17 @@ const initialCardText = {
 function GamePlayScreen({ gameState, navigation }) {
 	const [streak, setStreak] = useState(0);
 	const [currentGameSettings, setCurrentGameSettings] = useState({
-		level: gameState.gameSettings.currentLevel,
-		language: gameState.gameSettings.languageToLearn,
 		deckName: gameState.gameSettings.currentDeckName,
 		deck: gameState.gameSettings.currentDeck,
 	});
-	const [currentCardText, setCurrentCardText] = useState({
-		pre: levels[currentGameSettings.level].languages[
-			currentGameSettings.language
-		].pre,
-		post: levels[currentGameSettings.level].languages[
-			currentGameSettings.language
-		].post,
-		cardText: "",
-		unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-		currentCardIdx: Math.floor(Math.random() * 12),
-	});
+	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
 	useEffect(() => {
 		resetStreak();
 	}, []);
+
+	const preText = levels[gameState.gameSettings.currentLevel].languages[gameState.gameSettings.languageToLearn].pre
+	const postText = levels[gameState.gameSettings.currentLevel].languages[gameState.gameSettings.languageToLearn].post
 
 	const cardIdxRandomizer = () =>
 		Math.floor(Math.random() * currentCardText.unchosen.length);
@@ -56,15 +45,9 @@ function GamePlayScreen({ gameState, navigation }) {
 			cardIdxRandomizer()
 		];
 		setCurrentCardText({
-			pre: levels[currentGameSettings.level].languages[
-				currentGameSettings.language
-			].pre,
-			post: levels[currentGameSettings.level].languages[
-				currentGameSettings.language
-			].post,
 			cardText:
 				decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-					currentGameSettings.language
+					gameState.gameSettings.languageToLearn
 				],
 			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
 				num => num != randomCardIdx
@@ -91,7 +74,7 @@ function GamePlayScreen({ gameState, navigation }) {
 					...currentCardText,
 					cardText:
 						decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-							currentGameSettings.language
+							gameState.gameSettings.languageToLearn
 						],
 					unchosen: currentCardText.unchosen.filter(
 						num => num != randomCardIdx
@@ -126,14 +109,14 @@ function GamePlayScreen({ gameState, navigation }) {
 			<StreakTracker streak={streak} />
 
 			<CardsContainer
-				language={currentGameSettings.language}
+				language={gameState.gameSettings.languageToLearn}
 				handleCardTap={handleCardTap}
 				deck={decks[currentGameSettings.deckName].deck}
 			/>
 
 			<SpeechBubble
 				character={characters[1]}
-				text={`${currentCardText.pre}${currentCardText.cardText}${currentCardText.post}`}
+				text={`${preText}${currentCardText.cardText}${postText}`}
 			/>
 		</Screen>
 	);
