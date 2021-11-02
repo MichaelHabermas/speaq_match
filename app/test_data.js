@@ -62,18 +62,18 @@ import vegetables from "./assets/cards/food_1/vegetables.png";
 import water from "./assets/cards/food_1/water.png";
 
 // animals1
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
-// import an_1 from "./assets/cards/animals_1/ani_1.png";
+import animals1Cow from "./assets/cards/animals_1/animals1Cow.png";
+import animals1Bird from "./assets/cards/animals_1/animals1Bird.png";
+import animals1Bug from "./assets/cards/animals_1/animals1Bug.png";
+import animals1Cat from "./assets/cards/animals_1/animals1Cat.png";
+import animals1Chicken from "./assets/cards/animals_1/animals1Chicken.png";
+import animals1Dog from "./assets/cards/animals_1/animals1Dog.png";
+import animals1Fish from "./assets/cards/animals_1/animals1Fish.png";
+import animals1Horse from "./assets/cards/animals_1/animals1Horse.png";
+import animals1Mouse from "./assets/cards/animals_1/animals1Mouse.png";
+import animals1Pig from "./assets/cards/animals_1/animals1Pig.png";
+import animals1Rabbit from "./assets/cards/animals_1/animals1Rabbit.png";
+import animals1Snake from "./assets/cards/animals_1/animals1Snake.png";
 
 //shapes and colors 1
 import arrow from "./assets/cards/shapes_colors_1/grey_arrow.png";
@@ -603,7 +603,7 @@ const decks = {
 					spanish: "uno diecisiete",
 					french: "un dix-sept",
 					italian: "un diciassette",
-					german: "eins achtezehn",
+					german: "eins siebzehn",
 					russian: "семнадцать",
 				},
 			},
@@ -615,7 +615,7 @@ const decks = {
 					spanish: "uno dieciocho",
 					french: "un dix-huit",
 					italian: "un diciotto",
-					german: "eins neunzehn",
+					german: "eins achtzehn",
 					russian: "восемнадцать",
 				},
 			},
@@ -627,7 +627,7 @@ const decks = {
 					spanish: "uno diecinueve",
 					french: "un dix-neuf",
 					italian: "un diciannove",
-					german: "eins achtzehn",
+					german: "eins neunzehn",
 					russian: "девятнадцать",
 				},
 			},
@@ -1117,7 +1117,155 @@ const decks = {
 			},
 		],
 	},
-	animals_1: { locked: "true", deck: [] },
+	animals_1: {
+		locked: "false",
+		deck: [
+			{
+				id: 1,
+				image: animals1Cow,
+				languages: {
+					english: "a cow",
+					spanish: "una vaca",
+					french: "une vache",
+					italian: "un cappa",
+					german: "eine Kuh",
+					russian: "корова",
+				},
+			},
+			{
+				id: 2,
+				image: animals1Bird,
+				languages: {
+					english: "a bird",
+					spanish: "un pájaro",
+					french: "un oiseau",
+					italian: "un pinguino",
+					german: "ein Vogel",
+					russian: "птица",
+				},
+			},
+			{
+				id: 3,
+				image: animals1Bug,
+				languages: {
+					english: "a bug",
+					spanish: "un insecto",
+					french: "un insecte",
+					italian: "un grillo",
+					german: "ein Biest",
+					russian: "грызун",
+				},
+			},
+			{
+				id: 4,
+				image: animals1Cat,
+				languages: {
+					english: "a cat",
+					spanish: "un gato",
+					french: "un chat",
+					italian: "un gatto",
+					german: "ein Katze",
+					russian: "кошка",
+				},
+			},
+			{
+				id: 5,
+				image: animals1Chicken,
+				languages: {
+					english: "a chicken",
+					spanish: "un pollito",
+					french: "un poulet",
+					italian: "un pollo",
+					german: "ein Hähnchen",
+					russian: "курица",
+				},
+			},
+			{
+				id: 6,
+				image: animals1Dog,
+				languages: {
+					english: "a dog",
+					spanish: "un perro",
+					french: "un chien",
+					italian: "un cane",
+					german: "ein Hund",
+					russian: "собака",
+				},
+			},
+			{
+				id: 7,
+				image: animals1Fish,
+				languages: {
+					english: "a fish",
+					spanish: "un pez",
+					french: "un poisson",
+					italian: "un pesce",
+					german: "ein Fisch",
+					russian: "рыба",
+				},
+			},
+			{
+				id: 8,
+				image: animals1Horse,
+				languages: {
+					english: "a horse",
+					spanish: "un caballo",
+					french: "un cheval",
+					italian: "un cavallo",
+					german: "ein Pferd",
+					russian: "лошадь",
+				},
+			},
+			{
+				id: 9,
+				image: animals1Mouse,
+				languages: {
+					english: "a mouse",
+					spanish: "un ratón",
+					french: "un souris",
+					italian: "un gatto",
+					german: "ein Maus",
+					russian: "мышь",
+				},
+			},
+			{
+				id: 10,
+				image: animals1Pig,
+				languages: {
+					english: "a pig",
+					spanish: "un cerdo",
+					french: "un cochon",
+					italian: "un maiale",
+					german: "ein Schwein",
+					russian: "свинья",
+				},
+			},
+			{
+				id: 11,
+				image: animals1Rabbit,
+				languages: {
+					english: "a rabbit",
+					spanish: "un conejo",
+					french: "un lapin",
+					italian: "un riccio",
+					german: "ein Kaninchen",
+					russian: "кролик",
+				},
+			},
+			{
+				id: 12,
+				image: animals1Snake,
+				languages: {
+					english: "a snake",
+					spanish: "una serpiente",
+					french: "un serpent",
+					italian: "un serpente",
+					german: "ein Schlangen",
+					russian: "змея",
+				},
+			},
+		],
+	},
 };
 
 const levels = {

@@ -52,6 +52,12 @@ const deckCardsTest = [
 	{ name: "Animals 2", unlocked: true, completed: false, isSelected: false },
 	{ name: "Animals 3", unlocked: true, completed: false, isSelected: false },
 	{
+		name: "Prepositions",
+		unlocked: true,
+		completed: false,
+		isSelected: false,
+	},
+	{
 		name: "Transportation",
 		unlocked: true,
 		completed: false,
