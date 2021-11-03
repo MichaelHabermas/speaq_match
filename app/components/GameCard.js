@@ -1,10 +1,13 @@
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
-function GameCard({ card, handleCardTap, language, inStreak = false }) {
+// redux
+import { connect } from "react-redux";
+
+function GameCard({ card, handleCardTap, languageToLearn, inStreak = false }) {
 	return (
 		<TouchableOpacity
-			onPress={() => handleCardTap(card.languages[language])}
+			onPress={() => handleCardTap(card.languages[languageToLearn])}
 			style={styles.container}
 		>
 			<Image
@@ -44,4 +47,8 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default GameCard;
+const mapStateToProps = state => ({
+	languageToLearn: state.matchAndMemory.gameSettings.languageToLearn,
+});
+
+export default connect(mapStateToProps)(GameCard);

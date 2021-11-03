@@ -16,54 +16,47 @@ import { deckShuffle } from "../gameLogic";
 
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
-const initialCardText = {
-	cardText: "",
-	unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-	currentCardIdx: Math.floor(Math.random() * 12),
-};
 
-function GamePlayScreen({ gameSettings, navigation }) {
+function GamePlayScreen({
+	currentDeckName,
+	currentLevel,
+	languageToLearn,
+	navigation,
+}) {
 	const [streak, setStreak] = useState(0);
-	const [currentGameSettings, setCurrentGameSettings] = useState({
-		deckName: gameSettings.currentDeckName,
-		deck: gameSettings.currentDeck,
+	const [speaker, setSpeaker] = useState(characters[2]);
+	const [currentDeck, setCurrentDeck] = useState(decks[currentDeckName].deck);
+	const [currentCardText, setCurrentCardText] = useState({
+		cardText: "",
+		unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		currentCardIdx: Math.floor(Math.random() * 12),
 	});
-	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
 	useEffect(() => {
 		resetStreak();
 	}, []);
 
-	const preText =
-		levels[gameSettings.currentLevel].languages[gameSettings.languageToLearn]
-			.pre;
-	const postText =
-		levels[gameSettings.currentLevel].languages[gameSettings.languageToLearn]
-			.post;
+	const preText = levels[currentLevel].languages[languageToLearn].pre;
+	const postText = levels[currentLevel].languages[languageToLearn].post;
 
-	const cardIdxRandomizer = () =>
-		Math.floor(Math.random() * currentCardText.unchosen.length);
+	const cardIdxRandomizer = length => Math.floor(Math.random() * length);
 
 	const resetStreak = () => {
 		const randomCardIdx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][
-			cardIdxRandomizer()
+			cardIdxRandomizer(currentCardText.unchosen.length)
 		];
 		setCurrentCardText({
-			cardText:
-				decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-					gameSettings.languageToLearn
-				],
+			cardText: currentDeck[randomCardIdx].languages[languageToLearn],
 			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
 				num => num != randomCardIdx
 			),
 		});
-		const shuffledDeck = deckShuffle(decks[currentGameSettings.deckName].deck);
-		setCurrentGameSettings({ ...currentGameSettings, deck: shuffledDeck });
+		setCurrentDeck(deckShuffle(currentDeck));
 		setStreak(0);
 	};
 
 	const handleCardTap = cardText => {
-		// prevent over-selecting on game over
+		// prevent over-selecting cards on game over
 		if (streak >= 12) return;
 		if (cardText === currentCardText.cardText) {
 			// game over condition
@@ -73,18 +66,22 @@ function GamePlayScreen({ gameSettings, navigation }) {
 					resetStreak();
 				}, 1000);
 			} else {
-				const randomCardIdx = currentCardText.unchosen[cardIdxRandomizer()];
+				const randomCardIdx =
+					currentCardText.unchosen[
+						cardIdxRandomizer(currentCardText.unchosen.length)
+					];
 				setCurrentCardText({
 					...currentCardText,
 					cardText:
-						decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-							gameSettings.languageToLearn
+						decks[currentDeckName].deck[randomCardIdx].languages[
+							languageToLearn
 						],
 					unchosen: currentCardText.unchosen.filter(
 						num => num != randomCardIdx
 					),
 				});
 				setStreak(streak + 1);
+				setSpeaker(characters[cardIdxRandomizer(4)]);
 			}
 		} else {
 			resetStreak();
@@ -112,14 +109,10 @@ function GamePlayScreen({ gameSettings, navigation }) {
 
 			<StreakTracker streak={streak} />
 
-			<CardsContainer
-				language={gameSettings.languageToLearn}
-				handleCardTap={handleCardTap}
-				deck={decks[currentGameSettings.deckName].deck}
-			/>
+			<CardsContainer handleCardTap={handleCardTap} deck={currentDeck} />
 
 			<SpeechBubble
-				character={characters[1]}
+				character={speaker}
 				text={`${preText}${currentCardText.cardText}${postText}`}
 			/>
 		</Screen>
@@ -129,7 +122,9 @@ function GamePlayScreen({ gameSettings, navigation }) {
 const styles = StyleSheet.create({});
 
 const mapStateToProps = state => ({
-	gameSettings: state.matchAndMemory.gameSettings,
+	currentDeckName: state.matchAndMemory.gameSettings.currentDeckName,
+	currentLevel: state.matchAndMemory.gameSettings.currentLevel,
+	languageToLearn: state.matchAndMemory.gameSettings.languageToLearn,
 });
 
 export default connect(mapStateToProps)(GamePlayScreen);
