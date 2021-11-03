@@ -39,11 +39,11 @@ function GamePlayScreen({
 		resetStreak();
 	}, []);
 
-	const cardIdxRandomizer = length => Math.floor(Math.random() * length);
+	const idxRandomizer = length => Math.floor(Math.random() * length);
 
 	const resetStreak = () => {
 		const randomCardIdx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][
-			cardIdxRandomizer(currentCardText.unchosen.length)
+			idxRandomizer(currentCardText.unchosen.length)
 		];
 		setCurrentCardText({
 			cardText: currentDeck[randomCardIdx].languages[languageToLearn],
@@ -68,7 +68,7 @@ function GamePlayScreen({
 			} else {
 				const randomCardIdx =
 					currentCardText.unchosen[
-						cardIdxRandomizer(currentCardText.unchosen.length)
+						idxRandomizer(currentCardText.unchosen.length)
 					];
 				setCurrentCardText({
 					...currentCardText,
@@ -81,7 +81,7 @@ function GamePlayScreen({
 					),
 				});
 				setStreak(streak + 1);
-				setSpeaker(characters[cardIdxRandomizer(4)]);
+				setSpeaker(characters[idxRandomizer(4)]);
 			}
 		} else {
 			resetStreak();
