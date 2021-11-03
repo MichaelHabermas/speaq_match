@@ -12,15 +12,15 @@ import ScreenHeader from "../components/ScreenHeader";
 // temporary data structures
 import { decks } from "../test_data";
 
-function HelpScreen({ navigation, gameSettings }) {
+function HelpScreen({ navigation, currentDeckName, languageToLearn }) {
 	const [deck, setDeck] = useState([]);
 
 	useEffect(() => {
-		const helpCards = decks[gameSettings.currentDeckName].deck.map(card => {
+		const helpCards = decks[currentDeckName].deck.map(card => {
 			return {
 				id: card.id,
 				image: card.image,
-				name: card.languages[gameSettings.languageToLearn],
+				name: card.languages[languageToLearn],
 			};
 		});
 		setDeck(helpCards);
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-	gameSettings: state.matchAndMemory.gameSettings,
+	currentDeckName: state.matchAndMemory.gameSettings.currentDeckName,
+	languageToLearn: state.matchAndMemory.gameSettings.languageToLearn,
 });
 
 export default connect(mapStateToProps)(HelpScreen);
