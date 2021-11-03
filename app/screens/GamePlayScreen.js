@@ -32,12 +32,12 @@ function GamePlayScreen({
 		currentCardIdx: Math.floor(Math.random() * 12),
 	});
 
+	const preText = levels[currentLevel].languages[languageToLearn].pre;
+	const postText = levels[currentLevel].languages[languageToLearn].post;
+
 	useEffect(() => {
 		resetStreak();
 	}, []);
-
-	const preText = levels[currentLevel].languages[languageToLearn].pre;
-	const postText = levels[currentLevel].languages[languageToLearn].post;
 
 	const cardIdxRandomizer = length => Math.floor(Math.random() * length);
 
