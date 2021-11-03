@@ -12,7 +12,7 @@ import ScreenHeader from "../components/ScreenHeader";
 // temporary data structures
 import { decks } from "../test_data";
 
-function HelpScreen({ navigation, currentDeckName, languageToLearn }) {
+function HelpScreen({ currentDeckName, languageToLearn, navigation }) {
 	const [deck, setDeck] = useState([]);
 
 	useEffect(() => {
@@ -38,9 +38,9 @@ function HelpScreen({ navigation, currentDeckName, languageToLearn }) {
 			<View style={styles.container}>
 				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={styles.subContainer}>
-						{deck.map((card, index) => (
+						{deck.map(card => (
 							<HelpMenuItem
-								key={index}
+								key={card.id}
 								onPress={() => console.log(`Card ${card.name} pressed`)}
 								card={card}
 							/>

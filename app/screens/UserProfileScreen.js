@@ -24,14 +24,12 @@ const scrollOptions = [
 	"Russian",
 ];
 
-const initialProfile = {
-	gender: null,
-	userLanguage: "english",
-	languageToLearn: null,
-};
-
-function UserProfileScreen({ navigation, gameState, dispatch }) {
-	const [newProfile, setNewProfile] = useState(initialProfile);
+function UserProfileScreen({ dispatch, navigation }) {
+	const [newProfile, setNewProfile] = useState({
+		gender: null,
+		userLanguage: "english",
+		languageToLearn: null,
+	});
 	const [isFemale, setIsFemale] = useState(true);
 
 	const handleSelectGender = gender => {

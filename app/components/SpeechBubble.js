@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		bottom: 0,
 		height: 170,
-		marginBottom: Platform.OS === "ios" ? -35 : 0, // adjust to Constant
+		marginBottom: Platform.OS === "ios" ? -40 : 0, // adjust to Constant
 		position: "absolute",
 		width: "100%",
 	},

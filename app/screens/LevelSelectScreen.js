@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
 // redux
@@ -15,34 +15,14 @@ import DeckSelectionContainer from "../components/DeckSelectionContainer";
 // styles
 import defaultStyles from "../config/styles";
 
-const initialCurrentGameSettings = {
-	currentLevel: 1,
-	currentDeckName: null,
-};
 const levelCardsTest = [
-	{ level: 1, unlocked: true, completed: false, isSelected: true },
+	{ level: 1, unlocked: true, completed: false, isSelected: false },
 	{ level: 2, unlocked: true, completed: false, isSelected: false },
 	{ level: 3, unlocked: true, completed: false, isSelected: false },
 	{ level: 4, unlocked: true, completed: false, isSelected: false },
-	{ level: 5, unlocked: true, completed: false, isSelected: false },
-	{ level: 6, unlocked: true, completed: false, isSelected: false },
-	{ level: 7, unlocked: true, completed: false, isSelected: false },
-	{ level: 8, unlocked: true, completed: false, isSelected: false },
-	{ level: 9, unlocked: true, completed: false, isSelected: false },
-	{ level: 10, unlocked: true, completed: false, isSelected: false },
-	{ level: 11, unlocked: true, completed: false, isSelected: false },
-	{ level: 12, unlocked: true, completed: false, isSelected: false },
-	{ level: 13, unlocked: true, completed: false, isSelected: false },
-	{ level: 14, unlocked: true, completed: false, isSelected: false },
-	{ level: 15, unlocked: true, completed: false, isSelected: false },
-	{ level: 16, unlocked: true, completed: false, isSelected: false },
-	{ level: 17, unlocked: true, completed: false, isSelected: false },
-	{ level: 18, unlocked: true, completed: false, isSelected: false },
-	{ level: 19, unlocked: true, completed: false, isSelected: false },
-	{ level: 20, unlocked: true, completed: false, isSelected: false },
 ];
 const deckCardsTest = [
-	{ name: "Numbers 1", unlocked: true, completed: false, isSelected: true },
+	{ name: "Numbers 1", unlocked: true, completed: false, isSelected: false },
 	{ name: "Numbers 2", unlocked: true, completed: false, isSelected: false },
 	{ name: "Numbers 3", unlocked: true, completed: false, isSelected: false },
 	{ name: "Food 1", unlocked: true, completed: false, isSelected: false },
@@ -61,13 +41,21 @@ const deckCardsTest = [
 	},
 ];
 
-function LevelSelectScreen({ navigation, gameState, dispatch }) {
+function LevelSelectScreen({
+	navigation,
+	currentLevel,
+	currentDeckName,
+	dispatch,
+}) {
 	const [menuChoice, setMenuChoice] = useState(true);
 	const [levelCards, setLevelCards] = useState(levelCardsTest);
 	const [deckCards, setDeckCards] = useState(deckCardsTest);
-	const [newGameSettings, setNewGameSettings] = useState(
-		initialCurrentGameSettings
-	);
+	const [newGameSettings, setNewGameSettings] = useState({
+		currentLevel: currentLevel,
+		currentDeckName: currentDeckName,
+	});
+
+	// TODO: once the levels and decks are pulled from state/BE, the selected cards should update accordingly
 
 	const handleGoBack = () => {
 		navigation.navigate("Start");
@@ -162,7 +150,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-	gameState: state.matchAndMemory,
+	currentLevel: state.matchAndMemory.gameSettings.currentLevel,
+	currentDeckName: state.matchAndMemory.gameSettings.currentDeckName,
 });
 
 export default connect(mapStateToProps)(LevelSelectScreen);

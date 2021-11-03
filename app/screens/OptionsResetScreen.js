@@ -14,7 +14,7 @@ import Text from "../components/Text";
 //styling
 import defaultStyles from "../config/styles";
 
-function OptionsScreen({ navigation, gameState, dispatch }) {
+function OptionsScreen({ dispatch, navigation }) {
 	const handleReset = () => {
 		dispatch(resetProfile());
 		navigation.navigate("Start");
@@ -88,9 +88,5 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => ({
 	gameState: state.matchAndMemory,
 });
-
-// const mapActionsToProps = {
-// 	resetProfile,
-// };
 
 export default connect(mapStateToProps)(OptionsScreen);
