@@ -12,20 +12,17 @@ import ScreenHeader from "../components/ScreenHeader";
 // temporary data structures
 import { decks } from "../test_data";
 
-function HelpScreen({ navigation, gameState }) {
+function HelpScreen({ navigation, gameSettings }) {
 	const [deck, setDeck] = useState([]);
 
 	useEffect(() => {
-		const helpCards = decks[gameState.gameSettings.currentDeckName].deck.map(
-			card => {
-				return {
-					id: card.id,
-					image: card.image,
-					name: card.languages[gameState.gameSettings.languageToLearn],
-				};
-			}
-		);
-		console.log("helpCards: ", helpCards);
+		const helpCards = decks[gameSettings.currentDeckName].deck.map(card => {
+			return {
+				id: card.id,
+				image: card.image,
+				name: card.languages[gameSettings.languageToLearn],
+			};
+		});
 		setDeck(helpCards);
 	}, []);
 
@@ -75,7 +72,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-	gameState: state.matchAndMemory,
+	gameSettings: state.matchAndMemory.gameSettings,
 });
 
 export default connect(mapStateToProps)(HelpScreen);

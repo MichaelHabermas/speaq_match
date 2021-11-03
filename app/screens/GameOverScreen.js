@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import NavButtonSection from "../components/NavButtonSection";
 import Screen from "../components/Screen";
 
-function GameOverScreen({ gameState, navigation }) {
+function GameOverScreen({ navigation }) {
 	return (
 		<Screen style={styles.screen} screen={true}>
 			<NavButtonSection navigation={navigation} />

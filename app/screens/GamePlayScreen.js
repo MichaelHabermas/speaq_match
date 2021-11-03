@@ -22,11 +22,11 @@ const initialCardText = {
 	currentCardIdx: Math.floor(Math.random() * 12),
 };
 
-function GamePlayScreen({ gameState, navigation }) {
+function GamePlayScreen({ gameSettings, navigation }) {
 	const [streak, setStreak] = useState(0);
 	const [currentGameSettings, setCurrentGameSettings] = useState({
-		deckName: gameState.gameSettings.currentDeckName,
-		deck: gameState.gameSettings.currentDeck,
+		deckName: gameSettings.currentDeckName,
+		deck: gameSettings.currentDeck,
 	});
 	const [currentCardText, setCurrentCardText] = useState(initialCardText);
 
@@ -34,8 +34,12 @@ function GamePlayScreen({ gameState, navigation }) {
 		resetStreak();
 	}, []);
 
-	const preText = levels[gameState.gameSettings.currentLevel].languages[gameState.gameSettings.languageToLearn].pre
-	const postText = levels[gameState.gameSettings.currentLevel].languages[gameState.gameSettings.languageToLearn].post
+	const preText =
+		levels[gameSettings.currentLevel].languages[gameSettings.languageToLearn]
+			.pre;
+	const postText =
+		levels[gameSettings.currentLevel].languages[gameSettings.languageToLearn]
+			.post;
 
 	const cardIdxRandomizer = () =>
 		Math.floor(Math.random() * currentCardText.unchosen.length);
@@ -47,7 +51,7 @@ function GamePlayScreen({ gameState, navigation }) {
 		setCurrentCardText({
 			cardText:
 				decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-					gameState.gameSettings.languageToLearn
+					gameSettings.languageToLearn
 				],
 			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
 				num => num != randomCardIdx
@@ -74,7 +78,7 @@ function GamePlayScreen({ gameState, navigation }) {
 					...currentCardText,
 					cardText:
 						decks[currentGameSettings.deckName].deck[randomCardIdx].languages[
-							gameState.gameSettings.languageToLearn
+							gameSettings.languageToLearn
 						],
 					unchosen: currentCardText.unchosen.filter(
 						num => num != randomCardIdx
@@ -109,7 +113,7 @@ function GamePlayScreen({ gameState, navigation }) {
 			<StreakTracker streak={streak} />
 
 			<CardsContainer
-				language={gameState.gameSettings.languageToLearn}
+				language={gameSettings.languageToLearn}
 				handleCardTap={handleCardTap}
 				deck={decks[currentGameSettings.deckName].deck}
 			/>
@@ -125,7 +129,7 @@ function GamePlayScreen({ gameState, navigation }) {
 const styles = StyleSheet.create({});
 
 const mapStateToProps = state => ({
-	gameState: state.matchAndMemory,
+	gameSettings: state.matchAndMemory.gameSettings,
 });
 
 export default connect(mapStateToProps)(GamePlayScreen);

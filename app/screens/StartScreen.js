@@ -12,9 +12,9 @@ import ButtonMain from "../components/ButtonMain";
 // assets
 import speaq_logo from "../assets/speaq_logo.png";
 
-function StartScreen({ navigation, gameState }) {
+function StartScreen({ navigation, profileCreated }) {
 	const handleStart = () => {
-		if (gameState.profileCreated) {
+		if (profileCreated) {
 			navigation.navigate("LevelSelect");
 		} else {
 			navigation.navigate("Profile");
@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-	gameState: state.matchAndMemory,
+	profileCreated: state.matchAndMemory.profileCreated,
 });
 
 // const mapActionsToProps = {
 //     updateRouterElem // unrelated example
 // }
 
-export default connect(mapStateToProps, {})(StartScreen);
+export default connect(mapStateToProps)(StartScreen);
