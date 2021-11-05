@@ -16,6 +16,7 @@ import { deckShuffle } from "../gameLogic";
 
 // TODO: get this from the server/dynamically
 import { characters, decks, levels } from "../test_data";
+const deckIndecies = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 function GamePlayScreen({
 	currentDeckName,
@@ -23,12 +24,12 @@ function GamePlayScreen({
 	languageToLearn,
 	navigation,
 }) {
-	const [streak, setStreak] = useState(0);
+	const [streak, setStreak] = useState(12);
 	const [speaker, setSpeaker] = useState(characters[2]);
 	const [currentDeck, setCurrentDeck] = useState(decks[currentDeckName].deck);
 	const [currentCardText, setCurrentCardText] = useState({
 		cardText: "",
-		unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		unchosen: deckIndecies,
 		currentCardIdx: Math.floor(Math.random() * 12),
 	});
 
@@ -42,25 +43,22 @@ function GamePlayScreen({
 	const idxRandomizer = length => Math.floor(Math.random() * length);
 
 	const resetStreak = () => {
-		const randomCardIdx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][
-			idxRandomizer(currentCardText.unchosen.length)
-		];
+		const randomCardIdx = deckIndecies[idxRandomizer(12)];
 		setCurrentCardText({
 			cardText: currentDeck[randomCardIdx].languages[languageToLearn],
-			unchosen: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].filter(
-				num => num != randomCardIdx
-			),
+			unchosen: deckIndecies.filter(num => num != randomCardIdx),
 		});
 		setCurrentDeck(deckShuffle(currentDeck));
-		setStreak(0);
+		setStreak(12);
 	};
 
 	const handleCardTap = cardText => {
 		// prevent over-selecting cards on game over
-		if (streak >= 12) return;
+		if (streak <= 0) return;
 		if (cardText === currentCardText.cardText) {
 			// game over condition
-			if (streak >= 11) {
+			if (streak <= 1) {
+				setStreak(streak - 1);
 				setTimeout(() => {
 					navigation.navigate("GameOver");
 					resetStreak();
@@ -80,8 +78,8 @@ function GamePlayScreen({
 						num => num != randomCardIdx
 					),
 				});
-				setStreak(streak + 1);
-				setSpeaker(characters[idxRandomizer(4)]);
+				setStreak(streak - 1);
+				setSpeaker(characters[idxRandomizer(characters.length)]);
 			}
 		} else {
 			resetStreak();
