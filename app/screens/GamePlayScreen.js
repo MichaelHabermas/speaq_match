@@ -40,6 +40,10 @@ function GamePlayScreen({
 		resetStreak();
 	}, []);
 
+	const handleNavButtonTap = screen => {
+		if (streak > 0) navigation.navigate(screen);
+	};
+
 	const idxRandomizer = length => Math.floor(Math.random() * length);
 
 	const resetStreak = () => {
@@ -58,11 +62,12 @@ function GamePlayScreen({
 		if (cardText === currentCardText.cardText) {
 			// game over condition
 			if (streak <= 1) {
-				setStreak(streak - 1);
-				setTimeout(() => {
-					navigation.navigate("GameOver");
-					resetStreak();
-				}, 1000);
+				// setStreak(streak - 1);
+				// setTimeout(() => {
+				// 	navigation.navigate("GameOver");
+				// 	resetStreak();
+				// }, 1000);
+				handleGameOver();
 			} else {
 				const randomCardIdx =
 					currentCardText.unchosen[
@@ -86,6 +91,14 @@ function GamePlayScreen({
 		}
 	};
 
+	const handleGameOver = () => {
+		setStreak(streak - 1);
+		setTimeout(() => {
+			navigation.navigate("GameOver");
+			resetStreak();
+		}, 1000);
+	};
+
 	// TODO: need a better loading mechanism
 	if (!characters || !decks || !levels) {
 		return (
@@ -98,9 +111,9 @@ function GamePlayScreen({
 	return (
 		<Screen style={styles.screen}>
 			<ScreenHeader
-				navLeft={() => navigation.navigate("Options")}
+				navLeft={() => handleNavButtonTap("Options")}
 				navLeftIcon={require("../assets/buttons/options_icon_light.png")}
-				navRight={() => navigation.navigate("Help")}
+				navRight={() => handleNavButtonTap("Help")}
 				navRightIcon={require("../assets/buttons/help_icon_light.png")}
 				showTitle={false}
 			/>

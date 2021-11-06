@@ -13,7 +13,7 @@ const initialState = {
 	},
 	gameSettings: {
 		languageToLearn: null,
-		currentLevel: 1,
+		currentLevel: null,
 		currentDeckName: null,
 		currentDeck: {},
 	},

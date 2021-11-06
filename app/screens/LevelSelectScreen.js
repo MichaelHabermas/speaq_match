@@ -50,12 +50,19 @@ function LevelSelectScreen({
 	const [menuChoice, setMenuChoice] = useState(true);
 	const [levelCards, setLevelCards] = useState(levelCardsTest);
 	const [deckCards, setDeckCards] = useState(deckCardsTest);
-	const [newGameSettings, setNewGameSettings] = useState({
-		currentLevel: currentLevel,
-		currentDeckName: currentDeckName,
-	});
+	const [newGameSettings, setNewGameSettings] = useState({});
 
-	// TODO: once the levels and decks are pulled from state/BE, the selected cards should update accordingly
+	useEffect(() => {
+		handleLevelSelection(currentLevel);
+		if (currentDeckName) {
+			handleDeckSelection(
+				currentDeckName
+					.split("_")
+					.map(word => word[0].toUpperCase() + word.slice(1))
+					.join(" ")
+			);
+		}
+	}, []);
 
 	const handleGoBack = () => {
 		navigation.navigate("Start");
@@ -117,7 +124,7 @@ function LevelSelectScreen({
 					title="Deck"
 				/>
 			</View>
-			{menuChoice && (
+			{!!menuChoice && (
 				<LevelSelectionContainer
 					levelCards={levelCards}
 					handleLevelSelection={handleLevelSelection}
