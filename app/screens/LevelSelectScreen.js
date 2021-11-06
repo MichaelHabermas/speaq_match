@@ -50,10 +50,14 @@ function LevelSelectScreen({
 	const [menuChoice, setMenuChoice] = useState(true);
 	const [levelCards, setLevelCards] = useState(levelCardsTest);
 	const [deckCards, setDeckCards] = useState(deckCardsTest);
-	const [newGameSettings, setNewGameSettings] = useState({});
+	const [newGameSettings, setNewGameSettings] = useState({
+		currentLevel: currentLevel,
+		currentDeckName: currentDeckName,
+	});
 
 	useEffect(() => {
 		handleLevelSelection(currentLevel);
+		// needed because of the way the local temp data is structured
 		if (currentDeckName) {
 			handleDeckSelection(
 				currentDeckName
@@ -144,7 +148,7 @@ const styles = StyleSheet.create({
 	club: {
 		position: "absolute",
 	},
-	screen: { overflow: "visible" },
+	screen: {},
 	selections: {
 		alignItems: "center",
 		flexDirection: "row",

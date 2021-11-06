@@ -8,7 +8,7 @@ import defaultStyles from "../config/styles";
 function DeckCard({ name, handleDeckSelection, isSelected = false }) {
 	return (
 		<TouchableWithoutFeedback onPress={() => handleDeckSelection(name)}>
-			<View>
+			<View style={{ marginHorizontal: 10 }}>
 				<View style={[styles.container, styles.notSelectedContainer]}>
 					<Text style={styles.text}>{name}</Text>
 				</View>
