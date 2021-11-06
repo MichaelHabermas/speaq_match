@@ -9,7 +9,7 @@ import {
 const initialState = {
 	userProfile: {
 		userLanguage: "english",
-		gender: "female",
+		gender: null,
 	},
 	gameSettings: {
 		languageToLearn: null,

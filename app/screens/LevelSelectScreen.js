@@ -110,6 +110,9 @@ function LevelSelectScreen({
 			<ScreenHeader
 				navLeft={handleGoBack}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
+				showRightButton={
+					newGameSettings.currentLevel && newGameSettings.currentDeckName
+				}
 				navRight={handleSaveCurrentGameSettings}
 				navRightIcon={require("../assets/buttons/forward_icon_dark.png")}
 				title="Level Select"

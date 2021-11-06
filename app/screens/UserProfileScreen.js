@@ -1,5 +1,13 @@
-import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+	Alert,
+	Modal,
+	StyleSheet,
+	TouchableOpacity,
+	View,
+	Image,
+	Pressable,
+} from "react-native";
 
 // redux
 import { connect } from "react-redux";
@@ -24,13 +32,24 @@ const scrollOptions = [
 	"Russian",
 ];
 
-function UserProfileScreen({ dispatch, navigation }) {
+function UserProfileScreen({ dispatch, navigation, gender, userLanguage }) {
 	const [newProfile, setNewProfile] = useState({
-		gender: null,
-		userLanguage: "english",
+		gender: gender,
+		userLanguage: userLanguage,
 		languageToLearn: null,
 	});
 	const [isFemale, setIsFemale] = useState(true);
+	const [modalVisible, setModalVisible] = useState(false);
+
+	useEffect(() => {
+		setNewProfile({
+			gender: gender,
+			userLanguage: userLanguage,
+			languageToLearn: null,
+		});
+	}, []);
+
+	console.log("newProfile: ", newProfile);
 
 	const handleSelectGender = gender => {
 		setIsFemale(gender === "female");
@@ -47,6 +66,29 @@ function UserProfileScreen({ dispatch, navigation }) {
 
 	return (
 		<Screen screen={true} style={styles.screen}>
+			<Modal
+				animationType="slide"
+				transparent={true}
+				visible={modalVisible}
+				onRequestClose={() => {
+					setModalVisible(!modalVisible);
+				}}
+			>
+				<View style={styles.centeredView}>
+					<View style={styles.modalView}>
+						<Text style={styles.modalText}>
+							Some languages affect the words or conjugations they use depending
+							on the gender of the speaker and/or the responder.
+						</Text>
+						<Pressable
+							style={[styles.button, styles.buttonClose]}
+							onPress={() => setModalVisible(!modalVisible)}
+						>
+							<Text style={styles.textStyle}>Close</Text>
+						</Pressable>
+					</View>
+				</View>
+			</Modal>
 			<ScreenHeader
 				navLeft={() => navigation.goBack()}
 				navLeftIcon={require("../assets/buttons/back_icon_dark.png")}
@@ -62,6 +104,7 @@ function UserProfileScreen({ dispatch, navigation }) {
 					<TouchableOpacity
 						onPress={() => {
 							// TODO: insert modal for gender info
+							setModalVisible(!modalVisible);
 							console.log(" Gender help is pushed");
 						}}
 						style={styles.genderInfoButton}
@@ -158,10 +201,56 @@ const styles = StyleSheet.create({
 		marginTop: 80,
 		width: "100%",
 	},
+	centeredView: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		marginTop: 22,
+	},
+	modalView: {
+		margin: 20,
+		backgroundColor: "#FFEB5C",
+		borderRadius: 20,
+		padding: 15,
+		alignItems: "center",
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 2,
+		},
+		shadowOpacity: 0.25,
+		shadowRadius: 4,
+		elevation: 5,
+	},
+	button: {
+		borderRadius: 20,
+		padding: 10,
+		elevation: 2,
+	},
+	buttonOpen: {
+		backgroundColor: "#F194FF",
+	},
+	buttonClose: {
+		backgroundColor: "#2196F3",
+	},
+	textStyle: {
+		color: "white",
+		fontWeight: "bold",
+		textAlign: "center",
+		fontSize: 20,
+		paddingHorizontal: 10,
+	},
+	modalText: {
+		marginBottom: 15,
+		// textAlign: "center",
+		fontSize: 30,
+	},
 });
 
 const mapStateToProps = state => ({
-	gameState: state.matchAndMemory,
+	gender: state.matchAndMemory.userProfile.gender,
+	userLanguage: state.matchAndMemory.userProfile.userLanguage,
+	languageToLearn: state.matchAndMemory.gameSettings.languageToLearn,
 });
 
 export default connect(mapStateToProps)(UserProfileScreen);

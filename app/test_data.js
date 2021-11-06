@@ -131,6 +131,7 @@ const characters = [
 	},
 ];
 
+// TODO: THIS NEEDS WORK...look at food_1 and numbers_1, vs LSS
 const decks = {
 	template: {
 		locked: "true",
@@ -222,7 +223,9 @@ const decks = {
 		],
 	},
 	food_1: {
-		locked: "false",
+		unlocked: true,
+		completed: false,
+		isSelected: false,
 		deck: [
 			{
 				id: 1,
