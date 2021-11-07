@@ -27,6 +27,7 @@ const deckCardsTest = [
 	{ name: "Numbers 3", unlocked: true, completed: false, isSelected: false },
 	{ name: "Food 1", unlocked: true, completed: false, isSelected: false },
 	{ name: "Animals 1", unlocked: true, completed: false, isSelected: false },
+	{ name: "Feelings", unlocked: true, completed: false, isSelected: false },
 	{
 		name: "Prepositions",
 		unlocked: true,

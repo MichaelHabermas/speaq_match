@@ -103,6 +103,20 @@ import on from "./assets/cards/prepositions/on.png";
 import surrounded_by from "./assets/cards/prepositions/surrounded_by.png";
 import under from "./assets/cards/prepositions/under.png";
 
+// feelings
+import angry from "./assets/cards/feelings/angry.png";
+import confident from "./assets/cards/feelings/confident.png";
+import confused from "./assets/cards/feelings/confused.png";
+import embarrassed from "./assets/cards/feelings/embarrassed.png";
+import frightened from "./assets/cards/feelings/frightened.png";
+import guilty from "./assets/cards/feelings/guilty.png";
+import happy from "./assets/cards/feelings/happy.png";
+import sad from "./assets/cards/feelings/sad.png";
+import shy from "./assets/cards/feelings/shy.png";
+import surprised from "./assets/cards/feelings/surprised.png";
+import suspicious from "./assets/cards/feelings/suspicious.png";
+import tired from "./assets/cards/feelings/tired.png";
+
 const characters = [
 	{
 		id: 1,
@@ -133,95 +147,6 @@ const characters = [
 
 // TODO: THIS NEEDS WORK...look at food_1 and numbers_1, vs LSS
 const decks = {
-	template: {
-		locked: "true",
-		deck: [
-			{
-				id: 1,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 2,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 3,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 4,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 5,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 6,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 7,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 8,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 9,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 10,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 11,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-			{
-				id: 12,
-				image: card_0,
-				languages: {
-					english: "",
-				},
-			},
-		],
-	},
 	food_1: {
 		unlocked: true,
 		completed: false,
@@ -238,7 +163,6 @@ const decks = {
 					german: "ein Teig",
 					russian: "буханка хлеба",
 				},
-				quality: ["food", "brown", "soft"],
 			},
 			{
 				id: 2,
@@ -370,6 +294,157 @@ const decks = {
 					italian: "una tazza di acqua",
 					german: "ein Glas Wasser",
 					russian: "стакан с водой",
+				},
+			},
+		],
+	},
+	feelings: {
+		unlocked: true,
+		completed: false,
+		isSelected: false,
+		deck: [
+			{
+				id: 1,
+				image: angry,
+				languages: {
+					english: "an angry man",
+					spanish: "un hombre enojado",
+					french: "un homme en colère",
+					italian: "un uomo arrabbiato",
+					german: "ein wütender Mann",
+					russian: "злой человек",
+				},
+			},
+			{
+				id: 2,
+				image: confident,
+				languages: {
+					english: "a confident man",
+					spanish: "un hombre seguro",
+					french: "un homme confiant",
+					italian: "un uomo fiducioso",
+					german: "ein selbstbewusster Mann",
+					russian: "уверенный в себе человек",
+				},
+			},
+			{
+				id: 3,
+				image: confused,
+				languages: {
+					english: "a confused man",
+					spanish: "un hombre confundido",
+					french: "un homme confus",
+					italian: "un uomo confuso",
+					german: "ein verwirrter Mann",
+					russian: "смущенный человек",
+				},
+			},
+			{
+				id: 4,
+				image: embarrassed,
+				languages: {
+					english: "an embarrassed man",
+					spanish: "un hombre confundido",
+					french: "un homme embarrassé",
+					italian: "un uomo imbarazzato",
+					german: "ein verlegener Mann",
+					russian: "смущенный человек",
+				},
+			},
+			{
+				id: 5,
+				image: frightened,
+				languages: {
+					english: "a frightened man",
+					spanish: "un hombre asustado",
+					french: "un homme effrayé",
+					italian: "un uomo spaventato",
+					german: "ein verängstigter Mann",
+					russian: "напуганный человек",
+				},
+			},
+			{
+				id: 6,
+				image: guilty,
+				languages: {
+					english: "a guilty man",
+					spanish: "un hombre culpable",
+					french: "un homme coupable",
+					italian: "un uomo colpevole",
+					german: "ein schuldiger Mann",
+					russian: "виновный человек",
+				},
+			},
+			{
+				id: 7,
+				image: happy,
+				languages: {
+					english: "a happy man",
+					spanish: "un hombre feliz",
+					french: "un homme heureux",
+					italian: "un uomo felice",
+					german: "ein glücklicher Mann",
+					russian: "счастливый человек",
+				},
+			},
+			{
+				id: 8,
+				image: sad,
+				languages: {
+					english: "a sad man",
+					spanish: "un hombre triste",
+					french: "un homme triste",
+					italian: "un uomo triste",
+					german: "ein trauriger Mann",
+					russian: "грустный человек",
+				},
+			},
+			{
+				id: 9,
+				image: shy,
+				languages: {
+					english: "a shy man",
+					spanish: "un hombre tímido",
+					french: "un homme timide",
+					italian: "un uomo timido",
+					german: "ein schüchterner Mann",
+					russian: "застенчивый мужчина",
+				},
+			},
+			{
+				id: 10,
+				image: surprised,
+				languages: {
+					english: "a surprised man",
+					spanish: "un hombre sorprendido",
+					french: "un homme surpris",
+					italian: "un uomo sorpreso",
+					german: "ein überraschter Mann",
+					russian: "удивленный человек",
+				},
+			},
+			{
+				id: 11,
+				image: suspicious,
+				languages: {
+					english: "a suspicious man",
+					spanish: "un hombre sospechoso",
+					french: "un homme suspect",
+					italian: "un uomo sospettoso",
+					german: "ein misstrauischer Mann",
+					russian: "подозрительный человек",
+				},
+			},
+			{
+				id: 12,
+				image: tired,
+				languages: {
+					english: "a tired man",
+					spanish: "un hombre cansado",
+					french: "un homme fatigué",
+					italian: "un uomo stanco",
+					german: "ein müder Mann",
+					russian: "уставший человек",
 				},
 			},
 		],
@@ -1265,6 +1340,95 @@ const decks = {
 					italian: "un serpente",
 					german: "ein Schlangen",
 					russian: "змея",
+				},
+			},
+		],
+	},
+	template: {
+		locked: "true",
+		deck: [
+			{
+				id: 1,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 2,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 3,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 4,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 5,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 6,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 7,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 8,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 9,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 10,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 11,
+				image: card_0,
+				languages: {
+					english: "",
+				},
+			},
+			{
+				id: 12,
+				image: card_0,
+				languages: {
+					english: "",
 				},
 			},
 		],
