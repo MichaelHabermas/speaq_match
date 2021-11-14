@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { StyleSheet, View, Animated } from "react-native";
 
 // redux
 import { connect } from "react-redux";
@@ -36,7 +36,7 @@ function GamePlayScreen({
 	const preText = levels[currentLevel].languages[languageToLearn].pre;
 	const postText = levels[currentLevel].languages[languageToLearn].post;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		resetStreak();
 	}, []);
 
@@ -52,21 +52,17 @@ function GamePlayScreen({
 			cardText: currentDeck[randomCardIdx].languages[languageToLearn],
 			unchosen: deckIndecies.filter(num => num != randomCardIdx),
 		});
-		setCurrentDeck(deckShuffle(currentDeck));
+        const shuffledDeck = deckShuffle(currentDeck)
+		setCurrentDeck(shuffledDeck);
 		setStreak(12);
 	};
-
+console.log("currentCardText.unchosen:", currentCardText.unchosen)
 	const handleCardTap = cardText => {
 		// prevent over-selecting cards on game over
 		if (streak <= 0) return;
 		if (cardText === currentCardText.cardText) {
 			// game over condition
 			if (streak <= 1) {
-				// setStreak(streak - 1);
-				// setTimeout(() => {
-				// 	navigation.navigate("GameOver");
-				// 	resetStreak();
-				// }, 1000);
 				handleGameOver();
 			} else {
 				const randomCardIdx =
@@ -120,7 +116,10 @@ function GamePlayScreen({
 
 			<StreakTracker streak={streak} />
 
-			<CardsContainer handleCardTap={handleCardTap} deck={currentDeck} />
+			<CardsContainer
+				handleCardTap={handleCardTap}
+				deck={currentDeck}
+			/>
 
 			<SpeechBubble
 				character={speaker}

@@ -8,13 +8,15 @@ import {
 
 const initialState = {
 	userProfile: {
-		userLanguage: "english",
 		gender: null,
+		// not used yet
+		userLanguage: "english",
 	},
 	gameSettings: {
 		languageToLearn: null,
 		currentLevel: null,
 		currentDeckName: null,
+		// not used yet
 		currentDeck: {},
 	},
 	gameOptions: {
@@ -26,12 +28,15 @@ const initialState = {
 			"Italian",
 			"Russian",
 		],
+		// not used yet
+		appLanguages: ["English", "Spanish", "French"],
 	},
 	profileCreated: false,
+	// not used yet
 	overallProgress: {
 		tutorialCompleted: false,
 		levels: {
-			//TODO: clear and fill through a data call
+			//TODO: clear and fill through a data call?
 			1: { pre: "", post: "", unlocked: true, completed: false },
 			2: { pre: "", post: "", unlocked: false, completed: false },
 		},

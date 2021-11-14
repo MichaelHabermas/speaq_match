@@ -155,6 +155,7 @@ const decks = {
 			{
 				id: 1,
 				image: bread,
+                isFlipped: false,
 				languages: {
 					english: "a loaf of bread",
 					spanish: "una barra de pan",
@@ -162,11 +163,44 @@ const decks = {
 					italian: "una fetta di pane",
 					german: "ein Teig",
 					russian: "буханка хлеба",
+					chinese: "一块面包",
+					korean: "빵",
+					swedish: "ett bröd",
+					japanese: "パン",
+					dutch: "een broodje",
+					portuguese: "uma porção de pão",
+					polish: "ciasto",
+					danish: "et brød",
+					hungarian: "egy hús",
+					norwegian: "et brød",
+					finnish: "ruoka",
+					turkish: "bir çay",
+					czech: "pán",
+					slovak: "pán",
+					estonian: "päevapuu",
+					latvian: "pieno",
+					lithuanian: "pienas",
+					greek: "άλλο σπασμένο παν",
+					lithuanian: "pienas",
+					bulgarian: "пица",
+					latvian: "pieno",
+					lithuanian: "pienas",
+					greek: "άλλο σπασμένο παν",
+					lithuanian: "pienas",
+					malay: "puding",
+					vietnamese: "bánh mì",
+					thai: "กล้วย",
+					indonesian: "puding",
+					tagalog: "pudings",
+					filipino: "pudings",
+					arabic: "طبقة",
+					bengali: "পাউন্ড",
 				},
 			},
 			{
 				id: 2,
 				image: cheese,
+                isFlipped: false,
 				languages: {
 					english: "a piece of cheese",
 					spanish: "un pedazo de queso",
@@ -179,6 +213,7 @@ const decks = {
 			{
 				id: 3,
 				image: chicken,
+                isFlipped: false,
 				languages: {
 					english: "a piece of chicken",
 					spanish: "un trozo de pollo",
@@ -191,6 +226,7 @@ const decks = {
 			{
 				id: 4,
 				image: coffee,
+                isFlipped: false,
 				languages: {
 					english: "a cup of coffee",
 					spanish: "una taza de café",
@@ -203,6 +239,7 @@ const decks = {
 			{
 				id: 5,
 				image: egg,
+                isFlipped: false,
 				languages: {
 					english: "an egg",
 					spanish: "un huevo",
@@ -215,6 +252,7 @@ const decks = {
 			{
 				id: 6,
 				image: fish,
+                isFlipped: false,
 				languages: {
 					english: "a piece of fish",
 					spanish: "un trozo de pescado",
@@ -226,6 +264,7 @@ const decks = {
 			},
 			{
 				id: 7,
+                isFlipped: false,
 				image: meat,
 				languages: {
 					english: "a piece of meat",
@@ -238,6 +277,7 @@ const decks = {
 			},
 			{
 				id: 8,
+                isFlipped: false,
 				image: milk,
 				languages: {
 					english: "a glass of milk",
@@ -250,6 +290,7 @@ const decks = {
 			},
 			{
 				id: 9,
+                isFlipped: false,
 				image: rice,
 				languages: {
 					english: "a bowl of rice",
@@ -262,6 +303,7 @@ const decks = {
 			},
 			{
 				id: 10,
+                isFlipped: false,
 				image: tea,
 				languages: {
 					english: "a cup of tea",
@@ -274,6 +316,7 @@ const decks = {
 			},
 			{
 				id: 11,
+                isFlipped: false,
 				image: vegetables,
 				languages: {
 					english: "a bunch of vegetables",
@@ -287,6 +330,7 @@ const decks = {
 			{
 				id: 12,
 				image: water,
+                isFlipped: false,
 				languages: {
 					english: "a glass of water",
 					spanish: "una copa de agua",
@@ -455,6 +499,7 @@ const decks = {
 			{
 				id: 1,
 				image: card_0,
+                isFlipped: false,
 				languages: {
 					english: "a zero",
 					spanish: "uno cero",
@@ -467,6 +512,7 @@ const decks = {
 			{
 				id: 2,
 				image: card_1,
+                isFlipped: false,
 				languages: {
 					english: "a one",
 					spanish: "uno uno",
@@ -479,6 +525,7 @@ const decks = {
 			{
 				id: 3,
 				image: card_2,
+                isFlipped: false,
 				languages: {
 					english: "a two",
 					spanish: "uno dos",
@@ -491,6 +538,7 @@ const decks = {
 			{
 				id: 4,
 				image: card_3,
+                isFlipped: false,
 				languages: {
 					english: "a three",
 					spanish: "uno tres",
@@ -503,6 +551,7 @@ const decks = {
 			{
 				id: 5,
 				image: card_4,
+                isFlipped: false,
 				languages: {
 					english: "a four",
 					spanish: "uno cuatro",
@@ -515,6 +564,7 @@ const decks = {
 			{
 				id: 6,
 				image: card_5,
+                isFlipped: false,
 				languages: {
 					english: "a five",
 					spanish: "uno cinco",
@@ -527,6 +577,7 @@ const decks = {
 			{
 				id: 7,
 				image: card_6,
+                isFlipped: false,
 				languages: {
 					english: "a six",
 					spanish: "uno seis",
@@ -539,6 +590,7 @@ const decks = {
 			{
 				id: 8,
 				image: card_7,
+                isFlipped: false,
 				languages: {
 					english: "a seven",
 					spanish: "uno siete",
@@ -551,6 +603,7 @@ const decks = {
 			{
 				id: 9,
 				image: card_8,
+                isFlipped: false,
 				languages: {
 					english: "an eight",
 					spanish: "uno ocho",
@@ -563,6 +616,7 @@ const decks = {
 			{
 				id: 10,
 				image: card_9,
+                isFlipped: false,
 				languages: {
 					english: "a nine",
 					spanish: "uno nueve",
@@ -575,6 +629,7 @@ const decks = {
 			{
 				id: 11,
 				image: card_10,
+                isFlipped: false,
 				languages: {
 					english: "a ten",
 					spanish: "uno diez",
@@ -587,6 +642,7 @@ const decks = {
 			{
 				id: 12,
 				image: card_11,
+                isFlipped: false,
 				languages: {
 					english: "an eleven",
 					spanish: "uno once",

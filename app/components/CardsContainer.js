@@ -3,11 +3,12 @@ import { View, StyleSheet } from "react-native";
 
 import GameCard from "./GameCard";
 
-function CardsContainer({ deck, handleCardTap }) {
+function CardsContainer({ deck, handleCardTap,  }) {
+console.log(" - - - - - - - - - - - - - - - ")
 	return (
 		<View style={styles.container}>
 			{deck.map(card => (
-				<GameCard key={card.id} card={card} handleCardTap={handleCardTap} />
+				<GameCard key={card.id} card={card} deck={deck} handleCardTap={handleCardTap} />
 			))}
 		</View>
 	);

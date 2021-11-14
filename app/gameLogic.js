@@ -1,5 +1,9 @@
 const deckShuffle = deck => {
-	return shuffler(deck);
+      const newDeck = deck.map(card => {
+        card.isFlipped = false
+        return card
+    })
+	return shuffler(newDeck);
 };
 
 const shuffler = deck => {

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import {
 	Animated,
 	Pressable,
@@ -13,11 +13,17 @@ import { connect } from "react-redux";
 import cardFront from "../assets/cards/card_front.png";
 import cardBack from "../assets/cards/card_back.png";
 
-function GameCard({ card, handleCardTap, languageToLearn, inStreak = false }) {
-	const flipAnimation = useRef(new Animated.Value(0)).current;
+function GameCard({ card, handleCardTap, languageToLearn, deck }) {
 
-	let flipRotation = 0;
+	const flipAnimation = useRef(new Animated.Value(0)).current;
+    
+
+	let flipRotation =  0;
 	flipAnimation.addListener(({ value }) => (flipRotation = value));
+
+    useLayoutEffect(() => {
+		flipToBack(flipAnimation)
+	}, [deck]);
 
 	const flipToFrontStyle = {
 		transform: [
@@ -41,66 +47,72 @@ function GameCard({ card, handleCardTap, languageToLearn, inStreak = false }) {
 		],
 	};
 
-	const flipToFront = () => {
-		Animated.timing(flipAnimation, {
-			toValue: 180,
-			duration: 300,
-			useNativeDriver: true,
-		}).start();
-	};
+	const flipToFront = (flipAnimationProp) => {
+            Animated.timing(flipAnimationProp, {
+                toValue: 180,
+                duration: 200,
+                useNativeDriver: true,
+            }).start();
+    };
 
-	const flipToBack = () => {
-		Animated.timing(flipAnimation, {
+	const flipToBack = (flipAnimationProp) => {
+		Animated.timing(flipAnimationProp, {
 			toValue: 0,
-			duration: 300,
+			duration: 200,
 			useNativeDriver: true,
 		}).start();
 	};
+// console.log("flipAnimation: ", flipAnimation)
+console.log("card:", card.languages.english, "      F.A.:", flipAnimation)
 	// TODO: This is the current attempt to to make the card flippable. The flip animation partially works.
-	// return (
-	// 		<Pressable
-	// 			style={styles.container}
-	// 			onPress={() => {
-	// 				!!flipRotation ? flipToBack() : flipToFront();
-	// 				handleCardTap(card.languages[languageToLearn]);
-	// 			}}
-	// 		>
-	// 			<Animated.Image
-	// 				style={{ ...styles.card, ...styles.cardBack, ...flipToBackStyle }}
-	// 				source={cardBack}
-	// 			/>
-	// 			<Animated.Image
-	// 				style={{ ...styles.card, ...styles.cardFront, ...flipToFrontStyle }}
-	// 				source={cardFront}
-	// 			/>
-	// 			<Animated.Image
-	// 				style={{ ...styles.card, ...styles.cardFront, ...flipToFrontStyle }}
-	// 				source={card.image}
-	// 			/>
-	// 		</Pressable>
-	// 	);
-	// }
-
 	return (
-		<TouchableOpacity
-			onPress={() => handleCardTap(card.languages[languageToLearn])}
+		<Pressable
 			style={styles.container}
+			onPress={() => {
+				if (!card.isFlipped) {
+				    !!flipRotation ? flipToBack(flipAnimation) : flipToFront(flipAnimation);
+				    // flipToFront(flipAnimation)
+                    card.isFlipped = true
+					handleCardTap(card.languages[languageToLearn]);
+				}
+			}}
 		>
-			<Image
-				style={styles.card}
-				source={require("../assets/cards/card_front.png")}
+			<Animated.Image
+				style={{ ...styles.card, ...styles.cardBack, ...flipToBackStyle }}
+				source={cardBack}
 			/>
-			{inStreak ? (
-				<Image
-					style={styles.card}
-					source={require("../assets/cards/card_back.png")}
-				/>
-			) : (
-				<Image style={styles.card} source={card.image} />
-			)}
-		</TouchableOpacity>
+			<Animated.Image
+				style={{ ...styles.card, ...styles.cardFront, ...flipToFrontStyle }}
+				source={cardFront}
+			/>
+			<Animated.Image
+				style={{ ...styles.card, ...styles.cardFront, ...flipToFrontStyle }}
+				source={card.image}
+			/>
+		</Pressable>
 	);
 }
+
+// 	return (
+// 		<TouchableOpacity
+// 			onPress={() => handleCardTap(card.languages[languageToLearn])}
+// 			style={styles.container}
+// 		>
+// 			<Image
+// 				style={styles.card}
+// 				source={require("../assets/cards/card_front.png")}
+// 			/>
+// 			{inStreak ? (
+// 				<Image
+// 					style={styles.card}
+// 					source={require("../assets/cards/card_back.png")}
+// 				/>
+// 			) : (
+// 				<Image style={styles.card} source={card.image} />
+// 			)}
+// 		</TouchableOpacity>
+// 	);
+// }
 
 const styles = StyleSheet.create({
 	container: {
@@ -125,9 +137,9 @@ const styles = StyleSheet.create({
 	// need these for the animated build
 	cardFront: {
 		position: "absolute",
+		backfaceVisibility: "hidden",
 	},
 	cardBack: {
-		backfaceVisibility: "hidden",
 	},
 });
 
