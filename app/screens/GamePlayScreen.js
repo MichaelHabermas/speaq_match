@@ -15,8 +15,11 @@ import StreakTracker from "../components/StreakTracker";
 import { deckShuffle, idxRandomizer } from "../gameLogic";
 
 // TODO: get this from the server/dynamically
-import { characters, decks, levels, languages } from "../test_data";
+import { characters, decks, languages } from "../test_data";
+
+// setup
 const deckIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const initialIndex = idxRandomizer(12);
 
 function GamePlayScreen({
 	currentDeckName,
@@ -28,9 +31,9 @@ function GamePlayScreen({
 	const [speaker, setSpeaker] = useState(characters[2]);
 	const [currentDeck, setCurrentDeck] = useState(decks[currentDeckName].deck);
 	const [currentRequestText, setCurrentRequestText] = useState({
-		cardText: "",
-		unchosen: deckIndices,
-		currentCardIndex: idxRandomizer(12),
+		cardText: currentDeck[initialIndex].languages[languageToLearn],
+		unchosen: deckIndices.filter(num => num != initialIndex),
+		currentCardIndex: initialIndex,
 	});
 
 	const preText = languages[languageToLearn].levels[currentLevel].pre;
@@ -40,9 +43,9 @@ function GamePlayScreen({
 		resetStreak();
 	}, []);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setBubbleText();
-	}, [currentRequestText.unchosen]);
+	}, [currentDeck, currentRequestText.unchosen]);
 
 	const handleNavButtonTap = screen => {
 		if (streak > 0) navigation.navigate(screen);
@@ -94,13 +97,11 @@ function GamePlayScreen({
 			if (streak <= 1) {
 				handleGameOver();
 			} else {
-				// correct card choice / tap
 				determineNextCard(currentRequestText.unchosen);
 				setStreak(streak - 1);
 				setSpeaker(characters[idxRandomizer(characters.length)]);
 			}
 		} else {
-			// incorrect card choice / tap
 			resetStreak();
 		}
 	};
@@ -112,6 +113,11 @@ function GamePlayScreen({
 			resetStreak();
 		}, 1000);
 	};
+
+	// console.log(" - - - - - - - - - - - - - - - - - - -- - - - ");
+	// console.log("Card Text:", currentRequestText.cardText);
+	// console.log("Current Card Index:", currentRequestText.currentCardIndex);
+	// console.log("Unchosen:", currentRequestText.unchosen);
 
 	return (
 		<Screen style={styles.screen}>
