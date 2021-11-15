@@ -54,17 +54,17 @@ function GameCard({ card, handleCardTap, languageToLearn, deck }) {
 			useNativeDriver: true,
 		}).start();
 	};
+
+	const handleCardPress = () => {
+		if (!card.isFlipped) {
+			flipToFront(flipAnimation);
+			card.isFlipped = true;
+			handleCardTap(card.languages[languageToLearn]);
+		}
+	};
+
 	return (
-		<Pressable
-			style={styles.container}
-			onPress={() => {
-				if (!card.isFlipped) {
-					flipToFront(flipAnimation);
-					card.isFlipped = true;
-					handleCardTap(card.languages[languageToLearn]);
-				}
-			}}
-		>
+		<Pressable style={styles.container} onPress={handleCardPress}>
 			<Animated.Image
 				style={{ ...styles.card, ...styles.cardBack, ...flipToBackStyle }}
 				source={cardBack}

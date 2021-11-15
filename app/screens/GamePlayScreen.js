@@ -66,7 +66,7 @@ function GamePlayScreen({
 		setCurrentRequestText({
 			...currentRequestText,
 			currentCardIndex: randomCardIdx,
-			cardText: currentDeck[randomCardIdx].languages[languageToLearn],
+			// cardText: currentDeck[randomCardIdx].languages[languageToLearn],
 			unchosen: array.filter(num => num != randomCardIdx),
 		});
 	};
@@ -83,11 +83,6 @@ function GamePlayScreen({
 		}
 	};
 
-	const resetStreak = () => {
-		shuffleAndSet();
-		determineNextCard();
-	};
-
 	const handleCardTap = cardText => {
 		// prevent over-selecting cards on game over
 		if (streak <= 0) return;
@@ -97,13 +92,25 @@ function GamePlayScreen({
 			if (streak <= 1) {
 				handleGameOver();
 			} else {
-				determineNextCard(currentRequestText.unchosen);
-				setStreak(streak - 1);
-				setSpeaker(characters[idxRandomizer(characters.length)]);
+				// determineNextCard(currentRequestText.unchosen);
+				// setStreak(streak - 1);
+				// setSpeaker(characters[idxRandomizer(characters.length)]);
+				handleCorrectCardChoice();
 			}
 		} else {
 			resetStreak();
 		}
+	};
+
+	const handleCorrectCardChoice = () => {
+		determineNextCard(currentRequestText.unchosen);
+		setStreak(streak - 1);
+		setSpeaker(characters[idxRandomizer(characters.length)]);
+	};
+
+	const resetStreak = () => {
+		shuffleAndSet();
+		determineNextCard();
 	};
 
 	const handleGameOver = () => {
@@ -111,13 +118,17 @@ function GamePlayScreen({
 		setTimeout(() => {
 			navigation.navigate("GameOver");
 			resetStreak();
-		}, 1000);
+		}, 500);
 	};
 
-	// console.log(" - - - - - - - - - - - - - - - - - - -- - - - ");
-	// console.log("Card Text:", currentRequestText.cardText);
+	console.log(" - - - - - - - - - - - - - - - - - - -- - - - ");
+	console.log(
+		"Card Index and Text:",
+		currentRequestText.currentCardIndex,
+		currentRequestText.cardText
+	);
 	// console.log("Current Card Index:", currentRequestText.currentCardIndex);
-	// console.log("Unchosen:", currentRequestText.unchosen);
+	console.log("Unchosen:", currentRequestText.unchosen);
 
 	return (
 		<Screen style={styles.screen}>
