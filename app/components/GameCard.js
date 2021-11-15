@@ -1,11 +1,5 @@
-import React, { useState, useLayoutEffect, useRef } from "react";
-import {
-	Animated,
-	Pressable,
-	Image,
-	StyleSheet,
-	TouchableOpacity,
-} from "react-native";
+import React, { useLayoutEffect, useRef } from "react";
+import { Animated, Pressable, StyleSheet } from "react-native";
 
 // redux
 import { connect } from "react-redux";
@@ -14,15 +8,13 @@ import cardFront from "../assets/cards/card_front.png";
 import cardBack from "../assets/cards/card_back.png";
 
 function GameCard({ card, handleCardTap, languageToLearn, deck }) {
-
 	const flipAnimation = useRef(new Animated.Value(0)).current;
-    
 
-	let flipRotation =  0;
+	let flipRotation = 0;
 	flipAnimation.addListener(({ value }) => (flipRotation = value));
 
-    useLayoutEffect(() => {
-		flipToBack(flipAnimation)
+	useLayoutEffect(() => {
+		flipToBack(flipAnimation);
 	}, [deck]);
 
 	const flipToFrontStyle = {
@@ -47,32 +39,28 @@ function GameCard({ card, handleCardTap, languageToLearn, deck }) {
 		],
 	};
 
-	const flipToFront = (flipAnimationProp) => {
-            Animated.timing(flipAnimationProp, {
-                toValue: 180,
-                duration: 200,
-                useNativeDriver: true,
-            }).start();
-    };
+	const flipToFront = flipAnimationProp => {
+		Animated.timing(flipAnimationProp, {
+			toValue: 180,
+			duration: 200,
+			useNativeDriver: true,
+		}).start();
+	};
 
-	const flipToBack = (flipAnimationProp) => {
+	const flipToBack = flipAnimationProp => {
 		Animated.timing(flipAnimationProp, {
 			toValue: 0,
 			duration: 200,
 			useNativeDriver: true,
 		}).start();
 	};
-// console.log("flipAnimation: ", flipAnimation)
-console.log("card:", card.languages.english, "      F.A.:", flipAnimation)
-	// TODO: This is the current attempt to to make the card flippable. The flip animation partially works.
 	return (
 		<Pressable
 			style={styles.container}
 			onPress={() => {
 				if (!card.isFlipped) {
-				    !!flipRotation ? flipToBack(flipAnimation) : flipToFront(flipAnimation);
-				    // flipToFront(flipAnimation)
-                    card.isFlipped = true
+					flipToFront(flipAnimation);
+					card.isFlipped = true;
 					handleCardTap(card.languages[languageToLearn]);
 				}
 			}}
@@ -92,27 +80,6 @@ console.log("card:", card.languages.english, "      F.A.:", flipAnimation)
 		</Pressable>
 	);
 }
-
-// 	return (
-// 		<TouchableOpacity
-// 			onPress={() => handleCardTap(card.languages[languageToLearn])}
-// 			style={styles.container}
-// 		>
-// 			<Image
-// 				style={styles.card}
-// 				source={require("../assets/cards/card_front.png")}
-// 			/>
-// 			{inStreak ? (
-// 				<Image
-// 					style={styles.card}
-// 					source={require("../assets/cards/card_back.png")}
-// 				/>
-// 			) : (
-// 				<Image style={styles.card} source={card.image} />
-// 			)}
-// 		</TouchableOpacity>
-// 	);
-// }
 
 const styles = StyleSheet.create({
 	container: {
@@ -139,8 +106,7 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		backfaceVisibility: "hidden",
 	},
-	cardBack: {
-	},
+	cardBack: {},
 });
 
 const mapStateToProps = state => ({

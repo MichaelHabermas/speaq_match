@@ -3,12 +3,16 @@ import { View, StyleSheet } from "react-native";
 
 import GameCard from "./GameCard";
 
-function CardsContainer({ deck, handleCardTap,  }) {
-console.log(" - - - - - - - - - - - - - - - ")
+function GameCardsContainer({ deck, handleCardTap }) {
 	return (
 		<View style={styles.container}>
 			{deck.map(card => (
-				<GameCard key={card.id} card={card} deck={deck} handleCardTap={handleCardTap} />
+				<GameCard
+					key={card.id}
+					card={card}
+					deck={deck}
+					handleCardTap={handleCardTap}
+				/>
 			))}
 		</View>
 	);
@@ -26,4 +30,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default CardsContainer;
+export default GameCardsContainer;

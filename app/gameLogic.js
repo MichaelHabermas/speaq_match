@@ -1,10 +1,4 @@
-const deckShuffle = deck => {
-      const newDeck = deck.map(card => {
-        card.isFlipped = false
-        return card
-    })
-	return shuffler(newDeck);
-};
+const idxRandomizer = length => Math.floor(Math.random() * length);
 
 const shuffler = deck => {
 	for (let i = deck.length - 1; i > 0; i--) {
@@ -14,8 +8,16 @@ const shuffler = deck => {
 	return deck;
 };
 
+const deckShuffle = deck => {
+	const newDeck = deck.map(card => {
+		card.isFlipped = false;
+		return card;
+	});
+	return shuffler(newDeck);
+};
+
 const selectCardsFromDecks = (language, deck, ...args) => {
 	console.log(deck);
 };
 
-export { deckShuffle, selectCardsFromDecks };
+export { deckShuffle, idxRandomizer, selectCardsFromDecks };

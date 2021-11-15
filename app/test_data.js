@@ -155,7 +155,7 @@ const decks = {
 			{
 				id: 1,
 				image: bread,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a loaf of bread",
 					spanish: "una barra de pan",
@@ -200,7 +200,7 @@ const decks = {
 			{
 				id: 2,
 				image: cheese,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a piece of cheese",
 					spanish: "un pedazo de queso",
@@ -213,7 +213,7 @@ const decks = {
 			{
 				id: 3,
 				image: chicken,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a piece of chicken",
 					spanish: "un trozo de pollo",
@@ -226,7 +226,7 @@ const decks = {
 			{
 				id: 4,
 				image: coffee,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a cup of coffee",
 					spanish: "una taza de café",
@@ -239,7 +239,7 @@ const decks = {
 			{
 				id: 5,
 				image: egg,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "an egg",
 					spanish: "un huevo",
@@ -252,7 +252,7 @@ const decks = {
 			{
 				id: 6,
 				image: fish,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a piece of fish",
 					spanish: "un trozo de pescado",
@@ -264,7 +264,7 @@ const decks = {
 			},
 			{
 				id: 7,
-                isFlipped: false,
+				isFlipped: false,
 				image: meat,
 				languages: {
 					english: "a piece of meat",
@@ -277,7 +277,7 @@ const decks = {
 			},
 			{
 				id: 8,
-                isFlipped: false,
+				isFlipped: false,
 				image: milk,
 				languages: {
 					english: "a glass of milk",
@@ -290,7 +290,7 @@ const decks = {
 			},
 			{
 				id: 9,
-                isFlipped: false,
+				isFlipped: false,
 				image: rice,
 				languages: {
 					english: "a bowl of rice",
@@ -303,7 +303,7 @@ const decks = {
 			},
 			{
 				id: 10,
-                isFlipped: false,
+				isFlipped: false,
 				image: tea,
 				languages: {
 					english: "a cup of tea",
@@ -316,7 +316,7 @@ const decks = {
 			},
 			{
 				id: 11,
-                isFlipped: false,
+				isFlipped: false,
 				image: vegetables,
 				languages: {
 					english: "a bunch of vegetables",
@@ -330,7 +330,7 @@ const decks = {
 			{
 				id: 12,
 				image: water,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a glass of water",
 					spanish: "una copa de agua",
@@ -350,6 +350,7 @@ const decks = {
 			{
 				id: 1,
 				image: angry,
+				isFlipped: false,
 				languages: {
 					english: "an angry man",
 					spanish: "un hombre enojado",
@@ -362,6 +363,7 @@ const decks = {
 			{
 				id: 2,
 				image: confident,
+				isFlipped: false,
 				languages: {
 					english: "a confident man",
 					spanish: "un hombre seguro",
@@ -374,6 +376,7 @@ const decks = {
 			{
 				id: 3,
 				image: confused,
+				isFlipped: false,
 				languages: {
 					english: "a confused man",
 					spanish: "un hombre confundido",
@@ -386,6 +389,7 @@ const decks = {
 			{
 				id: 4,
 				image: embarrassed,
+				isFlipped: false,
 				languages: {
 					english: "an embarrassed man",
 					spanish: "un hombre confundido",
@@ -398,6 +402,7 @@ const decks = {
 			{
 				id: 5,
 				image: frightened,
+				isFlipped: false,
 				languages: {
 					english: "a frightened man",
 					spanish: "un hombre asustado",
@@ -410,6 +415,7 @@ const decks = {
 			{
 				id: 6,
 				image: guilty,
+				isFlipped: false,
 				languages: {
 					english: "a guilty man",
 					spanish: "un hombre culpable",
@@ -422,6 +428,7 @@ const decks = {
 			{
 				id: 7,
 				image: happy,
+				isFlipped: false,
 				languages: {
 					english: "a happy man",
 					spanish: "un hombre feliz",
@@ -434,6 +441,7 @@ const decks = {
 			{
 				id: 8,
 				image: sad,
+				isFlipped: false,
 				languages: {
 					english: "a sad man",
 					spanish: "un hombre triste",
@@ -446,6 +454,7 @@ const decks = {
 			{
 				id: 9,
 				image: shy,
+				isFlipped: false,
 				languages: {
 					english: "a shy man",
 					spanish: "un hombre tímido",
@@ -458,6 +467,7 @@ const decks = {
 			{
 				id: 10,
 				image: surprised,
+				isFlipped: false,
 				languages: {
 					english: "a surprised man",
 					spanish: "un hombre sorprendido",
@@ -470,6 +480,7 @@ const decks = {
 			{
 				id: 11,
 				image: suspicious,
+				isFlipped: false,
 				languages: {
 					english: "a suspicious man",
 					spanish: "un hombre sospechoso",
@@ -482,6 +493,7 @@ const decks = {
 			{
 				id: 12,
 				image: tired,
+				isFlipped: false,
 				languages: {
 					english: "a tired man",
 					spanish: "un hombre cansado",
@@ -499,7 +511,7 @@ const decks = {
 			{
 				id: 1,
 				image: card_0,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a zero",
 					spanish: "uno cero",
@@ -512,7 +524,7 @@ const decks = {
 			{
 				id: 2,
 				image: card_1,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a one",
 					spanish: "uno uno",
@@ -525,7 +537,7 @@ const decks = {
 			{
 				id: 3,
 				image: card_2,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a two",
 					spanish: "uno dos",
@@ -538,7 +550,7 @@ const decks = {
 			{
 				id: 4,
 				image: card_3,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a three",
 					spanish: "uno tres",
@@ -551,7 +563,7 @@ const decks = {
 			{
 				id: 5,
 				image: card_4,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a four",
 					spanish: "uno cuatro",
@@ -564,7 +576,7 @@ const decks = {
 			{
 				id: 6,
 				image: card_5,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a five",
 					spanish: "uno cinco",
@@ -577,7 +589,7 @@ const decks = {
 			{
 				id: 7,
 				image: card_6,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a six",
 					spanish: "uno seis",
@@ -590,7 +602,7 @@ const decks = {
 			{
 				id: 8,
 				image: card_7,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a seven",
 					spanish: "uno siete",
@@ -603,7 +615,7 @@ const decks = {
 			{
 				id: 9,
 				image: card_8,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "an eight",
 					spanish: "uno ocho",
@@ -616,7 +628,7 @@ const decks = {
 			{
 				id: 10,
 				image: card_9,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a nine",
 					spanish: "uno nueve",
@@ -629,7 +641,7 @@ const decks = {
 			{
 				id: 11,
 				image: card_10,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "a ten",
 					spanish: "uno diez",
@@ -642,7 +654,7 @@ const decks = {
 			{
 				id: 12,
 				image: card_11,
-                isFlipped: false,
+				isFlipped: false,
 				languages: {
 					english: "an eleven",
 					spanish: "uno once",
@@ -660,6 +672,7 @@ const decks = {
 			{
 				id: 1,
 				image: card_11,
+				isFlipped: false,
 				languages: {
 					english: "an eleven",
 					spanish: "uno once",
@@ -672,6 +685,7 @@ const decks = {
 			{
 				id: 2,
 				image: card_12,
+				isFlipped: false,
 				languages: {
 					english: "a twelve",
 					spanish: "uno doce",
@@ -684,6 +698,7 @@ const decks = {
 			{
 				id: 3,
 				image: card_13,
+				isFlipped: false,
 				languages: {
 					english: "a thirteen",
 					spanish: "uno trece",
@@ -696,6 +711,7 @@ const decks = {
 			{
 				id: 4,
 				image: card_14,
+				isFlipped: false,
 				languages: {
 					english: "a fourteen",
 					spanish: "uno catorce",
@@ -708,6 +724,7 @@ const decks = {
 			{
 				id: 5,
 				image: card_15,
+				isFlipped: false,
 				languages: {
 					english: "a fifteen",
 					spanish: "uno quince",
@@ -720,6 +737,7 @@ const decks = {
 			{
 				id: 6,
 				image: card_16,
+				isFlipped: false,
 				languages: {
 					english: "a sixteen",
 					spanish: "uno dieciséis",
@@ -732,6 +750,7 @@ const decks = {
 			{
 				id: 7,
 				image: card_17,
+				isFlipped: false,
 				languages: {
 					english: "a seventeen",
 					spanish: "uno diecisiete",
@@ -744,6 +763,7 @@ const decks = {
 			{
 				id: 8,
 				image: card_18,
+				isFlipped: false,
 				languages: {
 					english: "an eighteen",
 					spanish: "uno dieciocho",
@@ -756,6 +776,7 @@ const decks = {
 			{
 				id: 9,
 				image: card_19,
+				isFlipped: false,
 				languages: {
 					english: "an nineteen",
 					spanish: "uno diecinueve",
@@ -768,6 +789,7 @@ const decks = {
 			{
 				id: 10,
 				image: card_20,
+				isFlipped: false,
 				languages: {
 					english: "a twenty",
 					spanish: "uno veinte",
@@ -780,6 +802,7 @@ const decks = {
 			{
 				id: 11,
 				image: card_21,
+				isFlipped: false,
 				languages: {
 					english: "a twenty-one",
 					spanish: "uno veintiuno",
@@ -792,6 +815,7 @@ const decks = {
 			{
 				id: 12,
 				image: card_22,
+				isFlipped: false,
 				languages: {
 					english: "an twenty-two",
 					spanish: "uno veintidós",
@@ -809,6 +833,7 @@ const decks = {
 			{
 				id: 1,
 				image: card_10,
+				isFlipped: false,
 				languages: {
 					english: "a ten",
 					spanish: "un diez",
@@ -821,6 +846,7 @@ const decks = {
 			{
 				id: 2,
 				image: card_20,
+				isFlipped: false,
 				languages: {
 					english: "a twenty",
 					spanish: "un veinte",
@@ -833,6 +859,7 @@ const decks = {
 			{
 				id: 3,
 				image: card_30,
+				isFlipped: false,
 				languages: {
 					english: "a thirty",
 					spanish: "un treinta",
@@ -845,6 +872,7 @@ const decks = {
 			{
 				id: 4,
 				image: card_40,
+				isFlipped: false,
 				languages: {
 					english: "a fourty",
 					spanish: "un cuarenta",
@@ -857,6 +885,7 @@ const decks = {
 			{
 				id: 5,
 				image: card_50,
+				isFlipped: false,
 				languages: {
 					english: "a fifty",
 					spanish: "un cincuenta",
@@ -869,6 +898,7 @@ const decks = {
 			{
 				id: 6,
 				image: card_60,
+				isFlipped: false,
 				languages: {
 					english: "a sixty",
 					spanish: "un sesenta",
@@ -881,6 +911,7 @@ const decks = {
 			{
 				id: 7,
 				image: card_70,
+				isFlipped: false,
 				languages: {
 					english: "a seventy",
 					spanish: "un setenta",
@@ -893,6 +924,7 @@ const decks = {
 			{
 				id: 8,
 				image: card_80,
+				isFlipped: false,
 				languages: {
 					english: "an eighty",
 					spanish: "un ochenta",
@@ -905,6 +937,7 @@ const decks = {
 			{
 				id: 9,
 				image: card_90,
+				isFlipped: false,
 				languages: {
 					english: "an ninety",
 					spanish: "un noventa",
@@ -917,6 +950,7 @@ const decks = {
 			{
 				id: 10,
 				image: card_100,
+				isFlipped: false,
 				languages: {
 					english: "a hundred",
 					spanish: "un cien",
@@ -929,6 +963,7 @@ const decks = {
 			{
 				id: 11,
 				image: card_1000,
+				isFlipped: false,
 				languages: {
 					english: "a thousand",
 					spanish: "un mil",
@@ -941,6 +976,7 @@ const decks = {
 			{
 				id: 12,
 				image: card_10000,
+				isFlipped: false,
 				languages: {
 					english: "a ten thousand",
 					spanish: "un diez mil",
@@ -958,6 +994,7 @@ const decks = {
 			{
 				id: 1,
 				image: arrow,
+				isFlipped: false,
 				languages: {
 					english: "a grey arrow",
 					spanish: "una flecha gris",
@@ -970,6 +1007,7 @@ const decks = {
 			{
 				id: 2,
 				image: circle,
+				isFlipped: false,
 				languages: {
 					english: "a blue circle",
 					spanish: "un círculo azul",
@@ -982,6 +1020,7 @@ const decks = {
 			{
 				id: 3,
 				image: cone,
+				isFlipped: false,
 				languages: {
 					english: "a brown cone",
 					spanish: "un cono marrón",
@@ -994,6 +1033,7 @@ const decks = {
 			{
 				id: 4,
 				image: crescent,
+				isFlipped: false,
 				languages: {
 					english: "a pink crescent",
 					spanish: "un creciente rosa",
@@ -1006,6 +1046,7 @@ const decks = {
 			{
 				id: 5,
 				image: cylinder,
+				isFlipped: false,
 				languages: {
 					english: "a green cylinder",
 					spanish: "un cilindro verde",
@@ -1018,6 +1059,7 @@ const decks = {
 			{
 				id: 6,
 				image: cube,
+				isFlipped: false,
 				languages: {
 					english: "a purple cube",
 					spanish: "un cubo morado",
@@ -1030,6 +1072,7 @@ const decks = {
 			{
 				id: 7,
 				image: line,
+				isFlipped: false,
 				languages: {
 					english: "a black line",
 					spanish: "una línea negra",
@@ -1042,6 +1085,7 @@ const decks = {
 			{
 				id: 8,
 				image: oval,
+				isFlipped: false,
 				languages: {
 					english: "a white oval",
 					spanish: "un óvalo blanco",
@@ -1054,6 +1098,7 @@ const decks = {
 			{
 				id: 9,
 				image: rectangle,
+				isFlipped: false,
 				languages: {
 					english: "a rainbow rectangle",
 					spanish: "un rectángulo de arcoiris",
@@ -1066,6 +1111,7 @@ const decks = {
 			{
 				id: 10,
 				image: sphere,
+				isFlipped: false,
 				languages: {
 					english: "an orange sphere",
 					spanish: "una esfera naranja",
@@ -1078,6 +1124,7 @@ const decks = {
 			{
 				id: 11,
 				image: square,
+				isFlipped: false,
 				languages: {
 					english: "a red square",
 					spanish: "un cuadrado rojo",
@@ -1090,6 +1137,7 @@ const decks = {
 			{
 				id: 12,
 				image: triangle,
+				isFlipped: false,
 				languages: {
 					english: "a yellow triangle",
 					spanish: "un triángulo amarillo",
@@ -1107,6 +1155,7 @@ const decks = {
 			{
 				id: 1,
 				image: above,
+				isFlipped: false,
 				languages: {
 					english: "a ball above a box",
 					spanish: "una bola encima de una caja",
@@ -1119,6 +1168,7 @@ const decks = {
 			{
 				id: 2,
 				image: behind,
+				isFlipped: false,
 				languages: {
 					english: "a ball behind a box",
 					spanish: "una bola detrás de una caja",
@@ -1131,6 +1181,7 @@ const decks = {
 			{
 				id: 3,
 				image: below,
+				isFlipped: false,
 				languages: {
 					english: "a ball below a box",
 					spanish: "una bola debajo de una caja",
@@ -1143,6 +1194,7 @@ const decks = {
 			{
 				id: 4,
 				image: between,
+				isFlipped: false,
 				languages: {
 					english: "a ball between boxes",
 					spanish: "una bola entre cajas",
@@ -1155,6 +1207,7 @@ const decks = {
 			{
 				id: 5,
 				image: far,
+				isFlipped: false,
 				languages: {
 					english: "a ball far from a box",
 					spanish: "una bola lejos de una caja",
@@ -1167,6 +1220,7 @@ const decks = {
 			{
 				id: 6,
 				image: in_front,
+				isFlipped: false,
 				languages: {
 					english: "a ball in front of a box",
 					spanish: "una bola delante de una caja",
@@ -1179,6 +1233,7 @@ const decks = {
 			{
 				id: 7,
 				image: in_it,
+				isFlipped: false,
 				languages: {
 					english: "a ball in a box",
 					spanish: "una bola en una caja",
@@ -1191,6 +1246,7 @@ const decks = {
 			{
 				id: 8,
 				image: near,
+				isFlipped: false,
 				languages: {
 					english: "a ball near a box",
 					spanish: "una bola cerca de una caja",
@@ -1203,6 +1259,7 @@ const decks = {
 			{
 				id: 9,
 				image: next_to,
+				isFlipped: false,
 				languages: {
 					english: "a ball next to a box",
 					spanish: "una bola al lado de una caja",
@@ -1216,6 +1273,7 @@ const decks = {
 			{
 				id: 10,
 				image: on,
+				isFlipped: false,
 				languages: {
 					english: "a ball on a box",
 					spanish: "una bola sobre una caja",
@@ -1228,6 +1286,7 @@ const decks = {
 			{
 				id: 11,
 				image: surrounded_by,
+				isFlipped: false,
 				languages: {
 					english: "a ball surrounded by boxes",
 					spanish: "una bola rodeando por cajas",
@@ -1240,6 +1299,7 @@ const decks = {
 			{
 				id: 12,
 				image: under,
+				isFlipped: false,
 				languages: {
 					english: "a ball under a box",
 					spanish: "una bola debajo de una caja",
@@ -1257,6 +1317,7 @@ const decks = {
 			{
 				id: 1,
 				image: animals1Cow,
+				isFlipped: false,
 				languages: {
 					english: "a cow",
 					spanish: "una vaca",
@@ -1269,6 +1330,7 @@ const decks = {
 			{
 				id: 2,
 				image: animals1Bird,
+				isFlipped: false,
 				languages: {
 					english: "a bird",
 					spanish: "un pájaro",
@@ -1281,6 +1343,7 @@ const decks = {
 			{
 				id: 3,
 				image: animals1Bug,
+				isFlipped: false,
 				languages: {
 					english: "a bug",
 					spanish: "un insecto",
@@ -1293,6 +1356,7 @@ const decks = {
 			{
 				id: 4,
 				image: animals1Cat,
+				isFlipped: false,
 				languages: {
 					english: "a cat",
 					spanish: "un gato",
@@ -1305,6 +1369,7 @@ const decks = {
 			{
 				id: 5,
 				image: animals1Chicken,
+				isFlipped: false,
 				languages: {
 					english: "a chicken",
 					spanish: "un pollito",
@@ -1317,6 +1382,7 @@ const decks = {
 			{
 				id: 6,
 				image: animals1Dog,
+				isFlipped: false,
 				languages: {
 					english: "a dog",
 					spanish: "un perro",
@@ -1329,6 +1395,7 @@ const decks = {
 			{
 				id: 7,
 				image: animals1Fish,
+				isFlipped: false,
 				languages: {
 					english: "a fish",
 					spanish: "un pez",
@@ -1341,6 +1408,7 @@ const decks = {
 			{
 				id: 8,
 				image: animals1Horse,
+				isFlipped: false,
 				languages: {
 					english: "a horse",
 					spanish: "un caballo",
@@ -1353,6 +1421,7 @@ const decks = {
 			{
 				id: 9,
 				image: animals1Mouse,
+				isFlipped: false,
 				languages: {
 					english: "a mouse",
 					spanish: "un ratón",
@@ -1365,6 +1434,7 @@ const decks = {
 			{
 				id: 10,
 				image: animals1Pig,
+				isFlipped: false,
 				languages: {
 					english: "a pig",
 					spanish: "un cerdo",
@@ -1377,6 +1447,7 @@ const decks = {
 			{
 				id: 11,
 				image: animals1Rabbit,
+				isFlipped: false,
 				languages: {
 					english: "a rabbit",
 					spanish: "un conejo",
@@ -1389,6 +1460,7 @@ const decks = {
 			{
 				id: 12,
 				image: animals1Snake,
+				isFlipped: false,
 				languages: {
 					english: "a snake",
 					spanish: "una serpiente",
@@ -1406,6 +1478,7 @@ const decks = {
 			{
 				id: 1,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1413,6 +1486,7 @@ const decks = {
 			{
 				id: 2,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1420,6 +1494,7 @@ const decks = {
 			{
 				id: 3,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1427,6 +1502,7 @@ const decks = {
 			{
 				id: 4,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1434,6 +1510,7 @@ const decks = {
 			{
 				id: 5,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1441,6 +1518,7 @@ const decks = {
 			{
 				id: 6,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1448,6 +1526,7 @@ const decks = {
 			{
 				id: 7,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1455,6 +1534,7 @@ const decks = {
 			{
 				id: 8,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1462,6 +1542,7 @@ const decks = {
 			{
 				id: 9,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1469,6 +1550,7 @@ const decks = {
 			{
 				id: 10,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1476,6 +1558,7 @@ const decks = {
 			{
 				id: 11,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1483,6 +1566,7 @@ const decks = {
 			{
 				id: 12,
 				image: card_0,
+				isFlipped: false,
 				languages: {
 					english: "",
 				},
@@ -1609,6 +1693,7 @@ const levels = {
 		},
 	},
 };
+
 const languages = {
 	english: {
 		levels: {
@@ -1631,13 +1716,91 @@ const languages = {
 				completed: false,
 			},
 			4: {
+				pre: "That's ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			5: {
+				pre: "This is ",
+				post: ".",
+				unlocked: true,
+				completed: false,
+			},
+			6: {
 				pre: "Do you have ",
 				post: "?",
 				unlocked: true,
 				completed: false,
 			},
-			5: {
+			7: {
+				pre: "I would like ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+			8: {
+				pre: "Do you see ",
+				post: "?",
+				unlocked: false,
+				completed: false,
+			},
+			9: {
+				pre: "Is there ",
+				post: "?",
+				unlocked: false,
+				completed: false,
+			},
+			10: {
 				pre: "Give me ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+			11: {
+				pre: "Pass me ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+			12: {
+				pre: "Hand me",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+			13: {
+				pre: "Do you see ",
+				post: "?",
+				unlocked: false,
+				completed: false,
+			},
+			14: {
+				pre: "Can you give me ",
+				post: "?",
+				unlocked: false,
+				completed: false,
+			},
+			15: {
+				pre: "Can I have ",
+				post: "?",
+				unlocked: false,
+				completed: false,
+			},
+			16: {
+				pre: "Let me have ",
+				post: ".",
+				unlocked: false,
+				completed: false,
+			},
+			17: {
+				pre: "If you have ",
+				post: ", give it to me.",
+				unlocked: false,
+				completed: false,
+			},
+			18: {
+				pre: " If you see one, pass me ",
 				post: ".",
 				unlocked: false,
 				completed: false,
