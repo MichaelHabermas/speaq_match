@@ -88,13 +88,9 @@ function GamePlayScreen({
 		if (streak <= 0) return;
 
 		if (cardText === currentRequestText.cardText) {
-			// game over condition
 			if (streak <= 1) {
 				handleGameOver();
 			} else {
-				// determineNextCard(currentRequestText.unchosen);
-				// setStreak(streak - 1);
-				// setSpeaker(characters[idxRandomizer(characters.length)]);
 				handleCorrectCardChoice();
 			}
 		} else {
