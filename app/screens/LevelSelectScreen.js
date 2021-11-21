@@ -20,6 +20,17 @@ const levelCardsTest = [
 	{ level: 2, unlocked: true, completed: false, isSelected: false },
 	{ level: 3, unlocked: true, completed: false, isSelected: false },
 	{ level: 4, unlocked: true, completed: false, isSelected: false },
+	{ level: 5, unlocked: true, completed: false, isSelected: false },
+	{ level: 6, unlocked: true, completed: false, isSelected: false },
+	{ level: 7, unlocked: true, completed: false, isSelected: false },
+	{ level: 8, unlocked: true, completed: false, isSelected: false },
+	{ level: 9, unlocked: true, completed: false, isSelected: false },
+	{ level: 10, unlocked: true, completed: false, isSelected: false },
+	{ level: 11, unlocked: true, completed: false, isSelected: false },
+	{ level: 12, unlocked: true, completed: false, isSelected: false },
+	{ level: 13, unlocked: true, completed: false, isSelected: false },
+	{ level: 14, unlocked: true, completed: false, isSelected: false },
+	{ level: 15, unlocked: true, completed: false, isSelected: false },
 ];
 const deckCardsTest = [
 	{ name: "Numbers 1", unlocked: true, completed: false, isSelected: false },

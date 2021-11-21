@@ -117,15 +117,6 @@ function GamePlayScreen({
 		}, 500);
 	};
 
-	console.log(" - - - - - - - - - - - - - - - - - - -- - - - ");
-	console.log(
-		"Card Index and Text:",
-		currentRequestText.currentCardIndex,
-		currentRequestText.cardText
-	);
-	// console.log("Current Card Index:", currentRequestText.currentCardIndex);
-	console.log("Unchosen:", currentRequestText.unchosen);
-
 	return (
 		<Screen style={styles.screen}>
 			<ScreenHeader
