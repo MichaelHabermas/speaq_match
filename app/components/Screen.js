@@ -10,7 +10,7 @@ function Screen({ children, screen = false, style }) {
 			source={require("../assets/bg.png")}
 			style={styles.background}
 		>
-			{screen && (
+			{screen ? (
 				<ImageBackground
 					source={require("../assets/bg_screen.png")}
 					style={styles.background}
@@ -19,8 +19,7 @@ function Screen({ children, screen = false, style }) {
 						<View style={[styles.view, style]}>{children}</View>
 					</SafeAreaView>
 				</ImageBackground>
-			)}
-			{!screen && (
+			) : (
 				<SafeAreaView style={[styles.screen, style]}>
 					<View style={[styles.view, style]}>{children}</View>
 				</SafeAreaView>

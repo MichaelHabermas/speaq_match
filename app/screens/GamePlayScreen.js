@@ -39,11 +39,11 @@ function GamePlayScreen({
 	const preText = languages[languageToLearn].levels[currentLevel].pre;
 	const postText = languages[languageToLearn].levels[currentLevel].post;
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		resetStreak();
 	}, []);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		setBubbleText();
 	}, [currentDeck, currentRequestText.unchosen]);
 
